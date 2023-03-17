@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css';
 const Home = ({ players }) => (
 	<>
 		<main className={styles.main}>
+			<div className='home-news'>NEWS</div>
 			{players?.map(player => (
 				<div key={player._id}>
 					<p>{player.name}</p>

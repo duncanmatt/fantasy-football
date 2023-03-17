@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
-import { MenuOutlined } from '@ant-design/icons';
+import { MenuOutlined, UserOutlined } from '@ant-design/icons';
 
 
 const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
 	const isMobile = useMediaQuery({
 		query: '(max-width: 600px)',
 	});
@@ -20,11 +23,14 @@ const Nav = () => {
 					) : (
 						<div className='nav-desktop'>
 							<h1>Fantasy Football</h1>
-							<span className='nav-desktop-positions'>
-								{/* <Link>QB</Link>
-								<Link>RB</Link>
-								<Link>WR</Link>
-								<Link>TE</Link> */}
+							<span className='nav-desktop-links'>
+								<Link href='/QBs'>QB</Link>
+								<Link href='/RBs'>RB</Link>
+								<Link href='/WRs'>WR</Link>
+								<Link href='/TEs'>TE</Link>
+								<UserOutlined style={{
+									justifySelf: 'end'
+								}} />
 							</span>
 						</div>
 					)}
