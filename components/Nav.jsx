@@ -1,12 +1,59 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
-import { MenuOutlined, UserOutlined } from '@ant-design/icons';
+import {
+	MenuOutlined,
+	UserOutlined,
+	CloseOutlined,
+	RightOutlined,
+} from '@ant-design/icons';
 
+function MobileNav() {
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	const showMenu = () => setMenuOpen(!menuOpen);
+
+	return (
+		<>
+			{menuOpen ? (
+				<div className='menu-wrapper'>
+					<div className='menu-content'>
+						<div className='nav-mobile'>
+							<h1>Fantasy Football</h1>
+							<CloseOutlined onClick={showMenu} />
+						</div>
+						<div className='menu-lower'>
+							<h2>Positions</h2>
+							<span className='mobile-menu-links'>
+								<Link href='/QBs'>
+									QB <RightOutlined />
+								</Link>
+								<Link href='/RBs'>
+									RB <RightOutlined />
+								</Link>
+								<Link href='/WRs'>
+									WR <RightOutlined />
+								</Link>
+								<Link href='/TEs'>
+									TE <RightOutlined />
+								</Link>
+							</span>
+						</div>
+					</div>
+				</div>
+			) : (
+				<div className='nav-mobile'>
+					<Link href='/'>
+						<h1>Fantasy Football</h1>
+					</Link>
+					<MenuOutlined onClick={showMenu} />
+				</div>
+			)}
+		</>
+	);
+}
 
 const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
 	const isMobile = useMediaQuery({
 		query: '(max-width: 600px)',
 	});
@@ -16,21 +63,18 @@ const Nav = () => {
 			<header className='header-wrapper'>
 				<div className='header-content'>
 					{isMobile ? (
-						<div className='nav-mobile'>
-							<h1>Fantasy Football</h1>
-							<MenuOutlined />
-						</div>
+						<MobileNav />
 					) : (
 						<div className='nav-desktop'>
-							<h1>Fantasy Football</h1>
+							<Link href='/'>
+								<h1>Fantasy Football</h1>
+							</Link>
 							<span className='nav-desktop-links'>
 								<Link href='/QBs'>QB</Link>
 								<Link href='/RBs'>RB</Link>
 								<Link href='/WRs'>WR</Link>
 								<Link href='/TEs'>TE</Link>
-								<UserOutlined style={{
-									justifySelf: 'end'
-								}} />
+								<UserOutlined />
 							</span>
 						</div>
 					)}

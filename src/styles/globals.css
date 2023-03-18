@@ -103,6 +103,9 @@ a {
 
 header {
 	background-color: rgba(0, 0, 0, 0.09);
+	position: absolute;
+	width: 100%;
+	z-index: 20;
 }
 
 .nav-mobile {
@@ -129,4 +132,34 @@ header {
 	flex-basis: 100%;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.nav-desktop-links a {
+	border: 1px solid rgb(117, 117, 117);
+	padding-block: 0.2rem;
+	padding-inline: 0.6rem;
+	border-radius: 5px;
+}
+
+.menu-lower {
+	padding-inline: 1rem;
+	padding-block: 0.75rem 0.5rem;
+	background-color: #212529;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+}
+
+.mobile-menu-links {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	padding-block-start: 1rem;
+}
+
+.mobile-menu-links a {
+	display: flex;
+	flex-flow: row nowrap;
+	flex-basis: 100%;
+	justify-content: space-between;
 }
