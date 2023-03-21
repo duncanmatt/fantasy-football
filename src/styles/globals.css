@@ -103,9 +103,34 @@ a {
 
 header {
 	background-color: rgba(0, 0, 0, 0.09);
-	position: absolute;
 	width: 100%;
 	z-index: 20;
+	-webkit-tap-highlight-color: transparent;
+}
+
+header::selection {
+	background: none;
+	color: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+	.page-container {
+		padding-inline: 1rem;
+		padding-block-start: 1rem;
+	}
+}
+
+/* DESKTOP */
+@media (min-width: 600px) {
+	.page-container {
+		padding-inline: 3rem;
+		padding-block-start: 1rem;
+	}
+}
+
+.page-container {
+	padding-block-start: 1rem;
 }
 
 .nav-mobile {
@@ -148,6 +173,10 @@ header {
 	color: #fff;
 	display: flex;
 	flex-direction: column;
+	position: fixed;
+	right: 0;
+	width: 45vw;
+	z-index: 59;
 }
 
 .mobile-menu-links {

@@ -74,7 +74,9 @@ const Nav = () => {
 								<Link href='/RBs'>RB</Link>
 								<Link href='/WRs'>WR</Link>
 								<Link href='/TEs'>TE</Link>
-								<UserOutlined />
+								<Link href='/Login'>
+									<UserOutlined />
+								</Link>
 							</span>
 						</div>
 					)}
