@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
 import { login, reset } from '@/features/auth/authSlice';
 
 const LoginForm = () => {
+	const router = useRouter();
+	const dispatch = useDispatch();
+
 	const [formData, setFormData] = useState({
 		email: '',
 		password: '',
@@ -13,24 +17,22 @@ const LoginForm = () => {
 
 	const { username, password } = formData;
 
-	const dispatch = useDispatch();
-	const navigate = useNavigate();	
-
 	const { user, isLoading, isError, isSuccess, message } = useSelector(
 		state => state.auth,
 	);
 
 	useEffect(() => {
 		if (isError) {
-			console.error('USER CREDENTIALS NOT RECOGNIZED');
+			console.error(message);
 		}
 
 		if (isSuccess || user) {
-			navigate('/');
+			router.push('/');
 		}
+		// TODO: if already logged in redirect to profile page
 
 		dispatch(reset());
-	}, [isError, isSuccess, user, message, navigate, dispatch]);
+	}, [isError, isSuccess, user, message, router, dispatch]);
 
 	const onChange = e => {
 		setFormData(prevState => ({
@@ -39,8 +41,7 @@ const LoginForm = () => {
 		}));
 	};
 
-	const onFinish = e => {
-		console.log('CLICKED');
+	const onSubmit = e => {
 		e.preventDefault();
 
 		const userData = {
@@ -53,72 +54,52 @@ const LoginForm = () => {
 	};
 
 	if (isLoading) {
-		return <Spin />
+		return <Spin />;
 	}
 
 	return (
-		<Form
+		<form
 			name='normal_login'
 			className='login-form'
-			initialValues={{
-				remember: true,
-			}}
-			onSubmitCapture={onFinish}>
-			<Form.Item
-				name='username'
-				rules={[
-					{
-						required: true,
-						message: 'Please input your Username!',
-					},
-				]}>
-				<Input
-					prefix={<UserOutlined className='site-form-item-icon' />}
-					placeholder='Username'
-					value={username}
-				/>
-			</Form.Item>
-			<Form.Item
-				name='password'
-				rules={[
-					{
-						required: true,
-						message: 'Please input your Password!',
-					},
-				]}>
-				<Input
-					prefix={<LockOutlined className='site-form-item-icon' />}
-					type='password'
-					placeholder='Password'
+			onSubmit={onSubmit}>
+			<div className='input-item'>
+				<label htmlFor='username'>
+					<UserOutlined />
+				</label>
+				<input
+					type='text'
+					className='username-input'
+					required
+					maxLength='60'
+					name='username'
+					value={username || []}
 					onChange={onChange}
-					value={password}
 				/>
-			</Form.Item>
-			<Form.Item>
-				<Form.Item
-					name='remember'
-					valuePropName='checked'
-					noStyle>
-					<Checkbox>Remember me</Checkbox>
-				</Form.Item>
+			</div>
+			<div className='input-item'>
+				<label htmlFor='password'>
+					<LockOutlined />
+				</label>
+				<input
+					type='password'
+					className='password-input'
+					required
+					maxLength='60'
+					name='password'
+					value={password || []}
+					onChange={onChange}
+				/>
+			</div>
+			<button
+				type='submit'
+				className='form-submit-btn'>
+				Login
+			</button>
+			<div className="register-link">
+				Or <Link href='/Register'>Create an account</Link>
+			</div>
 
-				<a
-					className='login-form-forgot'
-					href=''>
-					Forgot password
-				</a>
-			</Form.Item>
-
-			<Form.Item>
-				<Button
-					type='primary'
-					htmlType='submit'
-					className='login-form-button'>
-					Log in
-				</Button>
-				Or <a href=''>register now!</a>
-			</Form.Item>
-		</Form>
+		</form>
 	);
 };
 export default LoginForm;

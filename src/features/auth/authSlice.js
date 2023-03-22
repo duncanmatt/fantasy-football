@@ -1,15 +1,13 @@
-import { useEffect } from 'react';
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import authService from './authService';
 
-// const user = JSON.parse(localStorage.getItem('user'))
+
+
 
 const initialState = {
-	user:
-		typeof window !== 'undefined'
-			? JSON.parse(localStorage.getItem('user'))
-			: null,
+ 	user: null,
 	isError: false,
 	isSuccess: false,
 	isLoading: false,
