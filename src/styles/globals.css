@@ -160,10 +160,19 @@ header::selection {
 }
 
 .nav-desktop-links a {
-	border: 1px solid rgb(117, 117, 117);
 	padding-block: 0.2rem;
 	padding-inline: 0.6rem;
 	border-radius: 5px;
+}
+
+/* position links */
+.nav-desktop-links a:not(:last-of-type):hover {
+	background-color: #f9f9f9;
+}
+
+/* profile link */
+.nav-desktop-links a :last-of-type:hover {
+	color: #f9f9f9;
 }
 
 .menu-lower {
