@@ -5,6 +5,7 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
 import { login, reset } from '@/features/auth/authSlice';
+import styles from '@/styles/Form.module.css';
 
 const LoginForm = () => {
 	const router = useRouter();
@@ -60,15 +61,15 @@ const LoginForm = () => {
 	return (
 		<form
 			name='normal_login'
-			className='login-form'
+			className={styles.form}
 			onSubmit={onSubmit}>
-			<div className='input-item'>
+			<div className={styles.item}>
 				<label htmlFor='username'>
 					<UserOutlined />
 				</label>
 				<input
 					type='text'
-					className='username-input'
+					className={styles.input}
 					required
 					maxLength='60'
 					name='username'
@@ -76,13 +77,13 @@ const LoginForm = () => {
 					onChange={onChange}
 				/>
 			</div>
-			<div className='input-item'>
+			<div className={styles.item}>
 				<label htmlFor='password'>
 					<LockOutlined />
 				</label>
 				<input
 					type='password'
-					className='password-input'
+					className={styles.input}
 					required
 					maxLength='60'
 					name='password'
@@ -90,15 +91,14 @@ const LoginForm = () => {
 					onChange={onChange}
 				/>
 			</div>
-			<button
-				type='submit'
-				className='form-submit-btn'>
-				Login
-			</button>
-			<div className="register-link">
-				Or <Link href='/Register'>Create an account</Link>
+			<div className={styles.actions}>
+				<button
+					type='submit'
+					className={styles.btn}>
+					Login
+				</button>
+				Or &nbsp;<Link className={styles.link} href='/Register'>Create an account</Link>
 			</div>
-
 		</form>
 	);
 };

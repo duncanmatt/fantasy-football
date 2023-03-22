@@ -109,11 +109,13 @@ const LoginForm = () => {
 					onChange={onChange}
 				/>
 			</div>
+			<div className={styles.actions}>
 			<button
 				type='submit'
-				className='form-submit-btn'>
+				className={styles.btn}>
 				Register
 			</button>
+			</div>
 		</form>
 	);
 };
