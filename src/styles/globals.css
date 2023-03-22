@@ -118,7 +118,6 @@ header::selection {
 @media (max-width: 600px) {
 	.page-container {
 		padding-inline: 1rem;
-		padding-block-start: 1rem;
 	}
 }
 
@@ -126,12 +125,11 @@ header::selection {
 @media (min-width: 600px) {
 	.page-container {
 		padding-inline: 3rem;
-		padding-block-start: 1rem;
 	}
 }
 
 .page-container {
-	padding-block-start: 1rem;
+	padding-block-start: 2rem;
 }
 
 .nav-mobile {
@@ -149,7 +147,7 @@ header::selection {
 	grid-template-rows: inherit;
 	grid-template-columns: 0.5fr 0.5fr;
 	align-items: center;
-	padding-inline: 1rem;
+	padding-inline: 3rem;
 }
 
 .nav-desktop-links {

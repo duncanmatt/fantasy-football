@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 		case 'GET':
 			try {
 				// find user
-				const user = await User.findByOne({ username });
+				const user = await User.find({ username });
 				if (user && (await compare(password, user.password))) {
 					res.status(200).json({
 						success: true,

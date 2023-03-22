@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import { wrapper } from '@/store';
 import Head from 'next/head';
-import Nav from '../../components/Nav';
+import Nav from '../components/Nav';
 import '@/styles/globals.css';
 
 const App = ({ Component, ...rest }) => {
