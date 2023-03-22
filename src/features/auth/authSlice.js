@@ -3,9 +3,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import authService from './authService';
 
-
-
-
 const initialState = {
  	user: null,
 	isError: false,

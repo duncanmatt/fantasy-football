@@ -7,6 +7,7 @@ import {
 	CloseOutlined,
 	RightOutlined,
 } from '@ant-design/icons';
+import styles from '@/styles/Nav.module.css'
 
 function MobileNav() {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -18,13 +19,13 @@ function MobileNav() {
 			{menuOpen ? (
 				<div className='menu-wrapper'>
 					<div className='menu-content'>
-						<div className='nav-mobile'>
+						<div className={styles.mobile}>
 							<h1>Fantasy Football</h1>
 							<CloseOutlined onClick={showMenu} />
 						</div>
-						<div className='menu-lower'>
+						<div className={styles.menu}>
 							<h2>Positions</h2>
-							<span className='mobile-menu-links'>
+							<span className={styles.mobileLinks}>
 								<Link href='/QBs'>
 									QB <RightOutlined />
 								</Link>
@@ -42,7 +43,7 @@ function MobileNav() {
 					</div>
 				</div>
 			) : (
-				<div className='nav-mobile'>
+				<div className={styles.mobile}>
 					<Link href='/'>
 						<h1>Fantasy Football</h1>
 					</Link>
@@ -65,11 +66,11 @@ const Nav = () => {
 					{isMobile ? (
 						<MobileNav />
 					) : (
-						<div className='nav-desktop'>
+						<div className={styles.desktop}>
 							<Link href='/'>
 								<h1>Fantasy Football</h1>
 							</Link>
-							<span className='nav-desktop-links'>
+							<span className={styles.links}>
 								<Link href='/QBs'>QB</Link>
 								<Link href='/RBs'>RB</Link>
 								<Link href='/WRs'>WR</Link>
