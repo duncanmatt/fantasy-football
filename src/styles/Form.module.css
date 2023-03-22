@@ -1,0 +1,21 @@
+.form {
+	padding: 1rem;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+}
+
+.input {
+	flex-basis: 100%;
+	margin-block: 1rem;
+	margin-inline: 0.65rem 2rem;
+	border: 1px solid rgb(217, 217, 217);
+	padding-block: 0.45rem;
+	border-radius: 3px;
+}
+
+.btn {
+	border-radius: 30px;
+}
