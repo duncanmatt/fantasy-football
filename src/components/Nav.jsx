@@ -67,9 +67,13 @@ const Nav = () => {
 						<MobileNav />
 					) : (
 						<div className={styles.desktop}>
-							<Link href='/'>
-								<h1>Fantasy Football</h1>
-							</Link>
+							<h1>
+								<Link
+									className={styles.title}
+									href='/'>
+									Fantasy Football
+								</Link>
+							</h1>
 							<span className={styles.links}>
 								<Link href='/QBs'>QB</Link>
 								<Link href='/RBs'>RB</Link>

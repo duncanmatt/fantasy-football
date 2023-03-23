@@ -28,12 +28,12 @@ const LoginForm = () => {
 		}
 
 		if (isSuccess || user) {
-			router.push('/');
+			// router.push(`/users/${username}`);
 		}
 		// TODO: if already logged in redirect to profile page
 
 		dispatch(reset());
-	}, [isError, isSuccess, user, message, router, dispatch]);
+	}, [isError, isSuccess, user, username, message, router, dispatch]);
 
 	const onChange = e => {
 		setFormData(prevState => ({

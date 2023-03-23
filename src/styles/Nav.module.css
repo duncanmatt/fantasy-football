@@ -11,9 +11,14 @@
 	display: grid;
 	width: 100%;
 	grid-template-rows: inherit;
-	grid-template-columns: 0.5fr 0.5fr;
+	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
 	padding-inline: 3rem;
+	justify-content: space-between;
+}
+
+.title {
+	width: min-content;
 }
 
 .links {

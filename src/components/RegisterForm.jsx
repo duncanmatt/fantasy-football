@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
-import { register, reset } from '@/features/auth/authSlice';
-import styles from '@/styles/Form.module.css';
+import { register, reset } from '../features/auth/authSlice';
+import styles from '../styles/Form.module.css';
 
 const LoginForm = () => {
 	const router = useRouter();
