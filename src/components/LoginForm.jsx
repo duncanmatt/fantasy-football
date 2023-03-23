@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
-import { login, reset } from '@/features/auth/authSlice';
-import styles from '@/styles/Form.module.css';
+import { login, reset } from '../features/auth/authSlice';
+import styles from '../styles/Form.module.css';
 
 const LoginForm = () => {
 	const router = useRouter();

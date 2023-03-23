@@ -1,20 +1,25 @@
 import connectDB from '../../lib/connectDB';
 import Player from '../../models/Player';
-import styles from '@/styles/Home.module.css';
+import News from '../components/News';
+import styles from '../styles/Home.module.css';
 
 const Home = ({ players }) => (
 	<>
 		<main className={styles.main}>
-			<div className='home-news'>NEWS</div>
+			<div className='home-news'>
+				<News />
+			</div>
 			<br />
 			<div className={styles.grid}>
-			{players?.map(player => (
-				<div className={styles.card} key={player._id}>
-					<p>{player.name}</p>
-					<p>{player.position}</p>
-					<p>{player.team}</p>
-				</div>
-			))}
+				{players?.map(player => (
+					<div
+						className={styles.card}
+						key={player._id}>
+						<p>{player.name}</p>
+						<p>{player.position}</p>
+						<p>{player.team}</p>
+					</div>
+				))}
 			</div>
 		</main>
 	</>
@@ -24,8 +29,8 @@ const Home = ({ players }) => (
 export async function getServerSideProps(context) {
 	await connectDB();
 
-	const result = await Player.find({ position: 'WR' }).limit(10);
-	const players = result.map(doc => {
+	const playersResult = await Player.find({ position: 'WR' }).limit(10);
+	const players = playersResult.map(doc => {
 		const player = doc.toObject();
 		player._id = player._id.toString();
 		return player;

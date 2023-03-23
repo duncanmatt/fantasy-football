@@ -7,7 +7,7 @@ import {
 	CloseOutlined,
 	RightOutlined,
 } from '@ant-design/icons';
-import styles from '@/styles/Nav.module.css'
+import styles from '../styles/Nav.module.css';
 
 function MobileNav() {
 	const [menuOpen, setMenuOpen] = useState(false);

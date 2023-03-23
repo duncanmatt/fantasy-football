@@ -32,12 +32,13 @@
 
 /* position links */
 .links a:not(:last-of-type):hover {
-	background-color: #f9f9f9;
+	background-color: #1677ff;
+	color: #f9f9f9;
 }
 
 /* profile link */
 .links a :last-of-type:hover {
-	color: #f9f9f9;
+	color: #1677ff;
 }
 
 .menu {
