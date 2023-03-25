@@ -1,10 +1,19 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { HYDRATE } from 'next-redux-wrapper';
+
 import authService from './authService';
 
+
+const GetUser = async () => {
+	if (typeof window !== 'undefined') {
+		const user = await JSON.parse(localStorage.getItem('user'));
+		return user ? user : null;
+	}
+};
+
+
 const initialState = {
- 	user: null,
+	user: GetUser(),
 	isError: false,
 	isSuccess: false,
 	isLoading: false,

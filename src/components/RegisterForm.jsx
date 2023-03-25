@@ -6,7 +6,7 @@ import { Button, Checkbox, Form, Input, Spin } from 'antd';
 import { register, reset } from '../features/auth/authSlice';
 import styles from '../styles/Form.module.css';
 
-const LoginForm = () => {
+const RegisterForm = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
 
@@ -27,8 +27,8 @@ const LoginForm = () => {
 			console.error(message);
 		}
 
-		if (isSuccess || user) {
-			router.push('/');
+		if (isSuccess && user) {
+			router.push(`/${user.id}`);
 		}
 
 		dispatch(reset());
@@ -119,4 +119,4 @@ const LoginForm = () => {
 		</form>
 	);
 };
-export default LoginForm;
+export default RegisterForm;
