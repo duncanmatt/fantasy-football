@@ -12,8 +12,7 @@ const Home = ({ players }) => (
 			<br />
 			<div className={styles.grid}>
 				{players?.map(player => (
-					<div
-						className={styles.card}
+					<div className={styles.card}
 						key={player._id}>
 						<p>{player.name}</p>
 						<p>{player.position}</p>

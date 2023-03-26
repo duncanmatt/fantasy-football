@@ -5,7 +5,7 @@ import articles from '../articles.json';
 
 const News = () => {
 	return (
-		<div className={styles.center}>
+		<div>
 			{articles.map((article, index) => (
 				<div key={index}>
 					<h3>{article.title}</h3>

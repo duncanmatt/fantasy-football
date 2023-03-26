@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import {
@@ -12,6 +13,8 @@ import styles from '../styles/Nav.module.css';
 function MobileNav() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
+	const { user } = useSelector(state => state.auth);
+
 	const showMenu = () => setMenuOpen(!menuOpen);
 
 	return (
@@ -24,7 +27,9 @@ function MobileNav() {
 							<CloseOutlined onClick={showMenu} />
 						</div>
 						<div className={styles.menu}>
-							<h2>Positions</h2>
+							<Link href={user ? `/${user._id}` : '/Login'}>
+								<UserOutlined />
+							</Link>
 							<span className={styles.mobileLinks}>
 								<Link href='/QBs'>
 									QB <RightOutlined />
