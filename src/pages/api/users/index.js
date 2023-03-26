@@ -37,10 +37,10 @@ export default async function handler(req, res) {
 		case 'POST':
 			try {
 				// create new model
-				if (!username || !password) {
-					res.status(400);
-					throw new Error('Please include all fields');
-				}
+				// if (!username || !password || !password2) {
+				// 	res.status(400);
+				// 	throw new Error('Please include all fields');
+				// }
 
 				const userExists = await User.findOne({ username });
 

@@ -27,8 +27,8 @@ const LoginForm = () => {
 			console.error(message);
 		}
 
-		if (isSuccess) {
-			router.push(`/Login`);
+		if (isSuccess || user) {
+			router.push(`/`);
 		}
 		// TODO: if already logged in redirect to profile page
 

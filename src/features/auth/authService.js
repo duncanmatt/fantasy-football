@@ -1,37 +1,45 @@
-
-
 const USER_URL = '/api/users';
 
 // Register user
 const register = async userData => {
-	const response = await fetch(USER_URL, userData, {
-		method: 'POST',
-		header: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({userData}),
-	});
+	try {
+		const response = await fetch(USER_URL, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(userData),
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log('Success:', data);
+			}).catch((error) => {
+				console.error(error);
+			});
 
-	const result = await response.json();
-
-	if (result) {
-		localStorage.setItem('user', JSON.stringify(result.user));
+		if (!response.ok) {
+			throw new Error(response.status);
+		}
+		return response;
+	} catch (error) {
+		console.error(error);
 	}
-	return result;
 };
 
 // Login user
 const login = async userData => {
-	const response = await fetch(USER_URL + `/${userData.username}`, userData, {
+	const response = await fetch(USER_URL, userData, {
 		method: 'GET',
-		header: {
+		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({ userData }),
+		body: JSON.stringify(userData),
 	});
 
 	const result = await response.json();
 	if (result) {
+		console.log(result);
 		localStorage.setItem('user', JSON.stringify(result));
 	}
 	return result;
@@ -40,9 +48,9 @@ const login = async userData => {
 const logout = () => localStorage.removeItem('user');
 
 const authService = {
-  register,
-  logout,
-  login,
-}
+	register,
+	logout,
+	login,
+};
 
 export default authService;
