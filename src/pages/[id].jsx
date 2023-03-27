@@ -1,14 +1,20 @@
 import connectDB from '../../lib/connectDB';
 import User from '../../models/User';
 import { UserOutlined } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import { logout } from '../features/auth/authSlice';
 
 const Profile = ({ user }) => {
+	const dispatch = useDispatch();
+
 	return (
-		<div className='page-container' key={user._id}>
+		<div
+			className='page-container'
+			key={user._id}>
 			<UserOutlined />
 			&nbsp;
 			{user.username}
-      {/* ADD LOGOUT */}
+			<button onClick={() => dispatch(logout())}>Logout</button>
 		</div>
 	);
 };
