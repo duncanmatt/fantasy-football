@@ -1,7 +1,8 @@
 import connectDB from '../../lib/connectDB';
 import User from '../../models/User';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import { UserOutlined } from '@ant-design/icons';
+import styles from '../styles/Profile.module.css';
 
 const Profile = ({ user }) => {
 	const router = useRouter();
@@ -15,10 +16,11 @@ const Profile = ({ user }) => {
 		<div
 			className='page-container'
 			key={user._id}>
-			<UserOutlined />
-			&nbsp;
-			{user.username}
-			<button onClick={logout}>Logout</button>
+			<div className={styles.profile}>
+				<UserOutlined className={styles.icon} />
+				<h3 className={styles.title}>{user.username}</h3>
+				<button className={styles.btn} onClick={logout}>Logout</button>
+			</div>
 		</div>
 	);
 };

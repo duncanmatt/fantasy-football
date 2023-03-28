@@ -91,4 +91,5 @@ header::selection {
 
 .page-container {
 	padding-block-start: 2rem;
+	max-width: var(--max-width);
 }
