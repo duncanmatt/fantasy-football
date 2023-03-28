@@ -1,13 +1,24 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import { Spin } from 'antd';
-import { login, reset } from '../features/auth/authSlice';
+
 import styles from '../styles/Form.module.css';
 
-function Login() {
+const Login = () => {
+
+	const [user, setUser] = useLocalStorage('user', null);
+	const router = useRouter();
+
+
+	useEffect(() => {
+		if (user) {
+			router.push(`/${user._id}`);
+		}
+	}, [router, user]);
+
 	const [formData, setFormData] = useState({
 		username: '',
 		password: '',
@@ -15,47 +26,41 @@ function Login() {
 
 	const { username, password } = formData;
 
-	const router = useRouter();
-	const dispatch = useDispatch();
-
-	const {user, isLoading, isError, isSuccess, message} = useSelector(
-		state => state.auth,
-	);
-
-	useEffect(() => {
-		if (isError) {
-			console.error(message);
-		}
-
-		if (isSuccess || user) {
-			router.push(`/${user._id}`);
-		}
-
-		dispatch(reset());
-	}, [isError, isSuccess, user, message, router, dispatch]);
-
 	const onChange = e => {
 		setFormData(prevState => ({
 			...prevState,
 			[e.target.name]: e.target.value,
 		}));
-	}
+	};
 
-	const onSubmit = e => {
+	
+
+	const onSubmit = async e => {
 		e.preventDefault();
 
 		const userData = {
 			username,
-			password
+			password,
 		};
 
-		dispatch(login(userData));
-		console.log('Received values of form:', userData);
-	}
+		await fetch('api/users/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(userData),
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log('Success:', data);
+				setUser(data);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
 
-	if (isLoading) {
-		return <Spin />
-	}
+		console.log('Received values of form:', userData);
+	};
 
 	return (
 		<div className='page-container'>
@@ -108,6 +113,6 @@ function Login() {
 			</form>
 		</div>
 	);
-}
+};
 
 export default Login;

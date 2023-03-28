@@ -1,11 +1,15 @@
 import connectDB from '../../lib/connectDB';
 import User from '../../models/User';
+import {useRouter} from 'next/router';
 import { UserOutlined } from '@ant-design/icons';
-import { useDispatch } from 'react-redux';
-import { logout } from '../features/auth/authSlice';
 
 const Profile = ({ user }) => {
-	const dispatch = useDispatch();
+	const router = useRouter();
+
+	const logout = () => {
+		localStorage.removeItem('user');
+		router.push('/');
+	};
 
 	return (
 		<div
@@ -14,7 +18,7 @@ const Profile = ({ user }) => {
 			<UserOutlined />
 			&nbsp;
 			{user.username}
-			<button onClick={() => dispatch(logout())}>Logout</button>
+			<button onClick={logout}>Logout</button>
 		</div>
 	);
 };

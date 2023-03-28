@@ -1,7 +1,6 @@
 import connectDB from '../../../../lib/connectDB';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
-
 import User from '../../../../models/User';
 
 export default async function handler(req, res) {
@@ -25,6 +24,7 @@ export default async function handler(req, res) {
 					password: user.password,
 					token: generateToken(user._id),
 				});
+
 			} else {
 				res.status(401);
 				console.log(password, user.password);

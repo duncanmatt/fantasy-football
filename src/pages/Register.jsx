@@ -1,36 +1,29 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Spin } from 'antd';
-import { register } from '../features/auth/authSlice';
+
 import styles from '../styles/Form.module.css';
 
 const Register = () => {
+	const router = useRouter();
+
+	const [user, setUser] = useLocalStorage('user', null);
+
+	useEffect(() => {
+		if (user) {
+			router.push(`/${user._id}`);
+		}
+	}, [user, router]);
+
 	const [formData, setFormData] = useState({
 		username: '',
 		password: '',
 		password2: '',
 	});
 
-	const router = useRouter();
-	const dispatch = useDispatch();
-
 	const { username, password, password2 } = formData;
-
-	const { user, isLoading, isError, isSuccess, message } = useSelector(
-		state => state.auth,
-	);
-
-	useEffect(() => {
-		if (isError) {
-			console.error(message);
-		}
-
-		if (isSuccess || user) {
-			router.push(`/`);
-		}
-	}, [isError, isSuccess, user, message, router]);
 
 	const onChange = e => {
 		setFormData(prevState => ({
@@ -39,7 +32,7 @@ const Register = () => {
 		}));
 	};
 
-	const onSubmit = e => {
+	const onSubmit = async e => {
 		e.preventDefault();
 
 		if (password !== password2) {
@@ -48,17 +41,27 @@ const Register = () => {
 			const userData = {
 				username,
 				password,
-				password2,
 			};
 
-			dispatch(register(userData));
+			await fetch('api/users/register', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(userData),
+			})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Success:', data);
+					setUser(data);
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+
 			console.log('Received values of form: ', userData);
 		}
 	};
-
-	if (isLoading) {
-		return <Spin />;
-	}
 
 	return (
 		<div className='page-container'>

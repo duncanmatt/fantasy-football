@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import {
@@ -13,7 +13,6 @@ import styles from '../styles/Nav.module.css';
 function MobileNav() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
-	const { user } = useSelector(state => state.auth);
 
 	const showMenu = () => setMenuOpen(!menuOpen);
 

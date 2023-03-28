@@ -1,15 +1,10 @@
-import { Provider } from 'react-redux';
-import { wrapper } from '../store';
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import '../styles/globals.css';
 
-const App = ({ Component, ...rest }) => {
-	const { store, props } = wrapper.useWrappedStore(rest);
-	const { pageProps } = props;
-
+const App = ({ Component, pageProps }) => {
 	return (
-		<Provider store={store}>
+		<>
 			<Head>
 				<title>NFL Fantasy</title>
 				<meta
@@ -28,7 +23,7 @@ const App = ({ Component, ...rest }) => {
 
 			<Nav />
 			<Component {...pageProps} />
-		</Provider>
+		</>
 	);
 };
 
