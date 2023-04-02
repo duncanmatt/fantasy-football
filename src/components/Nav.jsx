@@ -26,7 +26,7 @@ function MobileNav() {
 							<CloseOutlined onClick={showMenu} />
 						</div>
 						<div className={styles.menu}>
-							<Link href={user ? `/${user._id}` : '/Login'}>
+							<Link href='/Login'>
 								<UserOutlined />
 							</Link>
 							<span className={styles.mobileLinks}>

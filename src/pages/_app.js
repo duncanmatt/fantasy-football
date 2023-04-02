@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Nav from '../components/Nav';
 import '../styles/globals.css';
 
 const App = ({ Component, pageProps }) => {
@@ -20,8 +19,6 @@ const App = ({ Component, pageProps }) => {
 					href='/favicon.ico'
 				/>
 			</Head>
-
-			<Nav />
 			<Component {...pageProps} />
 		</>
 	);

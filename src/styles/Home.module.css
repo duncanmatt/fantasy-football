@@ -42,6 +42,11 @@
 	gap: 1rem;
 }
 
+.news {
+	display: grid;
+	gap: 1rem;
+}
+
 .card {
 	padding: 1rem 1.2rem;
 	border-radius: var(--border-radius);

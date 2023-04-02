@@ -1,0 +1,28 @@
+.player {
+	display: grid;
+	flex-direction: column;
+	padding-block: 1rem;
+	gap: 4rem;
+}
+
+.upper {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	font-size: 2rem;
+}
+
+.stats {
+	display: flex;
+	flex-basis: 100%;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	padding-block: 2rem;
+	border: 1px solid rgb(217, 217, 217);
+	border-radius: 12px;
+}

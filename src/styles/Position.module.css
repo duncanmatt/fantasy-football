@@ -1,0 +1,22 @@
+.main {
+	display: block;
+}
+
+.main > div {
+	padding-block: 2rem;
+}
+
+.title {
+	font-size: 2rem;
+	letter-spacing: 0.06rem;
+	font-weight: 500;
+}
+
+.players {
+	padding-block: 2rem;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(25%, auto));
+	width: var(--max-width);
+	max-width: 100%;
+	gap: 1rem;
+}

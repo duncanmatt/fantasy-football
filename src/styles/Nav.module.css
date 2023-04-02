@@ -9,7 +9,6 @@
 
 .desktop {
 	display: grid;
-	width: 100%;
 	grid-template-rows: inherit;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;

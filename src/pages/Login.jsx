@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import Layout from '../components/Layout';
 import { Spin } from 'antd';
 
 import styles from '../styles/Form.module.css';
@@ -15,7 +16,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if (user) {
-			router.push(`/${user._id}`);
+			router.push(`/users/${user._id}`);
 		}
 	}, [router, user]);
 
@@ -63,14 +64,14 @@ const Login = () => {
 	};
 
 	return (
-		<div className='page-container'>
+		<Layout>
 			<h2>Login</h2>
 			<form
 				name='normal_login'
 				className={styles.form}
 				onSubmit={onSubmit}>
 				<div className={styles.item}>
-					<label htmlFor='username'>
+					<label className={styles.icon} htmlFor='username'>
 						<UserOutlined />
 					</label>
 					<input
@@ -84,7 +85,7 @@ const Login = () => {
 					/>
 				</div>
 				<div className={styles.item}>
-					<label htmlFor='password'>
+					<label className={styles.icon} htmlFor='password'>
 						<LockOutlined />
 					</label>
 					<input
@@ -103,7 +104,7 @@ const Login = () => {
 						className={styles.btn}>
 						Login
 					</button>
-					Or &nbsp;
+					Or
 					<Link
 						className={styles.link}
 						href='/Register'>
@@ -111,7 +112,7 @@ const Login = () => {
 					</Link>
 				</div>
 			</form>
-		</div>
+		</Layout>
 	);
 };
 

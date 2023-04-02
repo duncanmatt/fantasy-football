@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import Layout from '../components/Layout';
 import { Spin } from 'antd';
 
 import styles from '../styles/Form.module.css';
@@ -64,7 +65,7 @@ const Register = () => {
 	};
 
 	return (
-		<div className='page-container'>
+		<Layout>
 			<h2>Create Account</h2>
 			<form
 				name='register'
@@ -120,7 +121,7 @@ const Register = () => {
 					</button>
 				</div>
 			</form>
-		</div>
+		</Layout>
 	);
 };
 

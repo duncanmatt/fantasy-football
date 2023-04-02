@@ -1,15 +1,17 @@
 import connectDB from '../../lib/connectDB';
 import Player from '../../models/Player';
 import News from '../components/News';
+import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
 
 const Home = ({ players }) => (
-	<>
+	<Layout>
 		<main className={styles.main}>
-			<div className='home-news'>
+			<div className={styles.news}>
+				<h2>LATEST NEWS</h2>
 				<News />
 			</div>
-			<br />
+
 			<div className={styles.grid}>
 				{players?.map(player => (
 					<div className={styles.card}
@@ -21,7 +23,7 @@ const Home = ({ players }) => (
 				))}
 			</div>
 		</main>
-	</>
+	</Layout>
 );
 
 // retrieve player data
