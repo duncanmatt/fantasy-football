@@ -1,8 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
-
 import styles from '../styles/Player.module.css';
-import Bio from './Bio';
+
 
 const QBCard = ({
 	name,
@@ -20,13 +20,27 @@ const QBCard = ({
 		query: '(max-width: 600px)',
 	});
 
+
 	return (
 		<div className={styles.player}>
-			<Bio
-				imgUrl={imgUrl}
-				name={name}
-				position={'QB'}
-			/>
+			<Link href='/QBs'>back to QBs</Link>
+			<div className={styles.upper}>
+				<div className={styles.hsContainer}>
+					<Image
+						priority
+						placeholder='blur'
+						blurDataURL={imgUrl}
+						className={styles.headshot}
+						fill
+						alt={name}
+						src={imgUrl}
+					/>
+				</div>
+				<div className={styles.info}>
+					<b>{name}</b>
+					&nbsp;|&nbsp;QB
+				</div>
+			</div>
 			<div className={styles.stats}>
 				<div className={styles.stat}>
 					<h4>Pass Yards</h4> {pass_yards}

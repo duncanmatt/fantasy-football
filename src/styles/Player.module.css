@@ -4,6 +4,15 @@
 	gap: 1rem;
 }
 
+.back {
+	margin: 1rem;
+	padding: 0.25rem 0.4rem;
+	width: fit-content;
+	border-radius: 30px;
+	background-color: #1677ff;
+	color: #fff;
+}
+
 .upper {
 	padding-inline: 1rem;
 	display: grid;
@@ -66,8 +75,8 @@
 	}
 	.info {
 		font-size: 1.5rem;
-		/* transform: translate(-50%, 30%); */
-		/* justify-self: flex-end; */
+		padding-block-start: 1rem;
+		justify-content: center;
 		flex-direction: row;
 	}
 }
@@ -87,8 +96,7 @@
 		font-size: 2.4rem;
 		transform: translateY(30%);
 	}
-	.hsContainer {
-	}
-	.headshot {
+	.back {
+		margin-inline: 3rem;
 	}
 }

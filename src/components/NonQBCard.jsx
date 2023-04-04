@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
+import { CaretLeftOutlined } from '@ant-design/icons';
 import styles from '../styles/Player.module.css';
 
 const NonQBCard = ({
@@ -20,6 +22,12 @@ const NonQBCard = ({
 
 	return (
 		<div className={styles.player}>
+			<Link
+				className={styles.back}
+				href={`/${position}s`}>
+				<CaretLeftOutlined />
+				{position}s
+			</Link>
 			<div className={styles.upper}>
 				<div className={styles.hsContainer}>
 					<Image
@@ -33,10 +41,8 @@ const NonQBCard = ({
 					/>
 				</div>
 				<div className={styles.info}>
-					{/* <p> */}
-						<b>{name}</b>
-						 &nbsp;|&nbsp;{position}
-					{/* </p> */}
+					<b>{name}</b>
+					&nbsp;|&nbsp;{position}
 				</div>
 			</div>
 			<div className={styles.lower}>
