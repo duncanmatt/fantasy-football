@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 import styles from '../styles/Player.module.css';
 
 const NonQBCard = ({
@@ -13,36 +14,59 @@ const NonQBCard = ({
 	rec_TDs,
 	FUMs,
 }) => {
+	const isMobile = useMediaQuery({
+		query: '(max-width: 800px)',
+	});
+
 	return (
 		<div className={styles.player}>
 			<div className={styles.upper}>
-				<Image
-					className={styles.upperImg}
-					priority
-					width={300}
-					height={300}
-					style={{
-						objectFit: 'contain',
-						height: 'auto',
-						borderRadius: '66%',
-					}}
-					alt={name}
-					src={imgUrl}
-				/>
+				<div className={styles.upperImg}>
+					<Image
+						priority
+						placeholder='blur'
+						blurDataURL={imgUrl}
+						width={isMobile ? 300 : 430}
+						height={isMobile ? 300 : 430}
+						style={{
+							objectFit: 'contain',
+							borderRadius: '60%',
+							backgroundColor: 'rgba(0, 0, 0, 0.05)'
+						}}
+						alt={name}
+						src={imgUrl}
+					/>
+				</div>
 				<div className={styles.info}>
-					<h3>{name}</h3>
+					<h3>{name}</h3>&nbsp;|&nbsp; 
 					<p>{position}</p>
 				</div>
 			</div>
 			<div className={styles.lower}>
 				<div className={styles.stats}>
-					<p>Rec Yards: {rec_yards}</p>
-					<p>Receptions: {receptions}</p>
-					<p>Rec TDs: {rec_TDs}</p>
-					<p>Rush Yards: {run_yards}</p>
-					<p>Rush Attempts: {run_attempts}</p>
-					<p>Rush TDs: {run_TDs}</p>
-					<p>FUMs: {FUMs}</p>
+					<div className={styles.stat}>
+						<h4>Rec Yards</h4> {rec_yards}
+					</div>
+					<div className={styles.stat}>
+						<h4>Receptions</h4> {receptions}
+					</div>
+					<div className={styles.stat}>
+						<h4>Rec TDs</h4> {rec_TDs}
+					</div>
+					<div className={styles.stat}>
+						<h4>Rush Yards</h4> {run_yards}
+					</div>
+					{position === 'RB' && (
+						<div className={styles.stat}>
+							<h4>Rush Attempts</h4> {run_attempts}
+						</div>
+					)}
+					<div className={styles.stat}>
+						<h4>Rush TDs</h4> {run_TDs}
+					</div>
+					<div className={styles.stat}>
+						<h4>FUMs:</h4> {FUMs}
+					</div>
 				</div>
 			</div>
 		</div>

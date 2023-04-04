@@ -60,7 +60,7 @@ function MobileNav() {
 
 const Nav = () => {
 	const isMobile = useMediaQuery({
-		query: '(max-width: 600px)',
+		query: '(max-width: 800px)',
 	});
 
 	return (

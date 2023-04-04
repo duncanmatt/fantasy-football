@@ -1,5 +1,8 @@
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
+
 import styles from '../styles/Player.module.css';
+import Bio from './Bio';
 
 const QBCard = ({
 	name,
@@ -13,31 +16,47 @@ const QBCard = ({
 	pass_TDs,
 	INTs,
 }) => {
+	const isMobile = useMediaQuery({
+		query: '(max-width: 600px)',
+	});
+
 	return (
-		<>
-			<Image
-				priority
-				width={300}
-				height={300}
-				style={{
-					objectFit: 'contain',
-					height: 'auto',
-					borderRadius: '66%',
-				}}
-				alt={name}
-				src={imgUrl}
+		<div className={styles.player}>
+			<Bio
+				imgUrl={imgUrl}
+				name={name}
+				position={'QB'}
 			/>
-			<h3>{name}</h3>
-			<p>QB</p>
-			<p>Pass Yards: {pass_yards}</p>
-			<p>Completions: {completions}</p>
-			<p>Pass Attempts: {pass_attempts}</p>
-			<p>Pass TDs: {pass_TDs}</p>
-			<p>INTs: {INTs}</p>
-			<p>Rush Yards: {run_yards}</p>
-			<p>Rush Attempts: {run_attempts}</p>
-			<p>Pass TDs: {run_TDs}</p>
-		</>
+			<div className={styles.stats}>
+				<div className={styles.stat}>
+					<h4>Pass Yards</h4> {pass_yards}
+				</div>
+				<div className={styles.stat}>
+					<h4>Completions</h4> {completions}
+				</div>
+				<div className={styles.stat}>
+					<h4>Pass Attempts</h4> {pass_attempts}
+				</div>
+				<div className={styles.stat}>
+					<h4>Pass TDs</h4> {pass_TDs}
+				</div>
+				<div className={styles.stat}>
+					<h4>INTs</h4> {INTs}
+				</div>
+				<div className={styles.stat}>
+					<h4>Rush Yards</h4> {run_yards}
+				</div>
+				<div className={styles.stat}>
+					<h4>Rush Attempts</h4> {run_attempts}
+				</div>
+				<div className={styles.stat}>
+					<h4>Rush TDs</h4> {run_TDs}
+				</div>
+			</div>
+			<div className={styles.news}>
+				<h3>News</h3>
+			</div>
+		</div>
 	);
 };
 

@@ -76,20 +76,19 @@ header::selection {
 }
 
 /* MOBILE */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
 	.page-container {
 		padding-inline: 1rem;
 	}
 }
 
 /* DESKTOP */
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
 	.page-container {
 		padding-inline: 3rem;
 	}
 }
 
 .page-container {
-	padding-block-start: 2rem;
 	max-width: var(--max-width);
-}
+} */

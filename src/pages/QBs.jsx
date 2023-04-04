@@ -85,6 +85,8 @@ export async function getServerSideProps(context) {
 		const player = doc.toObject();
 		player._id = player._id.toString();
 		return player;
+
+		// GET TEAM LOGOS
 	});
 
 	return { props: { players: players } };
