@@ -1,14 +1,14 @@
 .main {
 	display: block;
+	padding: 2rem;
 }
 
 .main > div {
-	padding-block: 2rem;
+	padding-block: 1rem;
 }
 
 .title {
 	font-size: 2rem;
-	letter-spacing: 0.06rem;
 	font-weight: 500;
 }
 
@@ -19,4 +19,16 @@
 	width: var(--max-width);
 	max-width: 100%;
 	gap: 1rem;
+}
+
+@media (max-width: 800px) {
+	.main {
+		padding-inline: 1rem;
+	}
+}
+
+@media (min-width: 800px) {
+	.main {
+		padding-inline: 3rem;
+	}
 }

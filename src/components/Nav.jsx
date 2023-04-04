@@ -65,7 +65,7 @@ const Nav = () => {
 
 	return (
 		<>
-			<header className='header-wrapper'>
+			<nav className='header-wrapper'>
 				<div className='header-content'>
 					{isMobile ? (
 						<MobileNav />
@@ -90,7 +90,7 @@ const Nav = () => {
 						</div>
 					)}
 				</div>
-			</header>
+			</nav>
 		</>
 	);
 };

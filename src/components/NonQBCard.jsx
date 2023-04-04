@@ -21,25 +21,22 @@ const NonQBCard = ({
 	return (
 		<div className={styles.player}>
 			<div className={styles.upper}>
-				<div className={styles.upperImg}>
+				<div className={styles.hsContainer}>
 					<Image
 						priority
 						placeholder='blur'
 						blurDataURL={imgUrl}
-						width={isMobile ? 300 : 430}
-						height={isMobile ? 300 : 430}
-						style={{
-							objectFit: 'contain',
-							borderRadius: '60%',
-							backgroundColor: 'rgba(0, 0, 0, 0.05)'
-						}}
+						className={styles.headshot}
+						fill
 						alt={name}
 						src={imgUrl}
 					/>
 				</div>
 				<div className={styles.info}>
-					<h3>{name}</h3>&nbsp;|&nbsp; 
-					<p>{position}</p>
+					{/* <p> */}
+						<b>{name}</b>
+						 &nbsp;|&nbsp;{position}
+					{/* </p> */}
 				</div>
 			</div>
 			<div className={styles.lower}>
