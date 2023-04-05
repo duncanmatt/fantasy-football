@@ -2,7 +2,7 @@ import connectDB from '../../lib/connectDB';
 import Player from '../../models/Player';
 import Layout from '../components/Layout';
 import Link from 'next/link';
-import { Table } from 'antd';
+import { Table, Spin } from 'antd';
 import styles from '../styles/Position.module.css';
 
 const RBs = ({ players }) => {
@@ -66,6 +66,7 @@ const RBs = ({ players }) => {
 					bordered={true}
 					dataSource={players}
 					columns={columns}
+					loading={{ spinning: !players ? true : false}}
 					rowKey={record => record._id}
 				/>
 			</div>

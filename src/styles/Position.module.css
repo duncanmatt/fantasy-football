@@ -8,17 +8,9 @@
 }
 
 .title {
-	font-size: 2rem;
+	font-size: 1.45rem;
 	font-weight: 500;
-}
-
-.players {
-	padding-block: 2rem;
-	display: grid;
-	grid-template-columns: repeat(4, minmax(25%, auto));
-	width: var(--max-width);
-	max-width: 100%;
-	gap: 1rem;
+	letter-spacing: 1px;
 }
 
 @media (max-width: 800px) {

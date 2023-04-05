@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
 import connectDB from '../../../lib/connectDB';
 import User from '../../../models/User';
 import { protect } from '../../../middleware';
 import { useRouter } from 'next/router';
+import { Spin } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import Layout from '../../components/Layout';
 import styles from '../../styles/Profile.module.css';
@@ -37,7 +39,15 @@ export async function getServerSideProps({ params }) {
 
 	protect(user);
 
-	if (user) return { props: { user: JSON.parse(JSON.stringify(user)) } };
+	if (user)
+		return {
+			props: {
+				user: {
+					_id: user._id,
+					username: user.username,
+				},
+			},
+		};
 }
 
 export default Profile;

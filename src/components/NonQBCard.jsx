@@ -22,12 +22,6 @@ const NonQBCard = ({
 
 	return (
 		<div className={styles.player}>
-			<Link
-				className={styles.back}
-				href={`/${position}s`}>
-				<CaretLeftOutlined />
-				{position}s
-			</Link>
 			<div className={styles.upper}>
 				<div className={styles.hsContainer}>
 					<Image
@@ -71,6 +65,9 @@ const NonQBCard = ({
 						<h4>FUMs:</h4> {FUMs}
 					</div>
 				</div>
+			</div>
+			<div className={styles.news}>
+				<h3>News</h3>
 			</div>
 		</div>
 	);

@@ -33,7 +33,6 @@ const Login = () => {
 			[e.target.name]: e.target.value,
 		}));
 	};
-
 	
 
 	const onSubmit = async e => {

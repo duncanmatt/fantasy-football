@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Link from 'next/link';
+import { Divider } from 'antd';
 import { useMediaQuery } from 'react-responsive';
 import {
 	MenuOutlined,
@@ -13,7 +14,6 @@ import styles from '../styles/Nav.module.css';
 function MobileNav() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
-
 	const showMenu = () => setMenuOpen(!menuOpen);
 
 	return (
@@ -23,27 +23,35 @@ function MobileNav() {
 					<div className='menu-content'>
 						<div className={styles.mobile}>
 							<h1>Fantasy Football</h1>
-							<CloseOutlined onClick={showMenu} />
-						</div>
-						<div className={styles.menu}>
-							<Link href='/Login'>
-								<UserOutlined />
-							</Link>
-							<span className={styles.mobileLinks}>
-								<Link href='/QBs'>
-									QB <RightOutlined />
+							<span className={styles.actions}>
+								<Link
+									href='/Login'
+									className={styles.login}>
+									<UserOutlined />
 								</Link>
-								<Link href='/RBs'>
-									RB <RightOutlined />
-								</Link>
-								<Link href='/WRs'>
-									WR <RightOutlined />
-								</Link>
-								<Link href='/TEs'>
-									TE <RightOutlined />
-								</Link>
+								<CloseOutlined onClick={showMenu} />
 							</span>
 						</div>
+						<nav className={styles.menu}>
+							<span className={styles.mobileLinks}>
+								<Link href='/QBs'>
+									QUARTER BACKS <RightOutlined />
+								</Link>
+								<Divider />
+								<Link href='/RBs'>
+									RUNNING BACKS <RightOutlined />
+								</Link>
+								<Divider />
+								<Link href='/WRs'>
+									WIDE RECEIVERS <RightOutlined />
+								</Link>
+								<Divider />
+								<Link href='/TEs'>
+									TIGHT ENDS <RightOutlined />
+								</Link>
+								<Divider />
+							</span>
+						</nav>
 					</div>
 				</div>
 			) : (
@@ -51,7 +59,14 @@ function MobileNav() {
 					<Link href='/'>
 						<h1>Fantasy Football</h1>
 					</Link>
-					<MenuOutlined onClick={showMenu} />
+					<span className={styles.actions}>
+						<Link
+							href='/Login'
+							className={styles.login}>
+							<UserOutlined />
+						</Link>
+						<MenuOutlined onClick={showMenu} />
+					</span>
 				</div>
 			)}
 		</>
@@ -65,7 +80,7 @@ const Nav = () => {
 
 	return (
 		<>
-			<nav className='header-wrapper'>
+			<header className='header-wrapper'>
 				<div className='header-content'>
 					{isMobile ? (
 						<MobileNav />
@@ -78,7 +93,7 @@ const Nav = () => {
 									Fantasy Football
 								</Link>
 							</h1>
-							<span className={styles.links}>
+							<nav className={styles.links}>
 								<Link href='/QBs'>QB</Link>
 								<Link href='/RBs'>RB</Link>
 								<Link href='/WRs'>WR</Link>
@@ -86,11 +101,11 @@ const Nav = () => {
 								<Link href='/Login'>
 									<UserOutlined />
 								</Link>
-							</span>
+							</nav>
 						</div>
 					)}
 				</div>
-			</nav>
+			</header>
 		</>
 	);
 };

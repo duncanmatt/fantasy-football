@@ -92,3 +92,7 @@ header::selection {
 .page-container {
 	max-width: var(--max-width);
 } */
+
+.ant-spin-container {
+	padding-block: 1.25rem;
+}

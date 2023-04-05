@@ -24,7 +24,6 @@ export default async function handler(req, res) {
 					password: user.password,
 					token: generateToken(user._id),
 				});
-
 			} else {
 				res.status(401);
 				console.log(password, user.password);

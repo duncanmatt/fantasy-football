@@ -14,7 +14,7 @@ const Register = () => {
 
 	useEffect(() => {
 		if (user) {
-			router.push(`/${user._id}`);
+			router.push(`/users/${user._id}`);
 		}
 	}, [user, router]);
 

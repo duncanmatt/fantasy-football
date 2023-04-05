@@ -2,15 +2,7 @@
 	display: grid;
 	grid-template-rows: inherit 1fr 1fr;
 	gap: 1rem;
-}
-
-.back {
-	margin: 1rem;
-	padding: 0.25rem 0.4rem;
-	width: fit-content;
-	border-radius: 30px;
-	background-color: #1677ff;
-	color: #fff;
+	padding-block: 2rem;
 }
 
 .upper {
@@ -20,12 +12,13 @@
 
 .hsContainer {
 	position: relative;
+	overflow: hidden;
+	border-radius: 63%;
 }
 
 .headshot {
-	filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-	object-fit: fill;
-	border-radius: 3rem;
+	object-fit: cover;
+	background-color: rgba(0, 0, 0, 0.06);
 }
 
 .info {
@@ -37,7 +30,7 @@
 }
 
 .lower {
-	padding: 1rem;
+	padding: 1.25rem 1rem;
 }
 
 .stats {
@@ -49,6 +42,7 @@
 	font-size: 1.5rem;
 	border-radius: 12px;
 	background-color: #f9f9f9;
+	border: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 .stat {
@@ -95,6 +89,7 @@
 	.info {
 		font-size: 2.4rem;
 		transform: translateY(30%);
+		justify-content: center;
 	}
 	.back {
 		margin-inline: 3rem;
