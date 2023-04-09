@@ -1,23 +1,35 @@
 import dbConnect from '../../../../lib/connectDB';
 import Player from '../../../../models/Player';
-import {useRouter} from 'next/router'
+import { getJson } from 'serpapi';
 
 export default async function handler(req, res) {
+	await dbConnect();
+
 	const {
 		query: { name },
 		method,
 	} = req;
 
-	await dbConnect();
+	const params = {
+    api_key: process.env.SERP_API_KEY,
+    q: {name},
+    location: "United States",
+    google_domain: "google.com",
+    gl: "us",
+    hl: "en",
+    tbm: "nws"
+  };
+
+
 
 	switch (method) {
 		case 'GET':
 			try {
-				const player = await Player.findOne(name);
-				if (!player) {
+				const response = await getJson("google", params);
+				if (!response) {
 					return res.status(400).json({ success: false });
 				}
-				res.status(200).json(player);
+				res.status(200).json(response);
 			} catch (error) {
 				res.status(400).json({ success: false });
 			}

@@ -66,9 +66,6 @@ const QBCard = ({
 					</div>
 				</div>
 			</div>
-			<div className={styles.news}>
-				<h3>News</h3>
-			</div>
 		</div>
 	);
 };

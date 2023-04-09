@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/api/users/[id].js", "src/features/auth/authService.js"  ],
+, "src/pages/api/users/[id].js", "src/features/auth/authService.js", "src/components/PlayerNews.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -6,6 +6,10 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'static.www.nfl.com'
+			},
+			{
+				protocol: 'https',
+				hostname: 'serpapi.com'
 			}
 		]
 	}
