@@ -6,7 +6,6 @@
 }
 
 .upper {
-	padding-inline: 1rem;
 	display: grid;
 }
 
@@ -30,26 +29,27 @@
 }
 
 .lower {
-	padding: 1.25rem 1rem;
+	display: block;
+	padding-inline: 1rem;
 }
 
 .stats {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(50%, auto));
+	padding: 1rem;
+	grid-template-columns: repeat(2, 0.5fr);
 	row-gap: 1rem;
 	column-gap: 0.25rem;
-	padding: 1rem 1.5rem;
 	font-size: 1.5rem;
 	border-radius: 12px;
 	background-color: #f9f9f9;
 	border: 1px solid rgba(0, 0, 0, 0.09);
+	max-width: 1400px;
 }
 
 .stat {
 	display: flex;
 	flex-direction: column;
 	gap: 0.25rem;
-	padding: 0.25rem;
 }
 
 .news {
@@ -85,7 +85,6 @@
 .title {
 	z-index: 3;
 	letter-spacing: 1px;
-	/* font-size: 1.125rem; */
 }
 
 .articleDesc {
@@ -140,6 +139,7 @@
 	.articles {
 		grid-template-columns: repeat(2, 0.5fr);
 		grid-template-rows: auto;
+		row-gap: 1.25rem;
 	}
 }
 
@@ -147,5 +147,6 @@
 	.articles {
 		grid-template-columns: repeat(4, 0.25fr);
 		grid-template-rows: auto;
+		gap: 2rem;
 	}
 }
