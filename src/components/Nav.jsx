@@ -22,7 +22,7 @@ function MobileNav() {
 				<div className='menu-wrapper'>
 					<div className='menu-content'>
 						<div className={styles.mobile}>
-							<h1>Fantasy Football</h1>
+							<h1>Football</h1>
 							<span className={styles.actions}>
 								<Link
 									href='/Login'
@@ -57,7 +57,7 @@ function MobileNav() {
 			) : (
 				<div className={styles.mobile}>
 					<Link href='/'>
-						<h1>Fantasy Football</h1>
+						<h1>Football</h1>
 					</Link>
 					<span className={styles.actions}>
 						<Link
@@ -90,7 +90,7 @@ const Nav = () => {
 								<Link
 									className={styles.title}
 									href='/'>
-									Fantasy Football
+									Football
 								</Link>
 							</h1>
 							<nav className={styles.links}>

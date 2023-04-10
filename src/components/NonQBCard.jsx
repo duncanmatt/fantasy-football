@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { useMediaQuery } from 'react-responsive';
-import { CaretLeftOutlined } from '@ant-design/icons';
 import styles from '../styles/Player.module.css';
 
 const NonQBCard = ({
@@ -16,22 +13,20 @@ const NonQBCard = ({
 	rec_TDs,
 	FUMs,
 }) => {
-	const isMobile = useMediaQuery({
-		query: '(max-width: 800px)',
-	});
-
 	return (
 		<div className={styles.player}>
 			<div className={styles.upper}>
 				<div className={styles.hsContainer}>
 					<Image
-						priority
+						src={imgUrl}
+						quality={50}
 						placeholder='blur'
 						blurDataURL={imgUrl}
 						className={styles.headshot}
 						fill
+						sizes="(max-width: 800px) 300px,
+										(min-width: 800px) 400px"
 						alt={name}
-						src={imgUrl}
 					/>
 				</div>
 				<div className={styles.info}>

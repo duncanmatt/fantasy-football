@@ -1,11 +1,10 @@
 import connectDB from '../../../lib/connectDB';
 import Player from '../../../models/Player';
+import { getJson } from 'serpapi';
 import Layout from '../../components/Layout';
 import QBCard from '../../components/QBCard';
 import NonQBCard from '../../components/NonQBCard';
 import { Spin } from 'antd';
-import Image from 'next/image';
-import { getJson } from 'serpapi';
 import styles from '../../styles/Player.module.css';
 import Link from 'next/link';
 
@@ -52,9 +51,9 @@ const PlayerPage = ({ player, news }) => {
 								href={article.link}>
 								<h4 className={styles.title}>{article.title}</h4>
 								<p className={styles.articleDesc}>{article.snippet}</p>
-									<h6 className={styles.articleSrc}>
+								<h6 className={styles.articleSrc}>
 									{article.source} - {article.date}
-									</h6>
+								</h6>
 							</Link>
 						))
 					)}

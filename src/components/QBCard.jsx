@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
-
 import styles from '../styles/Player.module.css';
 
 const QBCard = ({
@@ -15,22 +13,21 @@ const QBCard = ({
 	pass_TDs,
 	INTs,
 }) => {
-	const isMobile = useMediaQuery({
-		query: '(max-width: 600px)',
-	});
 
 	return (
 		<div className={styles.player}>
 			<div className={styles.upper}>
 				<div className={styles.hsContainer}>
 					<Image
-						priority
+						src={imgUrl}
+						quality={50}
 						placeholder='blur'
 						blurDataURL={imgUrl}
 						className={styles.headshot}
 						fill
+						sizes="(max-width: 800px) 300px,
+										(min-width: 800px) 400px"
 						alt={name}
-						src={imgUrl}
 					/>
 				</div>
 				<div className={styles.info}>
