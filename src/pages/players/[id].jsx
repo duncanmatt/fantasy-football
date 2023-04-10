@@ -1,6 +1,6 @@
 import connectDB from '../../../lib/connectDB';
 import Player from '../../../models/Player';
-import { getJson } from 'serpapi';
+import useSWR from 'swr';
 import Layout from '../../components/Layout';
 import QBCard from '../../components/QBCard';
 import NonQBCard from '../../components/NonQBCard';
@@ -8,7 +8,29 @@ import { Spin } from 'antd';
 import styles from '../../styles/Player.module.css';
 import Link from 'next/link';
 
-const PlayerPage = ({ player, news }) => {
+const fetcher = async (url) => {
+	const res = await fetch(url, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+		}
+	});
+	const data = await res.json();
+
+	if (res.status !== 200) {
+		throw new Error(data.message);
+	}
+	return data;
+}
+
+const PlayerPage = ({ player }) => {
+	const { data, error, isLoading } = useSWR(`/api/news/${player.name}`, fetcher);
+
+
+
+
+	if (error) return <div>ERROR</div>;
+
 	return (
 		<Layout key={player._id}>
 			{player.position === 'QB' ? (
@@ -41,22 +63,19 @@ const PlayerPage = ({ player, news }) => {
 			<div className={styles.news}>
 				<h3 className={styles.newsHead}>Latest News</h3>
 				<div className={styles.articles}>
-					{!news ? (
-						<Spin />
-					) : (
-						news.map(article => (
-							<Link
-								key={article.position}
-								className={styles.article}
-								href={article.link}>
-								<h4 className={styles.title}>{article.title}</h4>
-								<p className={styles.articleDesc}>{article.snippet}</p>
-								<h6 className={styles.articleSrc}>
-									{article.source} - {article.date}
-								</h6>
-							</Link>
-						))
-					)}
+					
+					{isLoading || !data ? <Spin /> : data.map(article => (
+						<Link
+							key={article.position}
+							className={styles.article}
+							href={article.link}>
+							<h4 className={styles.title}>{article.title}</h4>
+							<p className={styles.articleDesc}>{article.snippet}</p>
+							<h6 className={styles.articleSrc}>
+								{article.source} - {article.date}
+							</h6>
+						</Link>
+					))}
 				</div>
 			</div>
 		</Layout>
@@ -69,20 +88,7 @@ export async function getServerSideProps({ params }) {
 	const player = await Player.findById(params.id).lean();
 	player._id = player._id.toString();
 
-	const newsParams = {
-		api_key: process.env.SERP_API_KEY,
-		q: player.name,
-		location: 'United States',
-		google_domain: 'google.com',
-		gl: 'us',
-		hl: 'en',
-		tbm: 'nws',
-		num: '8',
-	};
-
-	const news = await getJson('google', newsParams);
-
-	return { props: { player, news: news['news_results'] } };
+	return { props: { player } };
 }
 
 export default PlayerPage;
