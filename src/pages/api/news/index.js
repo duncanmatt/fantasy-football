@@ -5,13 +5,11 @@ export default async function handler(req, res) {
 
 	const newsParams = {
 		api_key: process.env.SERP_API_KEY,
-		q: 'NFL',
-		location: 'United States',
-		google_domain: 'google.com',
+		q: 'nfl today',
 		gl: 'us',
 		hl: 'en',
-		tbm: 'nws',
-		num: '8',
+		ijn: '0',
+		tbm: 'nws'
 	};
 
 	switch (method) {
@@ -30,5 +28,6 @@ export default async function handler(req, res) {
 
 		default:
 			res.status(400).json({ success: false });
+			break;
 	}
 }
