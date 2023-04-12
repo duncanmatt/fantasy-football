@@ -43,10 +43,10 @@ const News = () => {
 								width={92}
 							/>
 						</picture>
+						<span className={styles.date}>{article.date}</span>
 					</div>
 					<div>
 						<h2 className={styles.title}>{article.title}</h2>
-						<span>{article.date}</span>
 					</div>
 				</Link>
 			))}
