@@ -1,0 +1,47 @@
+[
+	{
+		"id": 1,
+		"name": "D.J. Moore",
+		"prevTeam": "Panthers",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CAR.svg",
+		"newTeam": "Bears",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CHI.svg",
+		"date": "03/15"
+	},
+	{
+		"id": 2,
+		"name": "Elijah Moore",
+		"prevTeam": "Jets",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NYJ.svg",
+		"newTeam": "Browns",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CLE.svg",
+		"date": "03/23"
+	},
+	{
+		"id": 3,
+		"name": "Darren Waller",
+		"prevTeam": "Raiders",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/LV.svg",
+		"newTeam": "Giants",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NYG.svg",
+		"date": "03/15"
+	},
+	{
+		"id": 4,
+		"name": "Brandin Cooks",
+		"prevTeam": "Texans",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/HOU.svg",
+		"newTeam": "Cowboys",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DAL.svg",
+		"date": "03/19"
+	},
+	{
+		"id": 5,
+		"name": "Jonnu Smith",
+		"prevTeam": "Patriots",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NE.svg",
+		"newTeam": "Falcons",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL.svg",
+		"date": "03/15"
+	}
+]
