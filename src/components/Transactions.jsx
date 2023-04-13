@@ -1,39 +1,53 @@
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import transactions from '../transactions.json';
 import styles from '../styles/Home.module.css';
 
 const Transactions = () => {
+	const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
+
 	return (
 		<div className={styles.transactions}>
-			<h3>Recent Trades</h3>
+			<div className={styles.tradeHeader}>
+				<h3>Recent Trades</h3>
+			</div>
 			<div className={styles.transactionsSlide}>
 				{transactions.map(transaction => (
 					<div
 						className={styles.transaction}
 						key={transaction.id}>
-						<h4 className={styles.tradeName}>{transaction.name}</h4>
+						<div className={styles.playerIdentity}>
+							<h4 className={styles.tradeName}>{transaction.name}</h4>
+							<picture>
+								<Image
+									className={styles.headshot}
+									alt={transaction.name}
+									src={transaction.headshot}
+									width={isMobile ? 55 : 80}
+									height={isMobile ? 55 : 80}
+								/>
+							</picture>
+						</div>
 						<div className={styles.tradeTeams}>
 							<div className={styles.tradeOld}>
-								<span>{transaction.prevTeam}</span>
 								<picture>
 									<Image
 										alt={transaction.prevTeam}
 										src={transaction.prevLogo}
-										width={80}
-										height={80}
+										width={isMobile ? 50 : 80}
+										height={isMobile ? 50 : 80}
 									/>
 								</picture>
 							</div>
 							<ArrowRightOutlined />
 							<div className={styles.tradeNew}>
-								<span>{transaction.newTeam}</span>
 								<picture>
 									<Image
 										alt={transaction.newTeam}
 										src={transaction.newLogo}
-										width={80}
-										height={80}
+										width={isMobile ? 50 : 80}
+										height={isMobile ? 50 : 80}
 									/>
 								</picture>
 							</div>
