@@ -1,10 +1,14 @@
 import React from 'react'
 
-const Sleepers = () => {
+const Sleepers = ({players}) => {
   return (
-    <>
-      SLEEPERS
-    </>
+    <div>
+      {players.map((player) => (
+        <div key={player._id}>
+          <h3>{player.name}</h3>
+        </div>
+      ))}
+    </div>
   )
 }
 

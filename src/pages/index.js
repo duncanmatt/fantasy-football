@@ -1,36 +1,51 @@
-import Sleepers from '../components/Sleepers';
+import connectDB from '../../lib/connectDB';
+import Player from '../../models/Player';
 import Transactions from '../components/Transactions';
-import Handcuffs from '../components/Handcuffs';
 import News from '../components/News';
+import Sleepers from '../components/Sleepers';
+import Overvalued from '../components/Overvalued';
 import Layout from '../components/Layout';
-import { Divider } from 'antd';
+import { Divider, Spin } from 'antd';
 import styles from '../styles/Home.module.css';
 
-const Home = () => {
+const Home = ({ sleepers }) => {
 	return (
 		<Layout>
 			<main className={styles.main}>
 				<section className={styles.landing}>
 					<Transactions />
 					<div className={styles.newsWrapper}>
-						<h2>Latest</h2>
-						<Divider style={{ backgroundColor: '#000' }} />
+						<h2>Latest News</h2>
 						<News />
 					</div>
 				</section>
 				<div className={styles.sleepersWrapper}>
 					<h2>2023 Sleepers</h2>
 					<Divider style={{ backgroundColor: '#000' }} />
-					<Sleepers />
+					{sleepers ? <Sleepers players={sleepers} /> : <Spin />}
 				</div>
-				<div className={styles.handcuffsWrapper}>
-					<h2>2023 Handcuffs</h2>
+				<div className={styles.overValWrapper}>
+					<h2>OVERVALUED</h2>
 					<Divider style={{ backgroundColor: '#000' }} />
-					<Handcuffs />
+					<Overvalued />
 				</div>
 			</main>
 		</Layout>
 	);
 };
+
+export async function getServerSideProps() {
+	await connectDB();
+
+	const sleepersResult = await Player.find({ sleeper: true });
+
+	const sleepers = sleepersResult.map(doc => {
+		const sleeper = doc.toObject();
+		sleeper._id = sleeper._id.toString();
+		return sleeper;
+	});
+
+	return { props: { sleepers: sleepers } };
+}
 
 export default Home;
