@@ -1,12 +1,11 @@
-import React from 'react'
+import SleeperCard from "./SleeperCard";
+import styles from '../styles/Player.module.css'
 
 const Sleepers = ({players}) => {
   return (
-    <div>
+    <div className={styles.sleepers}>
       {players.map((player) => (
-        <div key={player._id}>
-          <h3>{player.name}</h3>
-        </div>
+       <SleeperCard key={player._id} player={player} />
       ))}
     </div>
   )
