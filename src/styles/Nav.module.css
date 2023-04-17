@@ -9,7 +9,7 @@
 }
 
 .desktop {
-	display: grid;
+	display: none;
 	grid-template-rows: 50px;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
@@ -93,4 +93,13 @@
 
 .mobileLinks > div {
 	background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 800px) {
+	.mobileWrapper {
+		display: none;
+	}
+	.desktop {
+		display: grid;
+	}
 }
