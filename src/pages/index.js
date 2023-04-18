@@ -3,7 +3,6 @@ import Player from '../../models/Player';
 import Transactions from '../components/Transactions';
 import News from '../components/News';
 import Sleepers from '../components/Sleepers';
-import Overvalued from '../components/Overvalued';
 import Layout from '../components/Layout';
 import { Divider, Spin } from 'antd';
 import styles from '../styles/Home.module.css';
@@ -23,11 +22,6 @@ const Home = ({ sleepers }) => {
 					<h2>2023 Sleepers</h2>
 					<Divider style={{ backgroundColor: '#000' }} />
 					{sleepers ? <Sleepers players={sleepers} /> : <Spin />}
-				</div>
-				<div className={styles.overValWrapper}>
-					<h2>OVERVALUED</h2>
-					<Divider style={{ backgroundColor: '#000' }} />
-					<Overvalued />
 				</div>
 			</main>
 		</Layout>

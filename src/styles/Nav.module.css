@@ -18,7 +18,12 @@
 }
 
 .title {
-	width: min-content;
+	display: flex;
+	align-self: center;
+}
+
+.logo {
+	background-position: center;
 }
 
 .links {
