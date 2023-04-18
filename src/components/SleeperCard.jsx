@@ -1,42 +1,31 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Card } from 'antd';
-import styles from '../styles/Player.module.css';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Card } from "antd";
+import styles from "../styles/Player.module.css";
 
 const { Meta } = Card;
 
-const tabList = [
-	{
-		key: '2022 Stats',
-		tab: '2022 Stats',
-	},
-	{
-		key: '2023 Outlook',
-		tab: '2023 Outlook',
-	},
-];
-
 const SleeperCard = ({ player }) => {
-	return (
-		<Card
-    size='small'
-      cover={
-        <Image
-          src={player.imgUrl}
-          alt={player.name}
-          fill
-        />
-      }
-      tabList={tabList}
-			loading={!player ? true : false}
-			extra={<Link href={`/players/${player._id}`}>view</Link>}>
-			<Meta
-				title={player.name}
-				description={player.sleeper[1]}
-			/>
-		</Card>
-	);
+  return (
+    <Card
+      title={player.name}
+      loading={!player ? true : false}
+      extra={<Link href={`/players/${player._id}`}>view</Link>}
+    >
+      <Meta
+        description={player.sleeper[1]}
+        avatar={
+          <Image
+            src={player.imgUrl}
+            alt={player.name}
+            width={100}
+            height={100}
+          />
+        }
+      />
+    </Card>
+  );
 };
 
 export default SleeperCard;
