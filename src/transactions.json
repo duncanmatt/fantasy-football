@@ -48,5 +48,34 @@
 		"newTeam": "Falcons",
 		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/ATL.svg",
 		"date": "03/15"
+	},
+	{
+		"id": 6,
+		"name": "Adam Thielen",
+		"headshot": "https://static.www.nfl.com/image/private/t_person_squared_mobile/f_auto/league/fuutugtpr0nikfvjwk67",
+		"prevTeam": "Vikings",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/MIN.svg",
+		"newTeam": "Panthers",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/CAR.svg",
+		"date": "03/19"
+	},
+	{
+		"id": 7,
+		"name": "JuJu Smith-Schuster",
+		"headshot": "https://static.www.nfl.com/image/private/t_person_squared_mobile/f_auto/league/tmvx3eakcr4uong0gf5h",
+		"prevTeam": "Steelers",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/PIT.svg",
+		"newTeam": "Patriots",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/NE.svg",
+		"date": "03/15"
+	},
+	{
+		"id": 8,
+		"name": "Trent Sherfield",
+		"headshot": "https://static.www.nfl.com/image/private/t_person_squared_mobile/f_auto/league/je4nd6eqpqrzytepcuvc",
+		"prevTeam": "Dolphins",
+		"prevLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/MIA.svg",
+		"newTeam": "Bills",
+		"newLogo": "https://static.www.nfl.com/t_q-best/league/api/clubs/logos/BUF.svg"
 	}
 ]
