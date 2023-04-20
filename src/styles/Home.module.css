@@ -155,7 +155,7 @@
 	}
 	.transactions {
 		display: grid;
-		grid-template-rows: inherit;
+		grid-template-rows: 100px;
 		grid-template-columns: auto auto;
 		align-items: center;
 		overflow: hidden;
@@ -167,15 +167,15 @@
 		z-index: 0;
 		min-width: max-content;
 		animation: slider 20s linear 0s infinite;
-		gap: 1.25rem;
+		gap: 1rem;
 	}
 	.transaction {
 		align-items: center;
-		flex: 0 0 250px;
+		flex: 0 0 260px;
 	}
 	.tradesHeader {
 		display: flex;
-		height: 90px;
+		height: 100px;
 		align-items: center;
 		background-color: #1677ff;
 		padding-inline: 0.25rem;
@@ -192,7 +192,8 @@
 		padding-inline-start: 0.25rem;
 		margin-top: 0.5rem;
 		display: flex;
-		font-size: 1.25rem;
+		flex-flow: row nowrap;
+		font-size: 1.2rem;
 		line-height: 0.8rem;
 		letter-spacing: 0.01em;
 	}
