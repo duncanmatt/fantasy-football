@@ -129,6 +129,11 @@
 	font-family: 'Ramabhadra', sans-serif;
 }
 
+.meta {
+	display: flex;
+	flex-direction: row;
+}
+
 .overValWrapper {
 	padding-inline: 1rem;
 }
@@ -275,5 +280,4 @@
 		line-height: 3.2rem;
 		font-size: 3rem;
 	}
-
 }
