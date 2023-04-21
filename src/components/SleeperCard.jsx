@@ -31,8 +31,9 @@ const SleeperCard = ({ player }) => {
               }}
             />
           }
-          title={player.position} description={player.sleeper[1]}
+          title={player.position} description={<Image width={30} height={30} src={player.team_logo} alt={player.team} />}
         />
+        <div>{player.sleeper[1]}</div>
       </Card>
     </Link>
   );
