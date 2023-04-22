@@ -1,5 +1,5 @@
 import SleeperCard from "./SleeperCard";
-import styles from '../styles/Player.module.css'
+import styles from '../styles/Home.module.css'
 
 const Sleepers = ({players}) => {
   return (

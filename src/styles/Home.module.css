@@ -1,283 +1,330 @@
-@import url('https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap");
 
 @keyframes slider {
-	0% {
-		transform: translateX(0);
-	}
-	25% {
-		transform: translateX(-25%);
-	}
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-25%);
+  }
 
-	50% {
-		transform: translateX(-50%);
-	}
-	to {
-		transform: translateX(-100%);
-	}
+  50% {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .landing {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .transactions {
-	display: flex;
-	flex-direction: row;
-	border-top: 1px solid rgb(217, 217, 217);
-	border-bottom: 1px solid rgb(217, 217, 217);
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid rgb(217, 217, 217);
+  border-bottom: 1px solid rgb(217, 217, 217);
 }
 
 .tradesHeader {
-	text-transform: uppercase;
-	font-family: 'Rhamabadra', sans-serif;
+  text-transform: uppercase;
+  font-family: "Rhamabadra", sans-serif;
 }
 
 .transaction {
-	display: flex;
+  display: flex;
 }
 
 .tradeName {
-	color: rgb(42, 50, 64);
+  color: rgb(42, 50, 64);
 }
 
 .tradeBody {
-	display: flex;
-	flex-direction: column;
-	flex-basis: 0;
-	flex-grow: 1;
-	flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .tradeTeams {
-	display: flex;
-	flex-flow: row;
-	flex-basis: 100%;
-	justify-content: space-evenly;
-	align-items: center;
+  display: flex;
+  flex-flow: row;
+  flex-basis: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .headshot {
-	aspect-ratio: 1;
-	border-radius: 60%;
-	background-color: rgba(0, 0, 0, 0.05);
+  aspect-ratio: 1;
+  border-radius: 60%;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* NEWS */
 .newsWrapper {
-	padding-inline: 1rem;
-	padding-block: 2rem 1rem;
+  padding-inline: 1rem;
+  padding-block: 2rem 1rem;
 }
 
 .newsWrapper > h2 {
-	text-transform: uppercase;
-	font-family: 'Ramabhadra', sans-serif;
-	font-weight: 800;
-	margin-bottom: 1.125rem;
+  text-transform: uppercase;
+  font-family: "Ramabhadra", sans-serif;
+  font-weight: 800;
+  margin-bottom: 1.125rem;
 }
 
 .news {
-	display: grid;
-	grid-auto-rows: minmax(0, 1fr);
-	gap: 1rem;
+  display: grid;
+  grid-auto-rows: minmax(0, 1fr);
+  gap: 1rem;
 }
 
 .article {
-	display: flex;
-	flex-direction: row-reverse;
-	align-items: center;
-	flex-basis: 100%;
-	justify-content: space-between;
-	gap: 1rem;
-	word-wrap: break-word;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-basis: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+  word-wrap: break-word;
 }
 
 .title {
-	line-height: 2.2rem;
-	font-weight: 500;
-	font-size: 1.9rem;
-	letter-spacing: -0.01em;
+  line-height: 2.2rem;
+  font-weight: 500;
+  font-size: 1.9rem;
+  letter-spacing: -0.01em;
 }
 
 .thumbnailWrapper {
-	display: flex;
-	flex-direction: column-reverse;
-	gap: 5px;
-	flex-basis: 0;
-	text-align: center;
-	justify-self: flex-end;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+  flex-basis: 0;
+  text-align: center;
+  justify-self: flex-end;
+  justify-content: space-between;
 }
 
 .date {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 .thumbnail {
-	border-radius: 8px;
-	aspect-ratio: 1;
+  border-radius: 8px;
+  aspect-ratio: 1;
 }
 
 /* SLEEPERS */
 .sleepersWrapper {
-	padding-inline: 1rem;
-	padding-block: 2rem;
+  padding-inline: 1rem;
+  padding-block: 2rem;
 }
 
 .sleepersWrapper > h2 {
-	text-transform: uppercase;
-	font-family: 'Ramabhadra', sans-serif;
+  text-transform: uppercase;
+  font-family: "Ramabhadra", sans-serif;
 }
 
-.meta {
-	display: flex;
-	flex-direction: row;
+.sleepers {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
-.overValWrapper {
-	padding-inline: 1rem;
+.sleeper {
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.sleeperUpper {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  background-color: rgb(217, 217, 217);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.sleeperBody {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-inline: 1rem;
+}
+
+.sleeperHeadshot {
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.sleeperOutlook {
+  display: flex;
+  flex-basis: 100%;
+  place-content: center;
+  padding-inline: 1rem;
 }
 
 @media (max-width: 500px) {
-	.article {
-		flex: 0;
-	}
-	.news {
-		grid-auto-rows: inherit;
-	}
+  .article {
+    flex: 0;
+  }
+  .news {
+    grid-auto-rows: inherit;
+  }
+}
+
+@media (min-width: 600px) {
+  .sleepers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
 }
 
 @media (max-width: 800px) {
-	.news {
-		grid-template-columns: repeat(1, minmax(0, 1fr));
-		gap: 1rem;
-		padding-block: 1rem;
-	}
-	.newsWrapper > h2 {
-		font-size: 2.2rem;
-		line-height: 2.4rem;
-		margin-block: 0.5rem 1rem;
-	}
-	.transactions {
-		display: grid;
-		grid-template-rows: 100px;
-		grid-template-columns: auto auto;
-		align-items: center;
-		overflow: hidden;
-		gap: 2rem;
-	}
-	.transactionsSlide {
-		display: flex;
-		text-size-adjust: 100%;
-		z-index: 0;
-		min-width: max-content;
-		animation: slider 20s linear 0s infinite;
-		gap: 1rem;
-	}
-	.transaction {
-		align-items: center;
-		flex: 0 0 260px;
-	}
-	.tradesHeader {
-		display: flex;
-		height: 100px;
-		align-items: center;
-		background-color: #1677ff;
-		padding-inline: 0.25rem;
-		color: #f9f9f9;
-		z-index: 100;
-		opacity: 1;
-	}
-	.tradeBody {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-	}
-	.tradeName {
-		padding-inline-start: 0.25rem;
-		margin-top: 0.5rem;
-		display: flex;
-		flex-flow: row nowrap;
-		font-size: 1.2rem;
-		line-height: 0.8rem;
-		letter-spacing: 0.01em;
-	}
-	.tradeTeams {
-		align-self: flex-start;
-		gap: 1rem;
-	}
-	.sleepersWrapper > h2 {
-		line-height: 2.4rem;
-		font-size: 1.9rem;
-	}
+  .news {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+  .newsWrapper > h2 {
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+    margin-block: 0.5rem 1rem;
+  }
+  .transactions {
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: auto auto;
+    align-items: center;
+    overflow: hidden;
+    gap: 2rem;
+  }
+  .transactionsSlide {
+    display: flex;
+    text-size-adjust: 100%;
+    z-index: 0;
+    min-width: max-content;
+    animation: slider 20s linear 0s infinite;
+    gap: 1rem;
+  }
+  .transaction {
+    align-items: center;
+    flex: 0 0 260px;
+  }
+  .tradesHeader {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    background-color: #1677ff;
+    padding-inline: 0.25rem;
+    color: #f9f9f9;
+    z-index: 100;
+    opacity: 1;
+  }
+  .tradeBody {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .tradeName {
+    padding-inline-start: 0.25rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.2rem;
+    line-height: 0.8rem;
+    letter-spacing: 0.01em;
+  }
+  .tradeTeams {
+    align-self: flex-start;
+    gap: 1rem;
+  }
+  .sleepersWrapper > h2 {
+    line-height: 2.4rem;
+    font-size: 1.9rem;
+  }
 }
 
 @media (min-width: 801px) {
-	.landing {
-		flex-direction: row-reverse;
-	}
-	.newsWrapper {
-		padding-inline: 3rem 0;
-		height: calc(100dvh -50px);
-		margin-top: auto;
-		margin-bottom: auto;
-	}
-	.newsWrapper > h2 {
-		font-size: 3.6rem;
-		line-height: 4rem;
-		margin-block: 3rem;
-	}
-	.sleepersWrapper {
-		padding-inline: 3rem;
-	}
-	.transactions {
-		flex-direction: column;
-		flex: 0 0 280px;
-		margin-left: 1rem;
-		border-top: 0px;
-		border-bottom: 0px;
-		padding-block: 1rem;
-		position: sticky;
-		top: 0px;
-	}
-	.tradesHeader {
-		padding: 1rem;
-		color: #000;
-	}
-	.transaction {
-		align-items: center;
-		padding-inline: 1rem;
-	}
-	.tradeName {
-		font-size: 1.5rem;
-		padding-inline-start: 0.5rem;
-		padding-block-start: 0.5rem;
-	}
-	.tradeTeams {
-		justify-self: flex-start;
-	}
-	.sleepersWrapper > h2 {
-		line-height: 2.4rem;
-		font-size: 2.5rem;
-	}
+  .landing {
+    flex-direction: row-reverse;
+  }
+  .newsWrapper {
+    padding-inline: 3rem 0;
+    height: calc(100dvh -50px);
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .newsWrapper > h2 {
+    font-size: 3.6rem;
+    line-height: 4rem;
+    margin-block: 3rem;
+  }
+  .sleepersWrapper {
+    padding-inline: 3rem;
+  }
+  .transactions {
+    flex-direction: column;
+    flex: 0 0 280px;
+    margin-left: 1rem;
+    border-top: 0px;
+    border-bottom: 0px;
+    padding-block: 1rem;
+    position: sticky;
+    top: 0px;
+  }
+  .tradesHeader {
+    padding: 1rem;
+    color: #000;
+  }
+  .transaction {
+    align-items: center;
+    padding-inline: 1rem;
+  }
+  .tradeName {
+    font-size: 1.5rem;
+    padding-inline-start: 0.5rem;
+    padding-block-start: 0.5rem;
+  }
+  .tradeTeams {
+    justify-self: flex-start;
+  }
+  .sleepersWrapper > h2 {
+    line-height: 2.4rem;
+    font-size: 2.5rem;
+  }
 }
 
 @media (min-width: 1100px) {
-	.newsWrapper > h2 {
-		font-size: 5rem;
-		line-height: 5rem;
-		margin-block: 3rem;
-	}
-	.news {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 2rem;
-	}
-	.main {
-		max-width: 1400px;
-		margin-inline: auto;
-	}
-	.sleepersWrapper > h2 {
-		line-height: 3.2rem;
-		font-size: 3rem;
-	}
+  .newsWrapper > h2 {
+    font-size: 5rem;
+    line-height: 5rem;
+    margin-block: 3rem;
+  }
+  .news {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .main {
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+  .sleepersWrapper > h2 {
+    line-height: 3.2rem;
+    font-size: 3rem;
+  }
+  .sleepers {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
 }
