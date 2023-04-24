@@ -85,4 +85,12 @@ header::selection {
 	width: 100%;
 	color: rgb(64, 64, 64);
 	text-align: center;
+	padding-inline: 1rem;
+	padding-block: 1rem;
+}
+
+@media (min-width: 800px) {
+	.footer {
+		padding-inline: 3rem;
+	}
 }

@@ -22,7 +22,6 @@ const Home = ({ sleepers }) => {
 				<div className={styles.sleepersWrapper}>
 					<h2>2023 Sleepers</h2>
 					{sleepers ? <Sleepers players={sleepers} /> : <Spin />}
-					<Divider style={{backgroundColor: '#000'}} />
 				</div>
 			</main>
 		</Layout>
