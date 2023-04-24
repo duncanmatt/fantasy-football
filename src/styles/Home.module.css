@@ -92,6 +92,10 @@
 	word-wrap: break-word;
 }
 
+.article:hover {
+	color: #1677ff;
+}
+
 .title {
 	line-height: 2.2rem;
 	font-weight: 500;
@@ -107,6 +111,7 @@
 	text-align: center;
 	justify-self: flex-end;
 	justify-content: space-between;
+	color: #000;
 }
 
 .date {
@@ -138,8 +143,8 @@
 }
 
 .sleeper {
-	border-radius: 8px;
-	background-color: #fff;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
 	grid-template-rows: 32px minmax(205px, auto) minmax(0, 1fr);
@@ -152,24 +157,29 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0.25rem 0.5rem;
-	background-color: rgb(217, 217, 217);
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
 	font-weight: 500;
+}
+
+.sleeperLink:hover {
+	color: #1677ff;
 }
 
 .sleeperBody {
 	display: flex;
-	flex: 0 0 250px;
+	flex: 0 0 200px;
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
 	padding-inline: 1rem;
 	margin-top: 0.5rem;
+	overflow: wrap;
 }
 
 .sleeperPos {
 	font-family: 'Ramabhadra', sans-serif;
+	z-index: 0;
 }
 
 .sleeperHeadshot {
@@ -190,6 +200,9 @@
 @media (max-width: 500px) {
 	.article {
 		flex: 0;
+	}
+	.title {
+		font-size: 1.5rem;
 	}
 	.news {
 		grid-auto-rows: inherit;
