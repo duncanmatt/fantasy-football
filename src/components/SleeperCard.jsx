@@ -26,6 +26,7 @@ const SleeperCard = ({ player }) => {
 							className={styles.sleeperHeadshot}
 							src={player.imgUrl}
 							alt={player.name}
+              quality={50}
 							fill
 							style={
 								{
@@ -43,7 +44,7 @@ const SleeperCard = ({ player }) => {
 				<Link
 					className={styles.sleeperLink}
 					href={`/players/${player._id}`}>
-					STATS
+					View
 				</Link>
 			</div>
 		</div>
