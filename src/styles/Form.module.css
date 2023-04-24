@@ -1,4 +1,17 @@
+.wrapper {
+	height: 100dvh;
+	display: flex;
+	padding-inline: 1rem;
+}
+
+.formTitle {
+	text-align: center;
+	padding-block-end: 3rem;
+}
+
 .form {
+	flex-basis: 100%;
+	align-self: center;
 	padding: 0;
 }
 
@@ -27,7 +40,7 @@
 
 .btn {
 	padding: 0.25rem 0.75rem;
-	background-color: #000;
+	background-color: #1677ff;
 	border-radius: 1.71875rem;
 	color: #fff;
 	border: none;
@@ -45,4 +58,12 @@
 
 .icon {
 	margin-right: 0.5rem;
+}
+
+@media (min-width: 800px) {
+	.wrapper {
+		padding-inline: 3rem;
+		max-width: 800px;
+		margin-inline: auto;
+	}
 }

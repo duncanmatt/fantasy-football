@@ -66,61 +66,66 @@ const Register = () => {
 
 	return (
 		<Layout>
-			<h2>Create Account</h2>
-			<form
-				name='register'
-				className={styles.form}
-				onSubmit={onSubmit}>
-				<div className={styles.item}>
-					<label htmlFor='username'>
-						<UserOutlined />
-					</label>
-					<input
-						type='text'
-						className={styles.input}
-						required
-						maxLength='30'
-						name='username'
-						value={username || []}
-						onChange={onChange}
-					/>
-				</div>
-				<div className={styles.item}>
-					<label htmlFor='password'>
-						<LockOutlined />
-					</label>
-					<input
-						type='password'
-						className={styles.input}
-						required
-						maxLength='40'
-						name='password'
-						value={password || []}
-						onChange={onChange}
-					/>
-				</div>
-				<div className={styles.item}>
-					<label htmlFor='password2'>
-						<LockOutlined />
-					</label>
-					<input
-						type='password'
-						className={styles.input}
-						required
-						maxLength='60'
-						name='password2'
-						value={password2 || []}
-						onChange={onChange}
-					/>
-				</div>
-				<div className={styles.actions}>
-					<button
-						type='submit'
-						className={styles.btn}>
-						Register
-					</button>
-				</div>
-			</form>
+			<div className={styles.wrapper}>
+				<form
+					name='register'
+					className={styles.form}
+					onSubmit={onSubmit}>
+					<h2 className={styles.formTitle}>Create Account</h2>
+					<div className={styles.item}>
+						<label htmlFor='username'>
+							<UserOutlined />
+						</label>
+						<input
+							type='text'
+							className={styles.input}
+							required
+							maxLength='30'
+							name='username'
+							placeholder='Username'
+							value={username || []}
+							onChange={onChange}
+						/>
+					</div>
+					<div className={styles.item}>
+						<label htmlFor='password'>
+							<LockOutlined />
+						</label>
+						<input
+							type='password'
+							className={styles.input}
+							required
+							maxLength='40'
+							name='password'
+							placeholder='Password'
+							value={password || []}
+							onChange={onChange}
+						/>
+					</div>
+					<div className={styles.item}>
+						<label htmlFor='password2'>
+							<LockOutlined />
+						</label>
+						<input
+							type='password'
+							className={styles.input}
+							required
+							maxLength='60'
+							name='password2'
+							placeholder='Confirm Password'
+							value={password2 || []}
+							onChange={onChange}
+						/>
+					</div>
+					<div className={styles.actions}>
+						<button
+							type='submit'
+							className={styles.btn}>
+							Register
+						</button>
+					</div>
+				</form>
+			</div>
 		</Layout>
 	);
 };

@@ -163,8 +163,8 @@
 }
 
 .sleeperPos {
-	font-family: 'Ramabhadra', sans-serif;
-	font-weight: 400;
+	/* font-family: 'Ramabhadra', sans-serif; */
+	font-weight: 500;
 	z-index: 0;
 }
 
@@ -196,7 +196,6 @@
 }
 
 .sleeperLink {
-	/* display: flex; */
 	z-index: 10;
 	background-color: #1677ff;
 	flex: 0;

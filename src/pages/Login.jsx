@@ -4,15 +4,12 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Layout from '../components/Layout';
-import { Spin } from 'antd';
 
 import styles from '../styles/Form.module.css';
 
 const Login = () => {
-
 	const [user, setUser] = useLocalStorage('user', null);
 	const router = useRouter();
-
 
 	useEffect(() => {
 		if (user) {
@@ -33,7 +30,6 @@ const Login = () => {
 			[e.target.name]: e.target.value,
 		}));
 	};
-	
 
 	const onSubmit = async e => {
 		e.preventDefault();
@@ -64,53 +60,61 @@ const Login = () => {
 
 	return (
 		<Layout>
-			<h2>Login</h2>
-			<form
-				name='normal_login'
-				className={styles.form}
-				onSubmit={onSubmit}>
-				<div className={styles.item}>
-					<label className={styles.icon} htmlFor='username'>
-						<UserOutlined />
-					</label>
-					<input
-						type='text'
-						className={styles.input}
-						required
-						maxLength='60'
-						name='username'
-						value={username || []}
-						onChange={onChange}
-					/>
-				</div>
-				<div className={styles.item}>
-					<label className={styles.icon} htmlFor='password'>
-						<LockOutlined />
-					</label>
-					<input
-						type='password'
-						className={styles.input}
-						required
-						maxLength='60'
-						name='password'
-						value={password || []}
-						onChange={onChange}
-					/>
-				</div>
-				<div className={styles.actions}>
-					<button
-						type='submit'
-						className={styles.btn}>
-						Login
-					</button>
-					Or
-					<Link
-						className={styles.link}
-						href='/Register'>
-						Create an account
-					</Link>
-				</div>
-			</form>
+			<div className={styles.wrapper}>
+				<form
+					name='normal_login'
+					className={styles.form}
+					onSubmit={onSubmit}>
+					<h2 className={styles.formTitle}>Login</h2>
+					<div className={styles.item}>
+						<label
+							className={styles.icon}
+							htmlFor='username'>
+							<UserOutlined />
+						</label>
+						<input
+							type='text'
+							className={styles.input}
+							required
+							maxLength='60'
+							name='username'
+							placeholder='Username'
+							value={username || []}
+							onChange={onChange}
+						/>
+					</div>
+					<div className={styles.item}>
+						<label
+							className={styles.icon}
+							htmlFor='password'>
+							<LockOutlined />
+						</label>
+						<input
+							type='password'
+							className={styles.input}
+							required
+							maxLength='60'
+							name='password'
+							placeholder='Password'
+							value={password || []}
+							onChange={onChange}
+						/>
+					</div>
+					<div className={styles.actions}>
+						<button
+							type='submit'
+							className={styles.btn}>
+							Login
+						</button>
+						Or
+						<Link
+							className={styles.link}
+							href='/Register'>
+							Create an account
+						</Link>
+					</div>
+				</form>
+			</div>
 		</Layout>
 	);
 };
