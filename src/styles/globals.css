@@ -78,3 +78,8 @@ header::selection {
 .ant-spin-container {
 	padding-block: 1.25rem;
 }
+
+.footer {
+	color: rgb(64, 64, 64);
+	text-align: center;
+}
