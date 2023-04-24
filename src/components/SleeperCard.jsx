@@ -23,7 +23,7 @@ const SleeperCard = ({ player }) => {
               height={200}
               width={200}
               style={{
-                borderRadius: "50%",
+                // borderRadius: "50%",
               }}
             />
           </picture>
