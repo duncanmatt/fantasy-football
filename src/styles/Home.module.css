@@ -147,7 +147,7 @@
 	border-bottom: 1px solid #000;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
-	grid-template-rows: 32px minmax(205px, auto) minmax(0, 1fr);
+	grid-template-rows: 40px minmax(205px, auto) minmax(0, 1fr);
 }
 
 .sleeperUpper {
@@ -159,32 +159,35 @@
 	padding: 0.25rem 0.5rem;
 	border-bottom: 1px solid #000;
 	border-top: 1px solid #000;
-	font-weight: 500;
-}
-
-.sleeperLink:hover {
-	color: #1677ff;
 }
 
 .sleeperBody {
-	display: flex;
+	/* display: flex;
 	flex: 0 0 200px;
 	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	padding-inline: 1rem;
-	margin-top: 0.5rem;
-	overflow: wrap;
+	justify-content: space-evenly; */
+	/* align-items: center; */
+	/* padding-inline: 1rem; */
+	/* margin-top: 0.5rem; */
+	position: relative;
+	z-index: 0;
 }
 
 .sleeperPos {
 	font-family: 'Ramabhadra', sans-serif;
+	font-weight: 400;
+	z-index: 0;
+}
+
+.sleeperHeadshotWrapper {
+	aspect-ratio: 1;
 	z-index: 0;
 }
 
 .sleeperHeadshot {
 	object-fit: contain;
 	overflow: hidden;
+	z-index: 0;
 }
 
 .sleeperOutlook {
@@ -195,6 +198,31 @@
 	color: rgb(32, 32, 32);
 	/* font-size: 12px; */
 	padding: 1rem;
+}
+
+.sleeperLinkWrapper {
+	display: flex;
+	flex: 0;
+	justify-content: center;
+	margin-bottom: 5px;
+}
+
+.sleeperLink {
+	/* display: flex; */
+	z-index: 10;
+	background-color: #1677ff;
+	flex: 0;
+	justify-content: center;
+	color: #fff;
+	padding: 0.5rem 0.75rem;
+	border-radius: 24px;
+	border: 1px solid #fff;
+}
+
+.sleeperLink:hover {
+	color: #1677ff;
+	background-color: #fff;
+	border: 1px solid #1677ff;
 }
 
 @media (max-width: 500px) {
