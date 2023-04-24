@@ -14,19 +14,20 @@ const SleeperCard = ({ player }) => {
       </div>
       <div className={styles.sleeperBody}>
         <span className={styles.sleeperPos}>{player.position}</span>
-        <picture>
-          <Image
-            className={styles.sleeperHeadshot}
-            src={player.imgUrl}
-            alt={player.name}
-            width={200}
-            height={200}
-            style={{
-              borderRadius: "50%",
-              // backgroundColor: 'rgba(0,0,0,0.09)',
-            }}
-          />
-        </picture>
+        <div className={styles.sleeperHeadshotWrapper}>
+          <picture>
+            <Image
+              className={styles.sleeperHeadshot}
+              src={player.imgUrl}
+              alt={player.name}
+              height={200}
+              width={200}
+              style={{
+                borderRadius: "50%",
+              }}
+            />
+          </picture>
+        </div>
         <Image
           className={styles.sleeperLogo}
           width={40}
@@ -35,8 +36,11 @@ const SleeperCard = ({ player }) => {
           alt={player.team}
         />
       </div>
-      <div className={styles.sleeperOutlook}><span>{player.sleeper[1]}</span></div>
+      <div className={styles.sleeperOutlook}>
+        <span>{player.sleeper[1]}</span>
+      </div>
     </div>
+
   );
 };
 
