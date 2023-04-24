@@ -7,7 +7,7 @@ const SleeperCard = ({ player }) => {
   return (
     <div className={styles.sleeper}>
       <div className={styles.sleeperUpper}>
-        <h3>{player.name}</h3>
+        <h4>{player.name}</h4>
         <Link href={`/players/${player._id}`}>
           <FileSearchOutlined />
         </Link>
