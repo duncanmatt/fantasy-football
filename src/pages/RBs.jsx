@@ -64,6 +64,7 @@ const RBs = ({ players }) => {
 				<h2 className={styles.title}>RUNNING BACKS</h2>
 				<Table
 					bordered={true}
+					scroll={{x: true}}
 					dataSource={players}
 					columns={columns}
 					loading={{ spinning: !players ? true : false}}

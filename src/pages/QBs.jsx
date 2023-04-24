@@ -67,7 +67,8 @@ const QBs = ({ players }) => {
 			<div className={styles.main}>
 				<h2 className={styles.title}>QUARTER BACKS</h2>
 				<Table
-				bordered={true}
+					bordered={true}
+					scroll={{ x: true }}
 					dataSource={players}
 					columns={columns}
 					rowKey={record => record._id}

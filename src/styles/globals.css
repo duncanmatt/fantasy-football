@@ -80,6 +80,9 @@ header::selection {
 }
 
 .footer {
+	position: sticky;
+	bottom: 0px;
+	width: 100%;
 	color: rgb(64, 64, 64);
 	text-align: center;
 }

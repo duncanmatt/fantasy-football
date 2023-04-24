@@ -64,6 +64,7 @@ const TEs = ({ players }) => {
         <h2 className={styles.title}>TIGHT ENDS</h2>
           <Table
             bordered={true}
+            scroll={{x: true}}
             dataSource={players}
             columns={columns}
             rowKey={(record) => record._id}
