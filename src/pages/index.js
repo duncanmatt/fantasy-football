@@ -16,12 +16,13 @@ const Home = ({ sleepers }) => {
 					<div className={styles.newsWrapper}>
 						<h2>Latest News</h2>
 						<News />
+						<Divider style={{backgroundColor: '#000'}} />
 					</div>
 				</section>
 				<div className={styles.sleepersWrapper}>
 					<h2>2023 Sleepers</h2>
-					<Divider style={{ backgroundColor: '#000' }} />
 					{sleepers ? <Sleepers players={sleepers} /> : <Spin />}
+					<Divider style={{backgroundColor: '#000'}} />
 				</div>
 			</main>
 		</Layout>
