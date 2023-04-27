@@ -8,14 +8,8 @@ import Layout from '../components/Layout';
 import styles from '../styles/Form.module.css';
 
 const Login = () => {
-	const [user, setUser] = useLocalStorage('user', null);
+	
 	const router = useRouter();
-
-	useEffect(() => {
-		if (user) {
-			router.push(`/users/${user._id}`);
-		}
-	}, [router, user]);
 
 	const [formData, setFormData] = useState({
 		username: '',
@@ -39,21 +33,23 @@ const Login = () => {
 			password,
 		};
 
-		await fetch('api/users/login', {
+		const user = await fetch('/api/users/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(userData),
-		})
-			.then(response => response.json())
-			.then(data => {
-				console.log('Success:', data);
-				setUser(data);
-			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
+		});
+
+
+		if (user.status === 200) {
+			const data = await user.json()
+			router.push(`/users/${data.user}`);
+			console.log(data)
+			console.log('successs')
+		} else {
+			throw new Error('no response');
+		}
 
 		console.log('Received values of form:', userData);
 	};

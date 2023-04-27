@@ -7,16 +7,24 @@ export default async function handler(req, res) {
 		method,
 	} = req;
 
-	await dbConnect();
-
 	switch (method) {
 		case 'GET':
 			try {
-				const user = await User.findById(id);
+
+				await dbConnect();
+				const user = await User.findById(id).lean();
 				if (!user) {
-					return res.status(400).json({ success: false });
+					res
+						.status(400)
+						.json({ message: 'unable to find user', success: false });
 				}
-				res.status(200).json(user);
+				res
+					.status(200)
+					.json({
+						_id: user._id.toString(),
+						username: user.username,
+						password: user.password,
+					});
 			} catch (error) {
 				res.status(400).json({ success: false });
 			}
