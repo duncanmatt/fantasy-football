@@ -66,10 +66,12 @@ const Register = () => {
 					name='register'
 					className={styles.form}
 					onSubmit={onSubmit}>
-					<h2 className={styles.formTitle}>Create Account</h2>
+					<h1 className={styles.formTitle}>Create your Account</h1>
 					<p className={styles.message}>{message}</p>
 					<div className={styles.item}>
-						<label htmlFor='username'>
+						<label
+							className={styles.icon}
+							htmlFor='username'>
 							<UserOutlined />
 						</label>
 						<input
@@ -79,12 +81,14 @@ const Register = () => {
 							maxLength='30'
 							name='username'
 							placeholder='Username'
-							value={username || []}
+							value={username}
 							onChange={onChange}
 						/>
 					</div>
 					<div className={styles.item}>
-						<label htmlFor='password'>
+						<label
+							className={styles.icon}
+							htmlFor='password'>
 							<LockOutlined />
 						</label>
 						<input
@@ -94,12 +98,14 @@ const Register = () => {
 							maxLength='40'
 							name='password'
 							placeholder='Password'
-							value={password || []}
+							value={password}
 							onChange={onChange}
 						/>
 					</div>
 					<div className={styles.item}>
-						<label htmlFor='password2'>
+						<label
+							className={styles.icon}
+							htmlFor='password2'>
 							<LockOutlined />
 						</label>
 						<input
@@ -109,7 +115,7 @@ const Register = () => {
 							maxLength='60'
 							name='password2'
 							placeholder='Confirm Password'
-							value={password2 || []}
+							value={password2}
 							onChange={onChange}
 						/>
 					</div>
@@ -117,7 +123,7 @@ const Register = () => {
 						<button
 							type='submit'
 							className={styles.btn}>
-							Register
+							create account
 						</button>
 					</div>
 				</form>
