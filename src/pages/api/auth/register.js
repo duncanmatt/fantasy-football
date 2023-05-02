@@ -43,11 +43,11 @@ export default async function handler(req, res) {
 						_id: user._id,
 						username: user.username,
 						password: user.password,
-						token: generateToken(user._id),
+						// token: generateToken(user._id),
 					});
 				}
 			} catch (error) {
-				throw new Error(error);
+				res.send(error);
 			}
 			break;
 		default:

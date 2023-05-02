@@ -8,7 +8,7 @@
 	text-align: center;
 	line-height: 2.4rem;
 	font-size: 2.4rem;
-	padding-block-end: 3rem;
+	margin-block-end: 1rem;
 }
 
 .form {
@@ -16,6 +16,12 @@
 	align-self: center;
 	transform: translateY(-50%);
 	padding: 0;
+}
+
+.message {
+	height: 20px;
+	text-align: center;
+	color: #e0282e;
 }
 
 .item {

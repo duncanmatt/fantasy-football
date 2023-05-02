@@ -1,23 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { SignIn } from '../util/SignIn';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Layout from '../components/Layout';
-import { Spin } from 'antd';
-
 import styles from '../styles/Form.module.css';
 
 const Register = () => {
 	const router = useRouter();
 
-	const [user, setUser] = useLocalStorage('user', null);
-
-	useEffect(() => {
-		if (user) {
-			router.push(`/users/${user._id}`);
-		}
-	}, [user, router]);
-
+	const [message, setMessage] = useState('');
 	const [formData, setFormData] = useState({
 		username: '',
 		password: '',
@@ -37,30 +28,34 @@ const Register = () => {
 		e.preventDefault();
 
 		if (password !== password2) {
-			console.error('Passwords do not match');
+			setMessage('Passwords do not match');
 		} else {
 			const userData = {
 				username,
 				password,
 			};
 
-			await fetch('api/users/register', {
+			const newUser = await fetch('api/auth/register', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(userData),
-			})
-				.then(response => response.json())
-				.then(data => {
-					console.log('Success:', data);
-					setUser(data);
-				})
-				.catch(error => {
-					console.error('Error:', error);
-				});
+			});
 
-			console.log('Received values of form: ', userData);
+			if (newUser.status === 400) {
+				setMessage('User already exists');
+			}
+
+			if (newUser.status === 201) {
+				const userRes = await SignIn({ username, password });
+
+				if (userRes?.error) {
+					setMessage(userRes.error);
+				} else {
+					router.push('/Profile');
+				}
+			}
 		}
 	};
 
@@ -72,6 +67,7 @@ const Register = () => {
 					className={styles.form}
 					onSubmit={onSubmit}>
 					<h2 className={styles.formTitle}>Create Account</h2>
+					<p className={styles.message}>{message}</p>
 					<div className={styles.item}>
 						<label htmlFor='username'>
 							<UserOutlined />

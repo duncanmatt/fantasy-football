@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { useLocalStorage } from '../hooks/useLocalStorage';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Layout from '../components/Layout';
-
+import {SignIn} from '../util/SignIn'
+import { useRouter } from 'next/router';
 import styles from '../styles/Form.module.css';
 
 const Login = () => {
-	
 	const router = useRouter();
+
+	const [message, setMessage] = useState('');
 
 	const [formData, setFormData] = useState({
 		username: '',
 		password: '',
 	});
 
-	const { username, password } = formData;
+	const { password, username } = formData;
 
 	const onChange = e => {
 		setFormData(prevState => ({
@@ -25,33 +25,20 @@ const Login = () => {
 		}));
 	};
 
-	const onSubmit = async e => {
+	const handleLogin = async e => {
 		e.preventDefault();
 
-		const userData = {
-			username,
-			password,
-		};
-
-		const user = await fetch('/api/users/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(userData),
-		});
-
-
-		if (user.status === 200) {
-			const data = await user.json()
-			router.push(`/users/${data.user}`);
-			console.log(data)
-			console.log('successs')
-		} else {
-			throw new Error('no response');
+		try {
+			const userRes = await SignIn({username, password});
+			if (userRes?.error) {
+				setMessage(userRes.error);
+			} else {
+				console.log(userRes);
+				router.push('/Profile')
+			}
+		} catch (error) {
+			console.error(error);
 		}
-
-		console.log('Received values of form:', userData);
 	};
 
 	return (
@@ -60,8 +47,9 @@ const Login = () => {
 				<form
 					name='normal_login'
 					className={styles.form}
-					onSubmit={onSubmit}>
+					onSubmit={handleLogin}>
 					<h2 className={styles.formTitle}>Login</h2>
+					<p className={styles.message}>{message}</p>
 					<div className={styles.item}>
 						<label
 							className={styles.icon}
@@ -75,7 +63,7 @@ const Login = () => {
 							maxLength='60'
 							name='username'
 							placeholder='Username'
-							value={username || []}
+							value={username}
 							onChange={onChange}
 						/>
 					</div>
@@ -92,7 +80,7 @@ const Login = () => {
 							maxLength='60'
 							name='password'
 							placeholder='Password'
-							value={password || []}
+							value={password}
 							onChange={onChange}
 						/>
 					</div>

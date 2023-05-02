@@ -1,9 +1,10 @@
 import Head from 'next/head';
+import {SessionProvider} from 'next-auth/react'
 import '../styles/globals.css';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps: {session, ...pageProps} }) => {
 	return (
-		<>
+		<SessionProvider session={session}>
 			<Head>
 				<title>NFL Fantasy</title>
 				<meta
@@ -20,7 +21,7 @@ const App = ({ Component, pageProps }) => {
 				/>
 			</Head>
 			<Component {...pageProps} />
-		</>
+		</SessionProvider>
 	);
 };
 
