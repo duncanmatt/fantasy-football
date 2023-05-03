@@ -24,13 +24,15 @@ const Profile = () => {
 
 	return (
 		<Layout>
+			<div className={styles.wrapper}>
 			<div className={styles.profile}>
-				<h1 style={{ textAlign: 'center' }}>{session.user.username}</h1>
+				<h1 className={styles.username}>{session.user.username}</h1>
 				<button
 					className={styles.btn}
 					onClick={signOut}>
 					Logout
 				</button>
+			</div>
 			</div>
 		</Layout>
 	);
