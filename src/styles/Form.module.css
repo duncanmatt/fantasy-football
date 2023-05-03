@@ -72,6 +72,7 @@
 
 form[name='normal_login'] .btn {
 	height: 24px;
+	line-height: 24px;
 }
 
 form[name='register'] .btn {
