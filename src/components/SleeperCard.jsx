@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FileSearchOutlined } from '@ant-design/icons';
 import styles from '../styles/Home.module.css';
 
 const SleeperCard = ({ player }) => {
@@ -21,20 +20,14 @@ const SleeperCard = ({ player }) => {
 			</div>
 			<div className={styles.sleeperBody}>
 				<div className={styles.sleeperHeadshotWrapper}>
-					<picture>
-						<Image
-							className={styles.sleeperHeadshot}
-							src={player.imgUrl}
-							alt={player.name}
-              quality={50}
-							fill
-							style={
-								{
-									// borderRadius: "50%",
-								}
-							}
-						/>
-					</picture>
+					<Image
+						className={styles.sleeperHeadshot}
+						src={player.imgUrl}
+						alt={player.name}
+						quality={50}
+						fill
+						sizes='(max-width: 600px) calc(100vw - 2rem),	(min-width: 600px) minmax(200px, 1fr), (min-width: 1100px) 30vw, (min-width: 1400px) 20vw'
+					/>
 				</div>
 			</div>
 			<div className={styles.sleeperOutlook}>

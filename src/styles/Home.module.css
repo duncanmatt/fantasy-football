@@ -158,7 +158,6 @@
 }
 
 .sleeperBody {
-	position: relative;
 	z-index: 0;
 }
 
@@ -168,6 +167,7 @@
 }
 
 .sleeperHeadshotWrapper {
+	position: relative;
 	aspect-ratio: 1;
 	z-index: 0;
 }
