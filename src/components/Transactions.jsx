@@ -7,7 +7,7 @@ const Transactions = () => {
 	return (
 		<div className={styles.transactions}>
 			<div className={styles.tradesHeader}>
-				<h3>Recent Moves</h3>
+				<h3>Recent Trades</h3>
 			</div>
 			<div className={styles.transactionsSlide}>
 				{transactions.map(transaction => (
@@ -21,6 +21,7 @@ const Transactions = () => {
 								src={transaction.headshot}
 								width={60}
 								height={60}
+								quality={50}
 							/>
 						</picture>
 						<div className={styles.tradeBody}>

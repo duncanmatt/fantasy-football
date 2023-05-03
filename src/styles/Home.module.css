@@ -29,8 +29,11 @@
 }
 
 .tradesHeader {
+	display: flex;
+	align-items: center;
 	text-transform: uppercase;
 	font-family: 'Ramabhadra', sans-serif;
+	font-size: 20px;
 }
 
 .transaction {
@@ -253,7 +256,7 @@
 	}
 	.transactions {
 		display: grid;
-		grid-template-rows: 100px;
+		grid-template-rows: 80px;
 		grid-template-columns: auto auto;
 		align-items: center;
 		overflow: hidden;
@@ -273,8 +276,10 @@
 	}
 	.tradesHeader {
 		display: flex;
-		height: 100px;
+		height: 80px;
 		align-items: center;
+		line-height: 22px;
+		font-size: 1rem;
 		background-color: #1677ff;
 		padding-inline: 0.25rem;
 		color: #f9f9f9;
