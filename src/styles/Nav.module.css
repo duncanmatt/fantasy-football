@@ -68,13 +68,15 @@
 }
 
 .actions {
+	font-size: 1.45rem;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
+	gap: 0.65rem;
 }
 
 .login {
-	margin-right: 0.5rem;
+	/* margin-right: 0.5rem; */
 }
 
 .menu a:hover {

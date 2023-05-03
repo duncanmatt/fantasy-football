@@ -73,7 +73,7 @@ function MobileNav() {
 							className={styles.login}>
 							<UserOutlined />
 						</Link>
-						<MenuOutlined onClick={showMenu} />
+						<MenuOutlined  onClick={showMenu} />
 					</span>
 				</div>
 			)}
