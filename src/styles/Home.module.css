@@ -246,7 +246,7 @@
 @media (max-width: 800px) {
 	.news {
 		grid-template-columns: repeat(1, minmax(0, 1fr));
-		gap: 1rem;
+		gap: 2rem;
 		padding-block: 1rem;
 	}
 	.newsWrapper > h2 {
@@ -276,7 +276,7 @@
 	}
 	.tradesHeader {
 		display: flex;
-		height: 80px;
+		height: 100%;
 		align-items: center;
 		line-height: 22px;
 		font-size: 1rem;
