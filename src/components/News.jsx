@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { Spin, Divider } from 'antd';
+import { Spin } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
