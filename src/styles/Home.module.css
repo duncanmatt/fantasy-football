@@ -210,22 +210,23 @@
 
 .sleeperLinkWrapper {
 	display: flex;
-	flex: 0;
+	flex: 1;
 	justify-content: center;
-	margin-bottom: 5px;
+	margin-block: 2px 5px;
+	/* padding-inline: 1rem; */
 }
 
 .sleeperLink {
 	z-index: 10;
 	background-color: #1677ff;
-	flex: 0;
-	justify-content: center;
+	width: 100%;
+	text-align: center;
 	color: #fff;
 	font-family: 'Rhamabadra', sans-serif;
 	font-weight: 600;
 	font-size-adjust: 100%;
-	padding: 0.25rem 0.75rem;
-	border-radius: 1.71875rem;
+	padding: 0.42rem 0.75rem;
+	border-radius: 0.8518rem;
 	border: 1px solid #f5f5f5;
 }
 
@@ -280,7 +281,6 @@
 
 @media (min-width: 801px) {
 	.newsWrapper {
-		padding-inline: 3rem;
 		height: calc(100dvh -50px);
 		margin-top: auto;
 		margin-bottom: auto;
@@ -307,7 +307,7 @@
 	}
 	.news {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 2rem;
+		column-gap: 3rem;
 	}
 	.main {
 		max-width: 1400px;
