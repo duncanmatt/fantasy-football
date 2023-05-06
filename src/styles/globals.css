@@ -61,15 +61,24 @@ header::selection {
 	padding-block: 1rem;
 }
 
+
 @media (min-width: 800px) {
 	.footer {
 		padding-inline: 3rem;
 	}
 }
 
-@media (min-width: 2000px) {
+
+@media (min-width: 1400px) {
 	.page-container {
-		max-width: 2000px;
+		max-width: 1400px;
+		margin-inline: auto;
+	}
+}
+
+@media (min-width: 1400px) {
+	.header-wrapper {
+		max-width: 1400px;
 		margin-inline: auto;
 	}
 }

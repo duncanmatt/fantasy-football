@@ -11,6 +11,9 @@
 	50% {
 		transform: translateX(-50%);
 	}
+	75% {
+		transform: translateX(-75%);
+	}
 	to {
 		transform: translateX(-100%);
 	}
@@ -22,42 +25,56 @@
 }
 
 .transactions {
-	display: flex;
-	flex-direction: row;
-	border-top: 1px solid rgb(217, 217, 217);
+	display: grid;
+	grid-template-rows: 50px;
+	grid-template-columns: auto auto;
 	border-bottom: 1px solid rgb(217, 217, 217);
+	overflow: hidden;
+}
+.transactionsSlide {
+	display: flex;
+	text-size-adjust: 100%;
+	z-index: 0;
+	align-content: center;
+	min-width: max-content;
+	animation: slider 40s linear 0s infinite;
+	gap: 2rem;
+}
+.transaction {
+	display: flex;
+	align-items: center;
 }
 
 .tradesHeader {
 	display: flex;
+	height: 100%;
 	align-items: center;
 	text-transform: uppercase;
-	font-family: 'Ramabhadra', sans-serif;
-	font-size: 20px;
+	line-height: 22px;
+	font-size: 1rem;
+	background-color: #1677ff;
+	letter-spacing: 1px;
+	padding-inline: 1rem;
+	color: #f5f5f5;
+	z-index: 100;
+	opacity: 1;
 }
-
-.transaction {
+.tradeBody {
 	display: flex;
+	flex-direction: row;
+	flex: 1;
+	align-items: center;
+	margin-block: auto;
+	margin-right: 1rem;
+	gap: 4px;
 }
 
 .tradeName {
-	color: rgb(42, 50, 64);
-}
-
-.tradeBody {
 	display: flex;
-	flex-direction: column;
-	flex-basis: 0;
-	flex-grow: 1;
-	flex-shrink: 1;
-}
-
-.tradeTeams {
-	display: flex;
-	flex-flow: row;
-	flex-basis: 100%;
-	justify-content: space-evenly;
-	align-items: center;
+	flex-flow: row nowrap;
+	font-size: 1.125rem;
+	letter-spacing: 0.01em;
+	font-family: 'Ramabhadra', sans-serif;
 }
 
 .headshot {
@@ -255,56 +272,6 @@
 		line-height: 2.4rem;
 		margin-block: 1rem 0.5rem;
 	}
-	.transactions {
-		display: grid;
-		grid-template-rows: 80px;
-		grid-template-columns: auto auto;
-		align-items: center;
-		overflow: hidden;
-		gap: 2rem;
-	}
-	.transactionsSlide {
-		display: flex;
-		text-size-adjust: 100%;
-		z-index: 0;
-		min-width: max-content;
-		animation: slider 20s linear 0s infinite;
-		gap: 1rem;
-	}
-	.transaction {
-		align-items: center;
-		flex: 0 0 260px;
-	}
-	.tradesHeader {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		line-height: 22px;
-		font-size: 1rem;
-		background-color: #1677ff;
-		padding-inline: 0.25rem;
-		color: #f5f5f5;
-		z-index: 100;
-		opacity: 1;
-	}
-	.tradeBody {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-	}
-	.tradeName {
-		padding-inline-start: 0.25rem;
-		margin-top: 0.5rem;
-		display: flex;
-		flex-flow: row nowrap;
-		font-size: 1.2rem;
-		line-height: 0.8rem;
-		letter-spacing: 0.01em;
-	}
-	.tradeTeams {
-		align-self: flex-start;
-		gap: 1rem;
-	}
 	.sleepersWrapper > h2 {
 		line-height: 2.4rem;
 		font-size: 1.9rem;
@@ -312,11 +279,8 @@
 }
 
 @media (min-width: 801px) {
-	.landing {
-		flex-direction: row-reverse;
-	}
 	.newsWrapper {
-		padding-inline: 3rem 0;
+		padding-inline: 3rem;
 		height: calc(100dvh -50px);
 		margin-top: auto;
 		margin-bottom: auto;
@@ -328,32 +292,6 @@
 	}
 	.sleepersWrapper {
 		padding-inline: 3rem;
-	}
-	.transactions {
-		flex-direction: column;
-		flex: 0 0 280px;
-		margin-left: 1rem;
-		border-top: 0px;
-		border-bottom: 0px;
-		padding-block: 1rem;
-		position: sticky;
-		top: 0px;
-	}
-	.tradesHeader {
-		padding: 1rem;
-		color: #000;
-	}
-	.transaction {
-		align-items: center;
-		padding-inline: 1rem;
-	}
-	.tradeName {
-		font-size: 1.5rem;
-		padding-inline-start: 0.5rem;
-		padding-block-start: 0.5rem;
-	}
-	.tradeTeams {
-		justify-self: flex-start;
 	}
 	.sleepersWrapper > h2 {
 		line-height: 2.4rem;

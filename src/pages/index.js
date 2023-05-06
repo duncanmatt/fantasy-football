@@ -16,7 +16,7 @@ const Home = ({ sleepers }) => {
 					<div className={styles.newsWrapper}>
 						<h2>Latest News</h2>
 						<News />
-						<Divider style={{backgroundColor: '#000'}} />
+						<Divider style={{backgroundColor: 'rgb(217,217,217'}} />
 					</div>
 				</section>
 				<div className={styles.sleepersWrapper}>
