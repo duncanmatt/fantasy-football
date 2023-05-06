@@ -69,7 +69,6 @@ export const options = {
 			return session;
 		},
 	},
-	debug: process.env.NODE_ENV === 'development',
 };
 
 export default NextAuth(options);

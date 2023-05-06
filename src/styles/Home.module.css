@@ -54,7 +54,7 @@
 	font-size: 1rem;
 	background-color: #1677ff;
 	letter-spacing: 1px;
-	padding-inline: 1rem;
+	padding-inline: 0.75rem;
 	color: #f5f5f5;
 	z-index: 100;
 	opacity: 1;
@@ -86,7 +86,7 @@
 /* NEWS */
 .newsWrapper {
 	padding-inline: 1rem;
-	padding-block: 2rem 1rem;
+	padding-block: 2rem 0;
 }
 
 .newsWrapper > h2 {
@@ -98,6 +98,7 @@
 
 .news {
 	min-height: 100dvh;
+	margin-inline: auto;
 	display: grid;
 	grid-auto-rows: minmax(0, 1fr);
 	gap: 1rem;
@@ -253,7 +254,7 @@
 		font-size: 1.5rem;
 	}
 	.tradesHeader {
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
 
