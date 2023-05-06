@@ -252,6 +252,9 @@
 	.sleeperUpper {
 		font-size: 1.5rem;
 	}
+	.tradesHeader {
+		font-size: 12px;
+	}
 }
 
 @media (min-width: 600px) {
