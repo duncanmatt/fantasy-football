@@ -285,6 +285,11 @@
 		margin-top: auto;
 		margin-bottom: auto;
 	}
+	.news {
+		margin-top: auto;
+		margin-bottom: auto;
+		padding-inline: 1rem;
+	}
 	.newsWrapper > h2 {
 		font-size: 3.6rem;
 		line-height: 4rem;

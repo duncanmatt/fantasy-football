@@ -24,7 +24,8 @@ const SleeperCard = ({ player }) => {
 						className={styles.sleeperHeadshot}
 						src={player.imgUrl}
 						alt={player.name}
-						quality={50}
+						placeholder='blur'
+						blurDataURL={player.imgUrl}
 						fill
 						sizes='(max-width: 600px) calc(100vw - 2rem),	(min-width: 600px) minmax(200px, 1fr), (min-width: 1100px) 30vw, (min-width: 1400px) 20vw'
 					/>

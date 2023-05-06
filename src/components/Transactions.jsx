@@ -44,8 +44,11 @@ const Transactions = () => {
 							<span className={styles.tradeName}>{transaction.name}</span>
 							<CaretRightOutlined />
 									<Image
+										priority={true}
 										alt={transaction.team[0]}
 										src={transaction.team[1]}
+										placeholder='blur'
+										blurDataURL={transaction.team[1]}
 										width={40}
 										height={40}
 									/>
