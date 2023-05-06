@@ -105,23 +105,24 @@
 .news {
 	min-height: calc(100dvh - 200px);
 	display: grid;
-	margin-block: auto;
+	/* margin-block: auto; */
 	grid-auto-rows: minmax(0, 1fr);
 	padding-block-end: 3rem;
 	gap: 2rem;
 }
 
 .article {
+	position: relative;
 	display: flex;
 	flex-direction: row-reverse;
 	align-items: center;
 	flex-basis: 100%;
-	padding-inline: 0 1rem;
 	justify-content: space-between;
 	word-wrap: break-word;
 	border-radius: 1.25rem;
 	background-color: #fff;
 	border: 1px solid rgb(217, 217, 217);
+	z-index: 1;
 }
 
 .article:hover {
@@ -142,13 +143,12 @@
 .thumbnailWrapper {
 	display: flex;
 	flex-direction: column-reverse;
-	gap: 5px;
-	text-align: center;
-	justify-self: flex-end;
+	height: 100%;
 	justify-content: space-between;
 }
 
 .date {
+	text-align: center;
 	font-size: 1rem;
 	font-family: var(--font-pro);
 	font-weight: 500;
@@ -156,8 +156,13 @@
 }
 
 .thumbnail {
-	border-radius: 8px;
+	align-self: flex-end;
+	border-top-left-radius: 12px;
+	border-bottom-right-radius: 1.25rem;
+	border-right: 1px solid rgb(217, 217, 217);
+	border-bottom: 1px solid rgb(217, 217, 217);
 	aspect-ratio: 1;
+	z-index: 0;
 }
 
 /* SLEEPERS */
@@ -249,9 +254,9 @@
 	.heading {
 		font-size: 3rem;
 	}
-	.news {
-		/* grid-auto-rows: inherit; */
-	}
+	/* .news {
+		grid-auto-rows: inherit;
+	} */
 	.title {
 		font-size: 1.24rem;
 		line-height: 24px;
@@ -334,11 +339,10 @@
 		width: 100%;
 		flex-direction: row-reverse;
 		justify-content: space-between;
-		padding-block: 0 0.5rem;
+		padding-inline: 1rem 0;
 	}
 	.date {
-		align-self: flex-end;
-		padding: 0 0 1rem 1.25rem;
+		align-self: center;
 		font-size: 1.5rem;
 	}
 	.main {

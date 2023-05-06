@@ -24,7 +24,12 @@ const News = () => {
 
 	if (error) return <div>ERROR</div>;
 
-	if (isLoading) return <div className={styles.news}> <Skeleton  /></div>;
+	if (isLoading)
+		return (
+			<div className={styles.news}>
+				<Skeleton />
+			</div>
+		);
 
 	return (
 		<div className={styles.news}>
@@ -34,15 +39,15 @@ const News = () => {
 					className={styles.article}
 					key={article.position}>
 					<div className={styles.thumbnailWrapper}>
-						<picture>
-							<Image
-								className={styles.thumbnail}
-								alt={article.title}
-								src={article.thumbnail}
-								height={92}
-								width={92}
-							/>
-						</picture>
+						<Image
+							className={styles.thumbnail}
+							alt={article.title}
+							src={article.thumbnail}
+							placeholder={<Skeleton />}
+							height={92}
+							width={92}
+						/>
+
 						<span className={styles.date}>{article.date}</span>
 					</div>
 					<div>
