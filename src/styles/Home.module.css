@@ -30,6 +30,7 @@
 	grid-template-columns: auto auto;
 	border-bottom: 1px solid rgb(217, 217, 217);
 	overflow: hidden;
+	background-color: #fff;
 }
 .transactionsSlide {
 	display: flex;
@@ -53,9 +54,9 @@
 	line-height: 22px;
 	font-size: 1rem;
 	background-color: #1677ff;
-	letter-spacing: 1px;
-	padding-inline: 0.75rem;
-	color: #f5f5f5;
+	letter-spacing: 0.01rem;
+	padding-inline: 0.5rem;
+	color: #fff;
 	z-index: 100;
 	opacity: 1;
 }
@@ -89,18 +90,25 @@
 	padding-block: 1rem 0;
 }
 
-.newsWrapper > h2 {
+.heading {
 	text-transform: uppercase;
 	font-family: 'Ramabhadra', sans-serif;
 	font-weight: 800;
 	margin-bottom: 1.125rem;
+	line-height: 50px;
+	color: #f5f5f5;
+	letter-spacing: 0.1em;
+	-webkit-text-stroke: 1.25px;
+	-webkit-text-stroke-color: #1677ff;
 }
 
 .news {
+	min-height: calc(100dvh - 150px);
 	display: grid;
+	margin-block: auto;
 	grid-auto-rows: minmax(0, 1fr);
 	padding-block-end: 3rem;
-	gap: 1rem;
+	gap: 2rem;
 }
 
 .article {
@@ -108,13 +116,18 @@
 	flex-direction: row-reverse;
 	align-items: center;
 	flex-basis: 100%;
+	padding-inline: 0 1rem;
 	justify-content: space-between;
-	gap: 1rem;
 	word-wrap: break-word;
+	border-radius: 1.25rem;
+	background-color: #fff;
+	border: 1px solid rgb(217, 217, 217);
 }
 
 .article:hover {
-	color: #1677ff;
+	background-color: #5c5c5c;
+	-webkit-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
 }
 
 .title {
@@ -122,21 +135,23 @@
 	font-weight: 500;
 	font-size: 1.9rem;
 	letter-spacing: -0.01em;
+	padding: 1rem;
+	font-family: var(--font-open);
 }
 
 .thumbnailWrapper {
 	display: flex;
 	flex-direction: column-reverse;
 	gap: 5px;
-	flex-basis: 0;
 	text-align: center;
 	justify-self: flex-end;
 	justify-content: space-between;
-	color: #000;
 }
 
 .date {
 	font-size: 1rem;
+	font-family: var(--font-pro);
+	/* font-weight: 600; */
 }
 
 .thumbnail {
@@ -148,11 +163,6 @@
 .sleepersWrapper {
 	padding-inline: 1rem;
 	padding-block: 2rem;
-}
-
-.sleepersWrapper > h2 {
-	text-transform: uppercase;
-	font-family: 'Ramabhadra', sans-serif;
 }
 
 .sleepers {
@@ -202,9 +212,7 @@
 .sleeperOutlook {
 	display: flex;
 	align-self: center;
-	letter-spacing: -0.01em;
 	text-align: center;
-	color: rgb(32, 32, 32);
 	padding: 1rem;
 }
 
@@ -237,23 +245,30 @@
 }
 
 @media (max-width: 500px) {
-	.article {
-		flex: 0;
-	}
-	.title {
-		font-size: 1.115rem;
-	}
 	.news {
 		grid-auto-rows: inherit;
+		padding-block: 1.25rem;
+	}
+	.title {
+		font-size: 1.24rem;
+		line-height: 24px;
 	}
 }
 
 @media (max-width: 600px) {
+	.heading {
+		font-size: 2.125rem;
+		margin-top: 1.25rem;
+	}
 	.sleeperUpper {
 		font-size: 1.5rem;
 	}
 	.tradesHeader {
 		font-size: 14px;
+	}
+	.title {
+		font-size: 1.42rem;
+		line-height: 24px;
 	}
 }
 
@@ -263,61 +278,73 @@
 		grid-template-rows: auto;
 		gap: 2rem;
 	}
+	.heading {
+		font-size: 3.4rem;
+	}
 }
 
 @media (max-width: 800px) {
 	.news {
+		padding-block: 1.75rem;
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 		grid-template-rows: auto;
-		gap: 2rem;
-		padding-block: 1rem;
+		gap: 1.5rem;
 	}
-	.newsWrapper > h2 {
-		font-size: 2.2rem;
-		line-height: 2.4rem;
-		margin-block: 1rem 0.5rem;
-	}
-	.sleepersWrapper > h2 {
-		line-height: 2.4rem;
-		font-size: 1.9rem;
+	.heading {
+		margin-top: 2rem;
 	}
 }
 
 @media (min-width: 801px) {
-	.newsWrapper > h2 {
-		font-size: 3.6rem;
-		line-height: 4rem;
-		margin-block: 3rem;
+	.heading {
+		margin-top: 2.25rem;
+		font-size: 4rem;
+	}
+	.newsWrapper {
+		padding-inline: 3rem;
 	}
 	.news {
-		padding-inline: 2rem;
+		gap: 1.75rem;
+		padding-block: 2rem;
 	}
 	.sleepersWrapper {
-		padding-inline: 1rem;
-	}
-	.sleepersWrapper > h2 {
-		line-height: 2.4rem;
-		font-size: 2.5rem;
+		padding-inline: 3rem;
 	}
 }
 
 @media (min-width: 1100px) {
-	.newsWrapper > h2 {
-		font-size: 5rem;
-		line-height: 5rem;
-		margin-block: 3rem;
+	.heading {
+		font-size: 5.525rem;
+		margin-top: 3rem;
 	}
 	.news {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		column-gap: 3rem;
+		gap: 3rem;
+		padding-block: 3.5rem;
+	}
+	.article {
+		flex-direction: column-reverse;
+	}
+	.title {
+		padding: 2.25rem 1.25rem 0 1.25rem;
+		font-size: 2.245rem;
+		line-height: 1;
+		/* letter-spacing: 0.01rem; */
+	}
+	.thumbnailWrapper {
+		width: 100%;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		padding-block: 0 0.5rem;
+	}
+	.date {
+		align-self: flex-end;
+		padding: 0 0 1rem 1.25rem;
+		font-size: 1.5rem;
 	}
 	.main {
 		max-width: 1400px;
 		margin-inline: auto;
-	}
-	.sleepersWrapper > h2 {
-		line-height: 3.2rem;
-		font-size: 3rem;
 	}
 	.sleepers {
 		display: grid;

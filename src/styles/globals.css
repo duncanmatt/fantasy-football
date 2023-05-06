@@ -5,8 +5,8 @@
 	--border-radius: 12px;
 	--font-open: 'Open Sans', sans-serif;
 	--font-pro: 'Source Sans Pro', sans-serif;
-	--font-rama: 'Ramabhadra', sans-serif,
-	--font-color: 0, 0, 0;
+	--font-rama: 'Ramabhadra', sans-serif;
+	--font-color: 68, 68, 68;
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
 }
@@ -15,6 +15,12 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	font-size-adjust: 100%;
 }
 
 html,
@@ -39,7 +45,6 @@ header {
 	border-bottom: 1px solid rgb(217, 217, 217);
 	width: 100%;
 	z-index: 20;
-	-webkit-tap-highlight-color: transparent;
 }
 
 header::selection {
@@ -61,13 +66,11 @@ header::selection {
 	padding-block: 1rem;
 }
 
-
 @media (min-width: 800px) {
 	.footer {
 		padding-inline: 3rem;
 	}
 }
-
 
 @media (min-width: 1400px) {
 	.page-container {

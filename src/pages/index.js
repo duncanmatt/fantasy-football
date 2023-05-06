@@ -14,13 +14,13 @@ const Home = ({ sleepers }) => {
 				<section className={styles.landing}>
 					<Transactions />
 					<div className={styles.newsWrapper}>
-						<h2>Latest News</h2>
+						<h2 className={styles.heading}>Latest News</h2>
 						<News />
 						<Divider style={{backgroundColor: 'rgb(217,217,217'}} />
 					</div>
 				</section>
 				<div className={styles.sleepersWrapper}>
-					<h2>2023 Sleepers</h2>
+					<h2 className={styles.heading}>2023 Sleepers</h2>
 					{sleepers ? <Sleepers players={sleepers} /> : <Spin />}
 				</div>
 			</main>
