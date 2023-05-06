@@ -30,10 +30,12 @@ function MobileNav() {
 							/>
 						</Link>
 						<span className={styles.actions}>
-							<Link
-								href='/Login'
-								className={styles.login}></Link>
-							<CloseOutlined onClick={showMenu} />
+						<Link
+							href='/Login'
+							className={styles.login}>
+							<UserOutlined />
+						</Link>
+						<CloseOutlined onClick={showMenu} />
 						</span>
 					</div>
 					<nav className={styles.menu}>
@@ -73,7 +75,7 @@ function MobileNav() {
 							className={styles.login}>
 							<UserOutlined />
 						</Link>
-						<MenuOutlined  onClick={showMenu} />
+						<MenuOutlined onClick={showMenu} />
 					</span>
 				</div>
 			)}

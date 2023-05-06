@@ -32,6 +32,8 @@
 	flex-basis: 100%;
 	justify-content: space-between;
 	align-items: center;
+	font-size: 1.45rem;
+	/* font-family: var(--font-rama); */
 }
 
 .links a {
@@ -91,6 +93,7 @@
 	flex-basis: 100%;
 	justify-content: space-between;
 	letter-spacing: 1px;
+	font-family: var(--font-rama);
 	font-weight: 500;
 }
 

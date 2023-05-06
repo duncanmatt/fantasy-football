@@ -125,7 +125,7 @@
 }
 
 .article:hover {
-	background-color: #5c5c5c;
+	background-color: #c9c9c9;
 	-webkit-transition: all 0.3s ease-in;
 	transition: all 0.3s ease-in;
 }
@@ -151,7 +151,8 @@
 .date {
 	font-size: 1rem;
 	font-family: var(--font-pro);
-	/* font-weight: 600; */
+	font-weight: 600;
+	color: #000;
 }
 
 .thumbnail {
