@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { Spin } from 'antd';
+import { Skeleton } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
@@ -24,7 +24,7 @@ const News = () => {
 
 	if (error) return <div>ERROR</div>;
 
-	if (isLoading) return <Spin />;
+	if (isLoading) return <div className={styles.news}> <Skeleton  /></div>;
 
 	return (
 		<div className={styles.news}>
