@@ -14,7 +14,7 @@ const Home = ({ sleepers }) => {
 				<section className={styles.landing}>
 					<Transactions />
 					<div className={styles.newsWrapper}>
-						<div className={styles.heading}>Latest News</div>
+						<div className={styles.heading}>Latest <span className={styles.dNews}>News</span></div>
 						<News />
 						<Divider style={{backgroundColor: 'rgb(217,217,217'}} />
 					</div>
