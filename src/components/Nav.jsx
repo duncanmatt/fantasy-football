@@ -31,7 +31,7 @@ function MobileNav() {
 						</Link>
 						<span className={styles.actions}>
 						<Link
-							href='/Login'
+							href='/Profile'
 							className={styles.login}>
 							<UserOutlined />
 						</Link>
@@ -71,7 +71,7 @@ function MobileNav() {
 					</Link>
 					<span className={styles.actions}>
 						<Link
-							href='/Login'
+							href='/Profile'
 							className={styles.login}>
 							<UserOutlined />
 						</Link>
@@ -105,7 +105,7 @@ const Nav = () => {
 							<Link href='/RBs'>RB</Link>
 							<Link href='/WRs'>WR</Link>
 							<Link href='/TEs'>TE</Link>
-							<Link href='/Login'>
+							<Link href='/Profile'>
 								<UserOutlined />
 							</Link>
 						</nav>
