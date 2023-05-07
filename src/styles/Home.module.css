@@ -136,6 +136,7 @@
 	letter-spacing: -0.01em;
 	padding: 1rem;
 	font-family: var(--font-open);
+	color: #000;
 }
 
 .thumbnailWrapper {
@@ -146,12 +147,17 @@
 	padding-inline: 1rem 0;
 }
 
-.date {
+.info {
 	align-self: flex-end;
+	gap: 5px;
+	display: flex;
+	flex-direction: column;
 	margin-bottom: 1rem;
-	text-align: center;
-	font-size: 1rem;
 	font-family: var(--font-pro);
+}
+
+.date {
+	font-size: 1rem;
 	font-weight: 500;
 	color: #1677ff;
 }
@@ -325,11 +331,12 @@
 		font-size: 5.525rem;
 		margin-top: 3rem;
 	}
-	/* .news {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 3rem;
-		padding-block: 3.5rem;
-	} */
+	.date {
+		font-size: 1.2rem;
+	}
+	.source {
+		font-size: 1.2rem;
+	}
 	.article {
 		flex-direction: column-reverse;
 	}
@@ -344,10 +351,6 @@
 		flex-direction: row-reverse;
 		justify-content: space-between;
 		padding-inline: 1rem 0;
-	}
-	.date {
-		align-self: center;
-		font-size: 1.5rem;
 	}
 	.main {
 		max-width: 1400px;

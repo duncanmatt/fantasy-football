@@ -47,8 +47,10 @@ const News = () => {
 							height={92}
 							width={92}
 						/>
-
-						<span className={styles.date}>{article.date}</span>
+						<div className={styles.info}>
+							<span className={styles.date}>{article.date}</span>
+							<span className={styles.source}>{article.source}</span>
+						</div>
 					</div>
 					<div>
 						<h2 className={styles.title}>{article.title}</h2>
