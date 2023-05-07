@@ -38,28 +38,28 @@ const QBCard = ({
 			<div className={styles.lower}>
 				<div className={styles.stats}>
 					<div className={styles.stat}>
-						<h4>Pass Yards</h4> {pass_yards}
+						<span>Pass Yards:</span> {pass_yards}
 					</div>
 					<div className={styles.stat}>
-						<h4>Completions</h4> {completions}
+						<span>Completions:</span> {completions}
 					</div>
 					<div className={styles.stat}>
-						<h4>Pass Attempts</h4> {pass_attempts}
+						<span>Pass Attempts:</span> {pass_attempts}
 					</div>
 					<div className={styles.stat}>
-						<h4>Pass TDs</h4> {pass_TDs}
+						<span>Pass TDs:</span> {pass_TDs}
 					</div>
 					<div className={styles.stat}>
-						<h4>INTs</h4> {INTs}
+						<span>INTs:</span> {INTs}
 					</div>
 					<div className={styles.stat}>
-						<h4>Rush Yards</h4> {run_yards}
+						<span>Rush Yards:</span> {run_yards}
 					</div>
 					<div className={styles.stat}>
-						<h4>Rush Attempts</h4> {run_attempts}
+						<span>Rush Attempts:</span> {run_attempts}
 					</div>
 					<div className={styles.stat}>
-						<h4>Rush TDs</h4> {run_TDs}
+						<span>Rush TDs:</span> {run_TDs}
 					</div>
 				</div>
 			</div>

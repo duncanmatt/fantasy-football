@@ -37,27 +37,27 @@ const NonQBCard = ({
 			<div className={styles.lower}>
 				<div className={styles.stats}>
 					<div className={styles.stat}>
-						<h4>Rec Yards</h4> {rec_yards}
+						<span>Rec Yards:</span> {rec_yards}
 					</div>
 					<div className={styles.stat}>
-						<h4>Receptions</h4> {receptions}
+						<span>Receptions:</span> {receptions}
 					</div>
 					<div className={styles.stat}>
-						<h4>Rec TDs</h4> {rec_TDs}
+						<span>Rec TDs:</span> {rec_TDs}
 					</div>
 					<div className={styles.stat}>
-						<h4>Rush Yards</h4> {run_yards}
+						<span>Rush Yards:</span> {run_yards}
 					</div>
 					{position === 'RB' && (
 						<div className={styles.stat}>
-							<h4>Rush Attempts</h4> {run_attempts}
+							<span>Rush Attempts:</span> {run_attempts}
 						</div>
 					)}
 					<div className={styles.stat}>
-						<h4>Rush TDs</h4> {run_TDs}
+						<span>Rush TDs:</span> {run_TDs}
 					</div>
 					<div className={styles.stat}>
-						<h4>FUMs:</h4> {FUMs}
+						<span>FUMs:</span> {FUMs}
 					</div>
 				</div>
 			</div>

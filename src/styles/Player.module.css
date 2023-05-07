@@ -23,6 +23,9 @@
 .info {
 	display: flex;
 	flex: 0;
+	font-family: var(--font-open);
+	font-weight: 800;
+	color: #000;
 	/* flex-direction: row nowrap; */
 	z-index: 2;
 	/* justify-content: safe; */
@@ -53,13 +56,25 @@
 	gap: 0.25rem;
 }
 
+.stat > span {
+	font-family: var(--font-open);
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	text-align: left;
+}
+
 .news {
 	display: block;
 }
 
 .newsHead {
+	font-size: 2rem;
 	padding-inline: 1rem;
-	padding-block-start: 2rem;
+	padding-block-start: 1rem;
+	color: #1671ff;
+	font-family: var(--font-rama);
+	font-weight: 800;
+	letter-spacing: -0.01em;
 }
 
 .articles {
