@@ -376,7 +376,8 @@
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 0.25fr));
 		grid-template-rows: auto;
-		gap: 3rem;
+		row-gap: 5rem;
+		column-gap: 3rem;
 	}
 	.sleeperOutlook {
 		font-size: 1.2rem;
