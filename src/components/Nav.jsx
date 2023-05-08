@@ -21,14 +21,16 @@ function MobileNav() {
 			{menuOpen ? (
 				<>
 					<div className={styles.mobile}>
-						<Link href='/'>
-							<Image
-								src={logo}
-								alt='Offseason Adviser'
-								width={35}
-								height={35}
-							/>
-						</Link>
+						<span>
+							<Link href='/'>
+								<Image
+									src={logo}
+									alt='Fantasy Football Auxiliary'
+									width={36}
+									height={36}
+								/>
+							</Link>
+						</span>
 						<span className={styles.actions}>
 							<CloseOutlined onClick={showMenu} />
 						</span>
@@ -79,16 +81,20 @@ function MobileNav() {
 				</>
 			) : (
 				<div className={styles.mobile}>
-					<Link href='/'>
-						<Image
-							src={logo}
-							alt='Offseason Adviser'
-							width={35}
-							height={35}
-						/>
-					</Link>
+					<span>
+						<Link
+							href='/'
+							className={styles.title}>
+							<Image
+								src={logo}
+								alt='Fantasy Football Auxiliary'
+								width={36}
+								height={36}
+							/>
+						</Link>
+					</span>
 					<span className={styles.actions}>
-						<MenuOutlined onClick={showMenu} />
+						<MenuOutlined style={{lineHeight: '1', verticalAlign: '0', paddingTop: '5px'}} onClick={showMenu} />
 					</span>
 				</div>
 			)}
@@ -103,23 +109,25 @@ const Nav = () => {
 				<div className='header-content'>
 					<MobileNav />
 					<div className={styles.desktop}>
-						<Link
-							className={styles.title}
-							href='/'>
-							<Image
-								src={logo}
-								alt='Offseason Adviser'
-								width={40}
-								height={40}
-							/>
-						</Link>
+						<span>
+							<Link
+								className={styles.title}
+								href='/'>
+								<Image
+									src={logo}
+									alt='Fantasy Football Auxiliary'
+									width={36}
+									height={36}
+								/>
+							</Link>
+						</span>
 						<nav className={styles.links}>
 							<Link href='/QBs'>QB</Link>
 							<Link href='/RBs'>RB</Link>
 							<Link href='/WRs'>WR</Link>
 							<Link href='/TEs'>TE</Link>
 							<Link href='/Profile'>
-								<UserOutlined />
+								<UserOutlined style={{lineHeight: '1', verticalAlign: '0', paddingTop: '5px'}} />
 							</Link>
 						</nav>
 					</div>
