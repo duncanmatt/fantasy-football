@@ -28,7 +28,7 @@ const Home = ({ sleepers }) => {
 	);
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	await connectDB();
 
 	const sleepersResult = await Player.find({ sleeper: true });
