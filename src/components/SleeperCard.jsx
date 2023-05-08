@@ -38,7 +38,7 @@ const SleeperCard = ({ player }) => {
 				<Link
 					className={styles.sleeperLink}
 					href={`/players/${player._id}`}>
-					View
+					view
 				</Link>
 			</div>
 		</div>
