@@ -51,7 +51,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
 				/>
 				<meta
 					name='theme-color'
-					content='#ffffff'></meta>
+					content='#f5f5f5'></meta>
 			</Head>
 			<Component {...pageProps} />
 		</SessionProvider>
