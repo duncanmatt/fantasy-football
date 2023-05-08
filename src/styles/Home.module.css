@@ -139,7 +139,7 @@
 	letter-spacing: -0.01em;
 	padding: 1rem;
 	font-family: var(--font-open);
-	color: #000;
+	color: #121212;
 }
 
 .thumbnailWrapper {
@@ -202,6 +202,10 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 0.1rem;
+	color: #121212;
+	font-family: var(--font-open);
+	font-weight: 600;
+	font-size: 1.2rem;
 }
 
 .sleeperBody {
@@ -267,12 +271,12 @@
 	.title {
 		font-size: 1.24rem;
 	}
+	.sleeperUpper {
+		font-size: 1.325rem;
+	}
 }
 
 @media (max-width: 600px) {
-	.sleeperUpper {
-		font-size: 1.5rem;
-	}
 	.tradesHeader {
 		font-size: 14px;
 	}

@@ -11,8 +11,8 @@ const SleeperCard = ({ player }) => {
 					<span className={styles.sleeperPos}>{player.position}</span>
 					<Image
 						className={styles.sleeperLogo}
-						width={40}
-						height={40}
+						width={35}
+						height={35}
 						src={player.team_logo}
 						alt={player.team}
 					/>

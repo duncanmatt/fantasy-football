@@ -25,21 +25,16 @@ function MobileNav() {
 							<Image
 								src={logo}
 								alt='Offseason Adviser'
-								width={50}
-								height={50}
+								width={35}
+								height={35}
 							/>
 						</Link>
 						<span className={styles.actions}>
-						<Link
-							href='/Profile'
-							className={styles.login}>
-							<UserOutlined />
-						</Link>
-						<CloseOutlined onClick={showMenu} />
+							<CloseOutlined onClick={showMenu} />
 						</span>
 					</div>
 					<nav className={styles.menu}>
-						<span className={styles.mobileLinks}>
+						<div className={styles.mobileLinks}>
 							<Link href='/QBs'>
 								QUARTER BACKS <RightOutlined />
 							</Link>
@@ -56,7 +51,19 @@ function MobileNav() {
 								TIGHT ENDS <RightOutlined />
 							</Link>
 							<Divider />
-						</span>
+							<span className={styles.user}>
+								<Link
+									href='/Profile'
+									className={styles.login}>
+									Login
+								</Link>
+								<Link
+									href='/Register'
+									className={styles.create}>
+									Create Account
+								</Link>
+							</span>
+						</div>
 					</nav>
 				</>
 			) : (
@@ -65,16 +72,11 @@ function MobileNav() {
 						<Image
 							src={logo}
 							alt='Offseason Adviser'
-							width={40}
-							height={40}
+							width={35}
+							height={35}
 						/>
 					</Link>
 					<span className={styles.actions}>
-						<Link
-							href='/Profile'
-							className={styles.login}>
-							<UserOutlined />
-						</Link>
 						<MenuOutlined onClick={showMenu} />
 					</span>
 				</div>
