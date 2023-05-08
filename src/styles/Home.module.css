@@ -119,16 +119,16 @@
 	word-wrap: break-word;
 	border-radius: 1.25rem;
 	background-color: #fff;
-	box-shadow: -5px -10px 15px rgba(255, 255, 255, 0.5),
-		5px 10px 15px rgba(68, 68, 68, 0.11);
+	box-shadow: -5px -10px 5px rgba(255, 255, 255, 0.5),
+		5px 10px 5px rgba(68, 68, 68, 0.14);
 	z-index: 1;
 	-webkit-transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .article:hover {
-	box-shadow: inset -5px -10px 15px rgba(255, 255, 255, 0.5),
-		inset 5px 10px 15px rgba(68, 68, 68, 0.11);
+	box-shadow: inset -5px -10px 5px rgba(255, 255, 255, 0.5),
+		inset 5px 10px 5px rgba(68, 68, 68, 0.11);
 	transform: translateY(-0.25rem);
 }
 
