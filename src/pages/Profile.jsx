@@ -16,11 +16,7 @@ const Profile = () => {
 		}
 	}, [session, router]);
 
-	if (typeof window === undefined) return null;
-
-	if (!session) {
-		return <Layout>ACCESS DENIED</Layout>;
-	}
+	if (typeof window === undefined || !session) return null;
 
 	return (
 		<Layout>

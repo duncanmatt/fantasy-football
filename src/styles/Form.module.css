@@ -60,20 +60,27 @@
 }
 
 .btn {
-	padding: 0 1.175rem;
 	background-color: #1677ff;
-	border: 1px solid #f5f5f5;
-	border-radius: 1.71875rem;
+	width: 5rem;
+	border-radius: 0.875rem;
 	color: #f5f5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
 	font-size: 1rem;
-	font-weight: 700;
 	text-transform: uppercase;
+	letter-spacing: 0.1125em;
+	font-weight: 600;
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 4px;
+	border: 2px solid rgba(0, 0, 0, 0);
+	font-family: var(--font-open);
 }
 
 form[name='normal_login'] .btn {
-	height: 32px;
+	height: 2.25rem;
 	text-align: center;
-	line-height: 1rem;
+	line-height: 1;
 }
 
 form[name='register'] .btn {
@@ -85,9 +92,8 @@ form[name='register'] .btn {
 }
 
 .btn:hover {
-	color: #1677ff;
-	background-color: #f5f5f5;
-	border: 1px solid #1677ff;
+	background-color: #4592ff;
+	color: #f5f5f5;
 }
 
 .link:hover {
