@@ -65,8 +65,8 @@ function MobileNav() {
 						<Image
 							src={logo}
 							alt='Offseason Adviser'
-							width={50}
-							height={50}
+							width={40}
+							height={40}
 						/>
 					</Link>
 					<span className={styles.actions}>
@@ -96,8 +96,8 @@ const Nav = () => {
 							<Image
 								src={logo}
 								alt='Offseason Adviser'
-								width={50}
-								height={50}
+								width={40}
+								height={40}
 							/>
 						</Link>
 						<nav className={styles.links}>
