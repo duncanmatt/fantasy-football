@@ -35,33 +35,44 @@ function MobileNav() {
 					</div>
 					<nav className={styles.menu}>
 						<div className={styles.mobileLinks}>
-							<Link href='/QBs'>
+							<Link
+								className={styles.pos}
+								href='/QBs'>
 								QUARTER BACKS <RightOutlined />
 							</Link>
 							<Divider />
-							<Link href='/RBs'>
+							<Link
+								className={styles.pos}
+								href='/RBs'>
 								RUNNING BACKS <RightOutlined />
 							</Link>
 							<Divider />
-							<Link href='/WRs'>
+							<Link
+								className={styles.pos}
+								href='/WRs'>
 								WIDE RECEIVERS <RightOutlined />
 							</Link>
 							<Divider />
-							<Link href='/TEs'>
+							<Link
+								className={styles.pos}
+								href='/TEs'>
 								TIGHT ENDS <RightOutlined />
 							</Link>
 							<Divider />
-							<span className={styles.user}>
-								<Link
-									href='/Profile'
-									className={styles.login}>
-									Login
-								</Link>
-								<Link
-									href='/Register'
-									className={styles.create}>
-									Create Account
-								</Link>
+							<span className={styles.accountWrapper}>
+								<h4>Account</h4>
+								<span className={styles.account}>
+									<Link
+										href='/Profile'
+										className={styles.login}>
+										Login
+									</Link>
+									<Link
+										href='/Register'
+										className={styles.create}>
+										Create Account
+									</Link>
+								</span>
 							</span>
 						</div>
 					</nav>

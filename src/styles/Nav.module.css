@@ -79,7 +79,7 @@
 	gap: 0.65rem;
 }
 
-.menu a:hover {
+.pos:hover {
 	color: #1677ff;
 }
 
@@ -103,17 +103,54 @@
 	background-color: rgb(217, 217, 217);
 }
 
-.account {
+.accountWrapper {
 	padding-block: 1rem;
+}
+
+.accountWrapper > h4 {
+	margin-bottom: 1.875rem;
+	font-family: var(--font-rama);
+	font-weight: 500;
+	font-size: 1.875rem;
+}
+
+.account {
+	display: flex;
+	gap: 1.275rem;
+	flex-direction: row;
+	flex-flow: row wrap;
 }
 
 .account > a {
 	height: 3rem;
 	border-radius: 0.875rem;
+	color: #f9f9f9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: -0.01em;
+	font-weight: 500;
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 4px;
+	border: 2px solid rgba(0, 0, 0, 0);
 }
 
 .login {
 	background-color: #121212;
+}
+
+.login:hover {
+	background-color: rgba(68, 68, 68, 1);
+}
+
+.create {
+	background-color: #1677ff;
+}
+
+.create:hover {
+	background-color: #4592ff;
 }
 
 @media (min-width: 800px) {
