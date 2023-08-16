@@ -35,7 +35,7 @@
 }
 
 .links a:hover {
-	color: #1677ff;
+	text-decoration: underline;
 }
 
 .menu {
