@@ -46,7 +46,7 @@ header {
   border-bottom: 1px solid rgb(217, 217, 217);
   width: 100%;
   z-index: 20;
-  background-color: rgba(245, 245, 245, 0.95);
+  background-color: rgba(245, 245, 245, 0.24);
   backdrop-filter: blur(136px);
   position: fixed;
   top: 0;
