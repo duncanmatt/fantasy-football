@@ -209,7 +209,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(50px, auto) minmax(205px, auto) minmax(0, 1fr);
-  background-color: #dfdfdf;
+  background-color: #e6e6e6;
   padding-block: 0 1.25rem;
   border-radius: 0.9rem;
   position: relative;
@@ -227,6 +227,7 @@
   font-size: 1.125rem;
   padding-inline: 1rem 0;
   padding-block: 0.525rem 0;
+  line-height: 1.5rem;
 }
 
 .sleeperBody {
@@ -240,7 +241,7 @@
 
 .sleeperHeadshotWrapper {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 0.9/1;
   z-index: 0;
 }
 
@@ -248,8 +249,8 @@
   object-fit: cover;
   overflow: hidden;
   z-index: 0;
-  /* border-radius: 60%; */
-  /* background-color: rgba(255, 255, 255, 0.35); */
+  background-clip: border-box;
+  filter: drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.45));
 }
 
 .sleeperOutlook {
@@ -257,6 +258,8 @@
   align-self: center;
   text-align: center;
   padding: 1rem;
+  color: #555555;
+  font-weight: 200;
 }
 
 .sleeperLinkWrapper {
