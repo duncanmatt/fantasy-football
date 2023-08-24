@@ -61,11 +61,12 @@
 
 .actions {
   color: #121212;
-  font-size: 1.523rem;
+  font-size: 1.65rem;
+  line-height: 36px;
   display: flex;
   flex-flow: row nowrap;
-  height: 100%;
-  align-items: center;
+  flex-grow: 0;
+  padding-top: 6px;
 }
 
 .pos::selection {
@@ -74,6 +75,17 @@
 
 .pos:hover {
   color: #1677ff;
+}
+
+.pos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px transparent;
+}
+
+.pos:not(:last-of-type) {
+  margin-bottom: 1.36rem;
 }
 
 .mobileLinks {
@@ -90,6 +102,7 @@
   letter-spacing: 1px;
   font-family: var(--font-rama);
   font-weight: 500;
+  height: 2rem;
 }
 
 .mobileLinks > div {

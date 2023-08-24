@@ -31,15 +31,12 @@ function MobileNav() {
               <Link className={styles.pos} href='/QBs'>
                 QUARTER BACKS <RightOutlined />
               </Link>
-              <Divider />
               <Link className={styles.pos} href='/RBs'>
                 RUNNING BACKS <RightOutlined />
               </Link>
-              <Divider />
               <Link className={styles.pos} href='/WRs'>
                 WIDE RECEIVERS <RightOutlined />
               </Link>
-              <Divider />
               <Link className={styles.pos} href='/TEs'>
                 TIGHT ENDS <RightOutlined />
               </Link>
