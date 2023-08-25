@@ -20,7 +20,7 @@ function MobileNav() {
     <div className={styles.mobileWrapper}>
       {menuOpen ? (
         <>
-          <div style={{ backgroundColor: '#f9f9f9' }} className={styles.mobile}>
+          <div style={{ backgroundColor: '#f9f9f' }} className={styles.mobile}>
             <span></span>
             <span className={styles.actions}>
               <CloseOutlined onClick={showMenu} />
