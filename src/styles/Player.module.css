@@ -70,15 +70,17 @@
 .newsHead {
   font-size: 2rem;
   padding-inline: 1rem;
-  padding-block-start: 1rem;
+  line-height: 2rem;
+  margin-block-start: 3rem;
   color: #1671ff;
   font-family: var(--font-rama);
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-weight: 200;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
 }
 
 .articles {
-  padding-block: 2.5rem;
+  padding-block: 2rem;
   padding-inline: 1rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
