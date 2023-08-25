@@ -61,12 +61,11 @@
 
 .actions {
   color: #121212;
-  font-size: 1.65rem;
-  line-height: 36px;
+  font-size: 1.5rem;
   display: flex;
   flex-flow: row nowrap;
   flex-grow: 0;
-  padding-top: 6px;
+  padding-top: 8px;
 }
 
 .pos::selection {
