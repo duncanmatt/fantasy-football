@@ -28,19 +28,18 @@
   flex-direction: column;
 }
 
-.transactions {
-  position: fixed;
-  top: 50px;
-  z-index: 19;
-}
-
 .transactions[data-action='down'] {
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
+  opacity: 0;
   display: flex;
 }
 
 .transactions {
+  transition: opacity 150ms linear;
+  position: fixed;
+  top: 50px;
+  z-index: 2;
   display: grid;
   grid-template-rows: 50px;
   grid-template-columns: auto auto;
@@ -51,7 +50,7 @@
 .transactionsSlide {
   display: flex;
   text-size-adjust: 100%;
-  z-index: 0;
+  z-index: 1;
   align-content: center;
   min-width: max-content;
   animation: slider 40s linear 0s infinite;
