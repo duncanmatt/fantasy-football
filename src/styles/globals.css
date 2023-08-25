@@ -46,9 +46,11 @@ a {
 header {
   width: 100%;
   z-index: 20;
-  background-color: rgba(245, 245, 245, 0.24);
-  backdrop-filter: blur(150px);
-  filter: saturate(1.8);
+  /* background-color: rgba(245, 245, 245, 0.48);
+  backdrop-filter: blur(148px);
+  filter: saturate(0.48); */
+  background-color: #f5f5f5;
+  box-shadow: rgb(217, 217, 217) 0px 1px 1px 0px;
   position: fixed;
   top: 0;
   bottom: auto;

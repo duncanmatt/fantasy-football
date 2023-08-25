@@ -40,7 +40,8 @@
 }
 
 .transactions {
-  transition: opacity 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: transform 300ms ease-in,
+    opacity 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
   position: fixed;
   top: 50px;
   z-index: 2;
