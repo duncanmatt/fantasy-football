@@ -44,7 +44,6 @@ a {
 }
 
 header {
-  border-bottom: 1px solid rgb(217, 217, 217);
   width: 100%;
   z-index: 20;
   background-color: rgba(252, 252, 252, 0.24);

@@ -35,15 +35,19 @@
   display: flex;
 }
 
+.transactions[data-action='up'] {
+  opacity: 1;
+}
+
 .transactions {
-  transition: opacity 150ms linear;
+  transition: opacity 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
   position: fixed;
   top: 50px;
   z-index: 2;
   display: grid;
   grid-template-rows: 50px;
   grid-template-columns: auto auto;
-  border-bottom: 1px solid rgb(217, 217, 217);
+  box-shadow: rgb(217, 217, 217) 0px 1px 1px 0px;
   overflow: hidden;
   background-color: #fff;
 }
@@ -71,6 +75,7 @@
   background-color: #1677ff;
   letter-spacing: 0.01rem;
   padding-inline: 0.5rem;
+  border-bottom: 1px solid #1677ff;
   color: #fff;
   z-index: 100;
   opacity: 1;
