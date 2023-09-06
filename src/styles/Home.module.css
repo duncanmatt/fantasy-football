@@ -214,7 +214,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(50px, auto) minmax(205px, auto) minmax(0, 1fr);
-  background-color: #e6e6e6;
+  background-color: #fff;
   padding-block: 0 1.25rem;
   border-radius: 0.9rem;
   position: relative;
@@ -237,6 +237,9 @@
 
 .sleeperBody {
   z-index: 0;
+  margin: 0.895rem;
+  /* border-radius: 1.875rem;
+  background-color: #696969; */
 }
 
 .sleeperPos {
@@ -255,7 +258,9 @@
   overflow: hidden;
   z-index: 0;
   background-clip: border-box;
-  filter: drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.45));
+  /* filter: drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.45)); */
+  border-radius: 50%;
+  background-color: #f2f2f2;
 }
 
 .sleeperOutlook {
