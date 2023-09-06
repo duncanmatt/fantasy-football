@@ -84,13 +84,13 @@ header::selection {
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1800px) {
   .page-container {
-    max-width: 1600px;
+    max-width: 1800px;
     margin-inline: auto;
   }
   .header-content {
-    max-width: 1600px;
+    max-width: 1800px;
     margin-inline: auto;
   }
 }

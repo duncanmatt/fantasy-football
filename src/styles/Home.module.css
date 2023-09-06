@@ -422,9 +422,9 @@
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1920px) {
   .transactions {
-    max-width: 1600px;
+    max-width: 1920px;
     margin-inline: auto;
   }
 }
