@@ -178,3 +178,10 @@
     display: grid;
   }
 }
+
+/* @media (min-width: 1600px) {
+  .desktop {
+    width: 1600px;
+    margin-inline: auto;
+  }
+} */

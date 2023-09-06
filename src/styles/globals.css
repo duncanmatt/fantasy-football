@@ -50,7 +50,6 @@ header {
   backdrop-filter: blur(148px);
   filter: saturate(0.48); */
   background-color: #f5f5f5;
-  box-shadow: rgb(217, 217, 217) 0px 1px 1px 0px;
   position: fixed;
   top: 0;
   bottom: auto;
@@ -59,6 +58,10 @@ header {
 header::selection {
   background: none;
   color: none;
+}
+
+.header-content {
+  box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
 }
 
 .ant-spin-container {
@@ -81,16 +84,13 @@ header::selection {
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .page-container {
-    max-width: 1400px;
+    max-width: 1600px;
     margin-inline: auto;
   }
-}
-
-@media (min-width: 1400px) {
-  .header-wrapper {
-    max-width: 1400px;
+  .header-content {
+    max-width: 1600px;
     margin-inline: auto;
   }
 }
