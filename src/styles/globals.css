@@ -6,9 +6,23 @@
   --font-open: 'Open Sans', sans-serif;
   --font-pro: 'Source Sans Pro', sans-serif;
   --font-rama: 'Ramabhadra', sans-serif;
-  --font-color: 68, 68, 68;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --font-color: #0b0c0c;
+  --font-color-sec: #505a5f;
+  --link-color: #1d70b8;
+  --link-color-hover: #003078;
+  --link-visited-color: #4c2c92;
+  --border-color: #b1b4b6;
+  --focus-color: #ffdd00;
+  --warning-color: #d4351c;
+  --success-color: #00703c;
+  --blue: #1d70b8;
+  --dark-blue: #003078;
+  --light-blue: #5694ca;
+  --black: #0b0c0c;
+  --dark-grey: #505a5f;
+  --mid-grey: #b1b4b6;
+  --light-grey: #f3f2f1;
+  --white: #fff;
 }
 
 * {
@@ -28,7 +42,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #f5f5f5;
+  background-color: #f4f3f1;
   font-family: var(--font-pro);
 }
 
@@ -49,7 +63,7 @@ header {
   /* background-color: rgba(245, 245, 245, 0.48);
   backdrop-filter: blur(148px);
   filter: saturate(0.48); */
-  background-color: #f5f5f5;
+  background-color: #f4f3f1;
   position: fixed;
   top: 0;
   bottom: auto;

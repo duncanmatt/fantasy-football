@@ -362,9 +362,6 @@
     gap: 1.75rem;
     padding-block: 2rem;
   }
-  .sleepersWrapper {
-    padding-inline: 3rem;
-  }
   .news {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 3rem;
@@ -401,20 +398,19 @@
   .sleepers {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, minmax(0, 0.3fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;
     row-gap: 3rem;
     column-gap: 2rem;
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1420px) {
   .sleepers {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 0.25fr));
     grid-template-rows: auto;
     row-gap: 5rem;
-    column-gap: 3rem;
   }
   .sleeperOutlook {
     font-size: 1.2rem;
