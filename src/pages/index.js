@@ -1,11 +1,11 @@
-import connectDB from "../../lib/connectDB";
-import Player from "../../models/Player";
-import Transactions from "../components/Transactions";
-import News from "../components/News";
-import Sleepers from "../components/Sleepers";
-import Layout from "../components/Layout";
-import { Divider, Spin } from "antd";
-import styles from "../styles/Home.module.css";
+import connectDB from '../../lib/connectDB';
+import Player from '../../models/Player';
+import Transactions from '../components/Transactions';
+import News from '../components/News';
+import Sleepers from '../components/Sleepers';
+import Layout from '../components/Layout';
+import { Divider, Skeleton } from 'antd';
+import styles from '../styles/Home.module.css';
 
 const Home = ({ sleepers }) => {
   return (
@@ -18,12 +18,12 @@ const Home = ({ sleepers }) => {
               Latest <span className={styles.dNews}>News</span>
             </div>
             <News />
-            <Divider style={{ backgroundColor: "rgb(217,217,217" }} />
+            <Divider style={{ backgroundColor: 'rgb(217,217,217' }} />
           </div>
         </section>
         <div className={styles.sleepersWrapper}>
           <div className={styles.heading}>Sleepers</div>
-          {sleepers ? <Sleepers players={sleepers} /> : <Spin />}
+          {sleepers ? <Sleepers players={sleepers} /> : <Skeleton />}
         </div>
       </main>
     </Layout>
