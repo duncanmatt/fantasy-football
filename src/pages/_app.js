@@ -34,7 +34,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
         <meta name='theme-color' content='#f5f5f5'></meta>
       </Head>
       <NextTopLoader
-        color='#1677ff'
+        color='#1d70b8'
         shadow={false}
         initialPosition={0.08}
         crawlSpeed={200}

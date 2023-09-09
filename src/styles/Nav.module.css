@@ -5,7 +5,7 @@
   align-items: center;
   padding-inline: 1rem;
   height: 50px;
-  color: #121212;
+  color: var(--black);
 }
 
 .desktop {
@@ -15,7 +15,7 @@
   align-items: center;
   padding-inline: 1rem;
   justify-content: space-between;
-  color: #121212;
+  color: var(--black);
 }
 
 .title {
@@ -46,8 +46,8 @@
 .menu {
   padding-inline: 1rem;
   padding-block: 0.75rem 0.5rem;
-  background-color: #f9f9f9;
-  color: #121212;
+  background-color: var(--white);
+  color: var(--black);
   display: flex;
   flex-direction: column;
   align-content: flex-end;
@@ -60,7 +60,7 @@
 }
 
 .actions {
-  color: #121212;
+  color: var(--black);
   font-size: 1.5rem;
   display: flex;
   flex-flow: row nowrap;
@@ -73,7 +73,7 @@
 }
 
 .pos:hover {
-  color: #1677ff;
+  color: var(--blue);
 }
 
 .pos {
@@ -109,7 +109,7 @@
 }
 
 .accountWrapper {
-  padding-block: 1rem;
+  padding-top: 2rem;
 }
 
 .accountWrapper::selection {
@@ -141,7 +141,7 @@
 .account > a {
   height: 3rem;
   border-radius: 0.875rem;
-  color: #f9f9f9;
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +155,7 @@
 }
 
 .login {
-  background-color: #121212;
+  background-color: var(--black);
 }
 
 .login:hover {
@@ -163,7 +163,7 @@
 }
 
 .create {
-  background-color: #1677ff;
+  background-color: var(--blue);
 }
 
 .create:hover {
