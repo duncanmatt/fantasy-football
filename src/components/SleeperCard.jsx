@@ -8,24 +8,23 @@ const SleeperCard = ({ player }) => {
       <div
         style={{
           display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'column',
           position: 'absolute',
-          right: '1rem',
-          top: '0.525rem',
+          right: '0',
+          top: '1.45rem',
         }}
       >
-        <span className={styles.sleeperPos}>{player.position}</span>
-        <Image
-          className={styles.sleeperLogo}
-          width={35}
-          height={35}
-          src={player.team_logo}
-          alt={player.team}
-        />
+        <span className={styles.sleeperLogoWrapper}>
+          <Image
+            className={styles.sleeperLogo}
+            fill
+            src={player.team_logo}
+            alt={player.team}
+          />
+        </span>
       </div>
       <div className={styles.sleeperUpper}>
-        <h4>{player.name}</h4>
+        <h4 className={styles.sleeperName}>{player.name}</h4>
+        <span className={styles.sleeperPos}>{player.position}</span>
       </div>
       <div className={styles.sleeperBody}>
         <div className={styles.sleeperHeadshotWrapper}>

@@ -213,57 +213,60 @@
 .sleeper {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: minmax(50px, auto) minmax(205px, auto) minmax(0, 1fr);
+  grid-template-rows: minmax(50px, auto) min-content minmax(0, 1fr);
   background-color: #fff;
   padding-block: 0 1.25rem;
   border-radius: 0.9rem;
   position: relative;
   box-shadow: 0px 3px 1px -1px rgba(0, 0, 0, 0.05),
     0px 4px 8px 4px rgba(0, 0, 0, 0.05);
-  /* filter:  drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05)); */
 }
 
 .sleeperUpper {
-  padding-block: 3px;
   display: flex;
   flex-basis: 100%;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  color: #121212;
   font-family: var(--font-open);
   font-weight: 600;
   font-size: 1.125rem;
-  padding-inline: 1rem 0;
+  padding-inline: 1rem;
   padding-block: 0.525rem 0;
   line-height: 1.5rem;
 }
 
 .sleeperBody {
   z-index: 0;
-  margin: 0.895rem;
-  /* border-radius: 1.875rem;
-  background-color: #696969; */
+  /* margin: 0.895rem; */
+}
+
+.sleeperLogoWrapper {
+  position: relative;
+  height: 9.575rem;
+  width: 9.575rem;
+}
+
+.sleeperLogo {
+  z-index: 0;
 }
 
 .sleeperPos {
   font-weight: 590;
-  color: #555555;
+  color: var(--font-color-sec);
 }
 
 .sleeperHeadshotWrapper {
   position: relative;
-  aspect-ratio: 0.9/1;
-  z-index: 0;
+  aspect-ratio: 1;
+  z-index: -1;
 }
 
 .sleeperHeadshot {
   object-fit: cover;
   overflow: hidden;
-  z-index: 0;
-  background-clip: border-box;
-  /* filter: drop-shadow(0 -1px 3px rgba(0, 0, 0, 0.45)); */
-  border-radius: 50%;
-  background-color: var(--light-grey);
+  z-index: -1;
+  background-clip: padding-box;
 }
 
 .sleeperOutlook {
