@@ -19,6 +19,8 @@ const SleeperCard = ({ player }) => {
             fill
             src={player.team_logo}
             alt={player.team}
+            placeholder='blur'
+            blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
           />
         </span>
       </div>
