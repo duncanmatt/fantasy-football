@@ -60,9 +60,6 @@ a {
 header {
   width: 100%;
   z-index: 20;
-  /* background-color: rgba(245, 245, 245, 0.48);
-  backdrop-filter: blur(148px);
-  filter: saturate(0.48); */
   background-color: #f4f3f1;
   position: fixed;
   top: 0;

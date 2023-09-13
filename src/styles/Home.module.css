@@ -84,11 +84,6 @@
   opacity: 1;
 }
 
-/* .transactions[data-action='up'] > .tradesHeader {
-  transition: transform 300ms ease-in-out,
-    opacity 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-} */
-
 .tradeBody {
   display: flex;
   flex-direction: row;
@@ -124,7 +119,7 @@
   text-transform: uppercase;
   font-family: var(--font-rama);
   line-height: 100px;
-  color: var(--white);
+  color: #f4f3f1;
   letter-spacing: 0.1em;
   -webkit-text-stroke: 2px;
   -webkit-text-stroke-color: var(--blue);
@@ -218,10 +213,11 @@
   padding-block: 3rem 1rem;
 }
 
+/* make name and position absolute and attach to sleeperBody then remove 50px row */
 .sleeper {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: minmax(50px, auto) min-content minmax(0, 1fr);
+  grid-template-rows: min-content 30px minmax(0, 1fr);
   background-color: #fff;
   padding-block: 0 1.25rem;
   border-radius: 0.9rem;
@@ -230,7 +226,17 @@
     0px 4px 8px 4px rgba(0, 0, 0, 0.05);
 }
 
+.sleeperUpperWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 50px;
+  z-index: 1;
+}
+
 .sleeperUpper {
+  position: relative;
   display: flex;
   flex-basis: 100%;
   flex-direction: row;
@@ -241,22 +247,30 @@
   font-size: 1.125rem;
   padding-inline: 1rem;
   padding-block: 0.525rem 0;
-  line-height: 1.5rem;
+  line-height: 1rem;
 }
 
 .sleeperBody {
   z-index: 0;
-  /* margin: 0.895rem; */
+  position: relative;
 }
 
 .sleeperLogoWrapper {
-  position: relative;
-  height: 9.575rem;
-  width: 9.575rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 
 .sleeperLogo {
-  z-index: 0;
+  z-index: -1;
+  object-fit: cover;
+  overflow: hidden;
+  background-clip: border-box;
 }
 
 .sleeperPos {
@@ -267,26 +281,62 @@
 .sleeperHeadshotWrapper {
   position: relative;
   aspect-ratio: 1;
-  z-index: -1;
+  z-index: 0;
 }
 
 .sleeperHeadshot {
   object-fit: cover;
   overflow: hidden;
-  z-index: -1;
+  z-index: 0;
   background-clip: padding-box;
+}
+
+.sleeperDetails {
+  display: flex;
+  width: 100%;
+}
+
+.sleeperDetailsInner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-inline: auto;
+  padding-block: 0.45rem;
+}
+
+.sleeperDetailsTeam {
+  width: 100%;
+  padding-inline: 0 0.5rem;
+}
+
+.sleeperDetailsNumber {
+  padding-inline: 0.5rem 0;
+  border-left: 1px solid var(--font-color-sec);
 }
 
 .sleeperOutlook {
   display: flex;
-  align-self: center;
-  text-align: center;
-  padding: 1rem;
+  align-self: flex-start;
+  flex-direction: column;
+  /* text-align: left; */
+  padding-inline: 0.5rem;
+}
+
+.sleeperOutlookHeader {
+  font-size: 1.65rem;
+  text-transform: uppercase;
+  padding-block: 0.5rem;
+}
+
+.sleeperOutlookDesc {
   color: var(--font-color-sec);
+  font-size: 1rem;
 }
 
 .sleeperLinkWrapper {
   padding-inline: 1rem;
+  margin-top: 0.875rem;
   height: 2.65rem;
 }
 
