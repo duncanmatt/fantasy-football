@@ -33,12 +33,7 @@ const SleeperCard = ({ player }) => {
           />
         </div>
       </div>
-      <div className={styles.sleeperDetails}>
-        <div className={styles.sleeperDetailsInner}>
-          <span className={styles.sleeperDetailsTeam}>{player.team}</span>
-          <span className={styles.sleeperDetailsNumber}>#{player.num}</span>
-        </div>
-      </div>
+
       <div className={styles.sleeperOutlook}>
         <span className={styles.sleeperOutlookHeader}>
           <h6>2023 outlook</h6>
