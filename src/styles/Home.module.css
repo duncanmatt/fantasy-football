@@ -319,8 +319,7 @@
   display: flex;
   align-self: flex-start;
   flex-direction: column;
-  /* text-align: left; */
-  padding-inline: 0.5rem;
+  padding-inline: 1rem;
 }
 
 .sleeperOutlookHeader {
@@ -349,11 +348,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.895rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.025em;
   border: 2px solid transparent;
-  font-family: var(--font-open);
+  font-family: var(--font-pro);
 }
 
 .sleeperLink:hover {
