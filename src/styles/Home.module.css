@@ -294,15 +294,17 @@
 .sleeperDetails {
   display: flex;
   width: 100%;
+  align-items: center;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--mid-grey);
 }
 
 .sleeperDetailsInner {
   display: flex;
   flex-direction: row;
-  align-items: center;
   flex-wrap: nowrap;
   margin-inline: auto;
-  padding-block: 0.45rem;
+  /* padding-block: 0.45rem; */
 }
 
 .sleeperDetailsTeam {
@@ -312,7 +314,7 @@
 
 .sleeperDetailsNumber {
   padding-inline: 0.5rem 0;
-  border-left: 1px solid var(--font-color-sec);
+  /* border-left: 1px solid var(--font-color-sec); */
 }
 
 .sleeperOutlook {
