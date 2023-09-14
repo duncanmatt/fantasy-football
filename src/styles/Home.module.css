@@ -243,11 +243,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-family: var(--font-open);
-  font-weight: 600;
-  font-size: 1.125rem;
   padding-inline: 1rem;
   padding-block: 0.525rem 0;
   line-height: 1rem;
+  align-items: center;
 }
 
 .sleeperBody {
@@ -255,26 +254,13 @@
   position: relative;
 }
 
-.sleeperLogoWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: auto;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
-
-.sleeperLogo {
-  z-index: -1;
-  object-fit: cover;
-  overflow: hidden;
-  background-clip: border-box;
+.sleeperName {
+  font-size: 1.25rem;
 }
 
 .sleeperPos {
-  font-weight: 590;
+  font-weight: 200;
+  font-size: 1.25rem;
   color: var(--font-color-sec);
 }
 
@@ -304,7 +290,8 @@
   flex-direction: row;
   flex-wrap: nowrap;
   margin-inline: auto;
-  /* padding-block: 0.45rem; */
+  font-size: 1.25rem;
+  font-family: var(--font-open);
 }
 
 .sleeperDetailsTeam {
@@ -314,7 +301,6 @@
 
 .sleeperDetailsNumber {
   padding-inline: 0.5rem 0;
-  /* border-left: 1px solid var(--font-color-sec); */
 }
 
 .sleeperOutlook {
@@ -327,7 +313,7 @@
 .sleeperOutlookHeader {
   font-size: 1.65rem;
   text-transform: uppercase;
-  padding-block: 0.5rem;
+  padding-block: 1rem 0.5rem;
 }
 
 .sleeperOutlookDesc {

@@ -5,14 +5,6 @@ import styles from '../styles/Home.module.css';
 const SleeperCard = ({ player }) => {
   return (
     <div className={styles.sleeper}>
-      <div
-        style={{
-          display: 'flex',
-          position: 'absolute',
-          right: '0',
-          top: '1.45rem',
-        }}
-      ></div>
       <div className={styles.sleeperBody}>
         <div className={styles.sleeperUpper}>
           <h4 className={styles.sleeperName}>{player.name}</h4>
