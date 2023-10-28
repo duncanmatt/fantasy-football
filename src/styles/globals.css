@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ramabhadra&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ramabhadra&family=Source+Sans+Pro&family=Assistant&display=swap');
 
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-open: 'Open Sans', sans-serif;
-  --font-pro: 'Source Sans Pro', sans-serif;
+  --font-open: 'Assistant', sans-serif;
+  --font-pro: 'Assistant', sans-serif;
   --font-rama: 'Ramabhadra', sans-serif;
   --font-color: #0b0c0c;
   --font-color-sec: #505a5f;
