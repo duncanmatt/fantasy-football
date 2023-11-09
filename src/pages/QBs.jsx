@@ -11,7 +11,9 @@ const QBs = ({ players }) => {
       title: 'Name',
       dataIndex: 'name',
       render: (text, record) => (
-        <Link href={`/players/${record._id}`}>{text}</Link>
+        <Link href={{ pathname: `/players/${record._id}`, query: 'qb' }}>
+          {text}
+        </Link>
       ),
     },
     {
@@ -21,6 +23,8 @@ const QBs = ({ players }) => {
     {
       title: 'Pts',
       dataIndex: 'fpts',
+      defaultSortOrder: 'descend',
+      sorter: { compare: (a, b) => a.pass_tds - b.pass_tds },
     },
     {
       title: 'Passing',
@@ -28,25 +32,38 @@ const QBs = ({ players }) => {
         {
           title: 'Comps',
           dataIndex: 'completions',
+          sorter: { compare: (a, b) => a.completions - b.completions },
         },
         {
           title: 'Atts',
           dataIndex: 'pass_atts',
+          sorter: { compare: (a, b) => a.pass_atts - b.pass_atts },
         },
         {
           title: 'Yds',
           dataIndex: 'pass_yds',
+          sorter: { compare: (a, b) => a.pass_yds - b.pass_yds },
         },
-        { title: 'Avg Comp', dataIndex: 'yds_per_pass' },
+        {
+          title: 'Avg Comp',
+          dataIndex: 'yds_per_pass',
+          sorter: { compare: (a, b) => a.yds_per_pass - b.yds_per_pass },
+        },
         {
           title: 'TDs',
           dataIndex: 'pass_tds',
+          sorter: { compare: (a, b) => a.pass_tds - b.pass_tds },
         },
         {
           title: 'INTs',
           dataIndex: 'interceptions',
+          sorter: { compare: (a, b) => a.interceptions - b.interceptions },
         },
-        { title: 'Sacks', dataIndex: 'sacks' },
+        {
+          title: 'Sacks',
+          dataIndex: 'sacks',
+          sorter: { compare: (a, b) => a.sacks - b.sacks },
+        },
       ],
     },
     {
@@ -55,18 +72,25 @@ const QBs = ({ players }) => {
         {
           title: 'Yds',
           dataIndex: 'rush_yds',
+          sorter: { compare: (a, b) => a.rush_yds - b.rush_yds },
         },
         {
           title: 'Atts',
           dataIndex: 'rush_atts',
+          sorter: { compare: (a, b) => a.rush_atts - b.rush_atts },
         },
         {
           title: 'TDs',
           dataIndex: 'rush_tds',
+          sorter: { compare: (a, b) => a.rush_tds - b.rush_tds },
         },
       ],
     },
-    { title: 'Fums', dataIndex: 'fumbles' },
+    {
+      title: 'Fums',
+      dataIndex: 'fumbles',
+      sorter: { compare: (a, b) => a.fumbles - b.fumbles },
+    },
   ];
 
   return (

@@ -9,6 +9,9 @@ const PlayerSchema = mongoose.Schema(
     imgUrl: {
       type: String,
     },
+    imgurl: {
+      type: String,
+    },
     position: {
       type: String,
       required: [true, 'Please add a position'],

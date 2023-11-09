@@ -21,6 +21,8 @@ const RBs = ({ players }) => {
     {
       title: 'Pts',
       dataIndex: 'fpts',
+      sorter: { compare: (a, b) => a.fpts - b.fpts },
+      defaultSortOrder: 'descend',
     },
     {
       title: 'Rushing',
@@ -28,19 +30,22 @@ const RBs = ({ players }) => {
         {
           title: 'Yds',
           dataIndex: 'rush_yds',
+          sorter: { compare: (a, b) => a.rush_yds - b.rush_yds },
         },
         {
           title: 'Atts',
           dataIndex: 'rush_atts',
+          sorter: { compare: (a, b) => a.rush_atts - b.rush_atts },
         },
         {
           title: '20+',
           dataIndex: 'rush_over_20',
+          sorter: { compare: (a, b) => a.rush_over_20 - b.rush_over_20 },
         },
-        { title: 'Long', dataIndex: 'longest_rush' },
         {
           title: 'TDs',
           dataIndex: 'rush_tds',
+          sorter: { compare: (a, b) => a.rush_tds - b.rush_tds },
         },
       ],
     },
@@ -50,38 +55,41 @@ const RBs = ({ players }) => {
         {
           title: 'Receptions',
           dataIndex: 'receptions',
+          sorter: { compare: (a, b) => a.receptions - b.receptions },
         },
         {
           title: 'Targets',
           dataIndex: 'targets',
+          sorter: { compare: (a, b) => a.targets - b.targets },
         },
         {
           title: 'Rec Rate',
           dataIndex: 'catch_rate',
           render: (text) => <>{text}%</>,
+          sorter: { compare: (a, b) => a.catch_rate - b.catch_rate },
         },
         {
           title: 'Tgt Share',
           dataIndex: 'target_share',
           render: (text) => <>{text}%</>,
+          sorter: { compare: (a, b) => a.target_share - b.target_share },
         },
         {
           title: 'Yds',
           dataIndex: 'rec_yds',
-        },
-        {
-          title: '20+',
-          dataIndex: 'rec_over_20',
+          sorter: { compare: (a, b) => a.rec_yds - b.rec_yds },
         },
         {
           title: 'TDs',
           dataIndex: 'rec_tds',
+          sorter: { compare: (a, b) => a.rec_tds - b.rec_tds },
         },
       ],
     },
     {
       title: 'FUMs',
       dataIndex: 'fumbles',
+      sorter: { compare: (a, b) => a.fumbles - b.fumbles },
     },
   ];
 

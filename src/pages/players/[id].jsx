@@ -1,5 +1,9 @@
 import connectDB from '../../../lib/connectDB';
 import Player from '../../../models/Player';
+// import Qb from '../../../models/Qb';
+// import Rb from '../../../models/Rb';
+// import Wr from '../../../models/Wr';
+// import Te from '../../../models/Te';
 import useSWR from 'swr';
 import Layout from '../../components/Layout';
 import QBCard from '../../components/QBCard';
@@ -36,7 +40,7 @@ const PlayerPage = ({ player }) => {
       {player.position === 'QB' ? (
         <QBCard
           name={player.name}
-          imgUrl={player.imgUrl}
+          imgurl={player.imgurl}
           pass_yards={player.pass_yards}
           pass_attempts={player.pass_attempts}
           run_yards={player.run_yards}
@@ -89,8 +93,18 @@ const PlayerPage = ({ player }) => {
 export async function getServerSideProps({ params }) {
   await connectDB();
 
+  const position = params.query;
+
+  console.log(position);
+
   const player = await Player.findById(params.id).lean();
   player._id = player._id.toString();
+  const [name, team] = player.name.split('(');
+  player._id = player._id.toString();
+  player.name = name.trim();
+  player.team = team.slice(0, -1);
+
+  console.log(player);
 
   return { props: { player } };
 }
