@@ -6,12 +6,12 @@ const NonQBCard = ({
   position,
   imgurl,
   rec_yds,
-  run_yds,
-  run_attempts,
-  run_TDs,
+  rush_yds,
+  rush_atts,
+  rush_tds,
   receptions,
-  rec_TDs,
-  FUMs,
+  rec_tds,
+  fumbles,
 }) => {
   return (
     <div className={styles.player}>
@@ -43,21 +43,21 @@ const NonQBCard = ({
             <span>Receptions:</span> {receptions}
           </div>
           <div className={styles.stat}>
-            <span>Rec TDs:</span> {rec_TDs}
+            <span>Rec TDs:</span> {rec_tds}
           </div>
           <div className={styles.stat}>
-            <span>Rush Yards:</span> {run_yds}
+            <span>Rush Yards:</span> {rush_yds}
           </div>
           {position === 'RB' && (
             <div className={styles.stat}>
-              <span>Rush Attempts:</span> {run_attempts}
+              <span>Rush Attempts:</span> {rush_atts}
             </div>
           )}
           <div className={styles.stat}>
-            <span>Rush TDs:</span> {run_TDs}
+            <span>Rush TDs:</span> {rush_tds}
           </div>
           <div className={styles.stat}>
-            <span>FUMs:</span> {FUMs}
+            <span>FUMs:</span> {fumbles}
           </div>
         </div>
       </div>

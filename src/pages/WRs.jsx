@@ -11,7 +11,7 @@ const WRs = ({ players }) => {
       title: 'Name',
       dataIndex: 'name',
       render: (text, record) => (
-        <Link href={`/players/${record._id}`}>{text}</Link>
+        <Link href={`/players/wrs/${record._id}`}>{text}</Link>
       ),
     },
     {

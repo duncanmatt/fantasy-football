@@ -11,9 +11,7 @@ const QBs = ({ players }) => {
       title: 'Name',
       dataIndex: 'name',
       render: (text, record) => (
-        <Link href={{ pathname: `/players/${record._id}`, query: 'qb' }}>
-          {text}
-        </Link>
+        <Link href={`/players/qbs/${record._id}`}>{text}</Link>
       ),
     },
     {

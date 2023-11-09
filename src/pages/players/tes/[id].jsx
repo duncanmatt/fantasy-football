@@ -1,16 +1,10 @@
-import connectDB from '../../../lib/connectDB';
-import Player from '../../../models/Player';
-// import Qb from '../../../models/Qb';
-// import Rb from '../../../models/Rb';
-// import Wr from '../../../models/Wr';
-// import Te from '../../../models/Te';
-import { useRouter } from 'next/router';
+import connectDB from '../../../../lib/connectDB';
+import Te from '../../../../models/Te';
 import useSWR from 'swr';
-import Layout from '../../components/Layout';
-import QBCard from '../../components/QBCard';
-import NonQBCard from '../../components/NonQBCard';
+import Layout from '../../../components/Layout';
+import NonQBCard from '../../../components/NonQBCard';
 import { Spin } from 'antd';
-import styles from '../../styles/Player.module.css';
+import styles from '../../../styles/Player.module.css';
 import Link from 'next/link';
 
 const fetcher = async (url) => {
@@ -34,41 +28,22 @@ const PlayerPage = ({ player }) => {
     fetcher
   );
 
-  const router = useRouter();
-
-  player.position = router.query.position.toUpperCase();
-
   if (player === null || error) return <div>ERROR</div>;
 
   return (
     <Layout key={player._id}>
-      {player.position === 'QB' ? (
-        <QBCard
-          name={player.name}
-          imgurl={player.imgurl}
-          pass_yards={player.pass_yards}
-          pass_attempts={player.pass_attempts}
-          run_yards={player.run_yards}
-          run_attempts={player.run_attempts}
-          run_TDs={player.run_TDs}
-          completions={player.completions}
-          pass_TDs={player.TDs}
-          INTs={player.INTs}
-        />
-      ) : (
-        <NonQBCard
-          name={player.name}
-          position={player.position}
-          imgUrl={player.imgUrl}
-          rec_yards={player.rec_yards}
-          receptions={player.receptions}
-          rec_TDs={player.rec_TDs}
-          run_yards={player.run_yards}
-          run_attempts={player.run_attempts}
-          run_TDs={player.run_TDs}
-          FUMs={player.FUMs}
-        />
-      )}
+      <NonQBCard
+        name={player.name}
+        position='TE'
+        imgurl={player.imgurl}
+        rec_yds={player.rec_yds}
+        receptions={player.receptions}
+        rec_tds={player.rec_tds}
+        rush_yds={player.rush_yds}
+        rush_atts={player.rush_atts}
+        rush_tds={player.rush_tds}
+        fumbles={player.fumbles}
+      />
       <div className={styles.news}>
         <h3 className={styles.newsHead}>latest updates</h3>
         <div className={styles.articles}>
@@ -95,12 +70,12 @@ const PlayerPage = ({ player }) => {
   );
 };
 
-export async function getServerSideProps({ params }, context) {
+export async function getServerSideProps({ params }) {
   await connectDB();
 
   console.log(params);
 
-  const player = await Player.findById(params.id).lean();
+  const player = await Te.findById(params.id).lean();
   player._id = player._id.toString();
   const [name, team] = player.name.split('(');
   player._id = player._id.toString();
