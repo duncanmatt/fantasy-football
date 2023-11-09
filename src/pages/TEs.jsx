@@ -1,5 +1,5 @@
 import connectDB from '../../lib/connectDB';
-import Player from '../../models/Player';
+import Te from '../../models/Te';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import { Table } from 'antd';
@@ -15,27 +15,45 @@ const TEs = ({ players }) => {
       ),
     },
     {
-      title: 'Position',
-      dataIndex: 'position',
+      title: 'Team',
+      dataIndex: 'team',
+    },
+    {
+      title: 'Pts',
+      dataIndex: 'fpts',
     },
     {
       title: 'Receiving',
       children: [
         {
-          title: 'Yards',
-          dataIndex: 'rec_yards',
+          title: 'Receptions',
+          dataIndex: 'receptions',
         },
         {
           title: 'Targets',
           dataIndex: 'targets',
         },
         {
-          title: 'Receptions',
-          dataIndex: 'receptions',
+          title: 'Rec Rate',
+          dataIndex: 'catch_rate',
+          render: (text) => <>{text}%</>,
+        },
+        {
+          title: 'Tgt Share',
+          dataIndex: 'target_share',
+          render: (text) => <>{text}%</>,
+        },
+        {
+          title: 'Yds',
+          dataIndex: 'rec_yds',
+        },
+        {
+          title: '20+',
+          dataIndex: 'rec_over_20',
         },
         {
           title: 'TDs',
-          dataIndex: 'rec_TDs',
+          dataIndex: 'rec_tds',
         },
       ],
     },
@@ -43,18 +61,22 @@ const TEs = ({ players }) => {
       title: 'Rushing',
       children: [
         {
-          title: 'Yards',
-          dataIndex: 'run_yards',
+          title: 'Atts',
+          dataIndex: 'rush_atts',
+        },
+        {
+          title: 'Yds',
+          dataIndex: 'rush_yds',
         },
         {
           title: 'TDs',
-          dataIndex: 'run_TDs',
+          dataIndex: 'rush_tds',
         },
       ],
     },
     {
-      title: 'FUMs',
-      dataIndex: 'FUMs',
+      title: 'Fums',
+      dataIndex: 'fumbles',
     },
   ];
 
@@ -68,6 +90,7 @@ const TEs = ({ players }) => {
           dataSource={players}
           columns={columns}
           rowKey={(record) => record._id}
+          loading={{ spinning: !players ? true : false }}
         />
       </div>
     </Layout>
@@ -77,11 +100,13 @@ const TEs = ({ players }) => {
 export async function getServerSideProps(context) {
   await connectDB();
 
-  const playersResult = await Player.find({ position: 'TE' });
+  const playersResult = await Te.find({ targets: { $gt: 0 } });
   const players = playersResult.map((doc) => {
     const player = doc.toObject();
+    const [name, team] = player.name.split('(');
     player._id = player._id.toString();
-    player.move = null;
+    player.name = name.trim();
+    player.team = team.slice(0, -1);
     return player;
   });
 
