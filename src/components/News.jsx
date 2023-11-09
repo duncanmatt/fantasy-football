@@ -24,7 +24,7 @@ const News = () => {
 
   if (error) return <div>ERROR</div>;
 
-  if (isLoading)
+  if (!data || isLoading)
     return (
       <div className={styles.news}>
         <Skeleton />

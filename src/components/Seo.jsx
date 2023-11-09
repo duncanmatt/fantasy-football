@@ -1,9 +1,11 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-export const Seo = ({title}) => {
+const Seo = ({ title }) => {
   return (
     <Head>
       <title>{title}</title>
     </Head>
-  )
-}
+  );
+};
+
+export default Seo;

@@ -9,24 +9,26 @@ import styles from '../styles/Home.module.css';
 
 const Home = ({ sleepers }) => {
   return (
-    <Layout>
-      <main className={styles.main}>
-        <section className={styles.landing}>
-          <Transactions />
-          <div className={styles.newsWrapper}>
-            <div className={styles.heading}>
-              Latest <span className={styles.dNews}>News</span>
+    <>
+      <Layout>
+        <main className={styles.main}>
+          <section className={styles.landing}>
+            <Transactions />
+            <div className={styles.newsWrapper}>
+              <div className={styles.heading}>
+                Latest <span className={styles.dNews}>News</span>
+              </div>
+              <News />
+              <Divider style={{ backgroundColor: 'rgb(217,217,217' }} />
             </div>
-            <News />
-            <Divider style={{ backgroundColor: 'rgb(217,217,217' }} />
+          </section>
+          <div className={styles.sleepersWrapper}>
+            <div className={styles.heading}>Sleepers</div>
+            {sleepers ? <Sleepers players={sleepers} /> : <Skeleton />}
           </div>
-        </section>
-        <div className={styles.sleepersWrapper}>
-          <div className={styles.heading}>Sleepers</div>
-          {sleepers ? <Sleepers players={sleepers} /> : <Skeleton />}
-        </div>
-      </main>
-    </Layout>
+        </main>
+      </Layout>
+    </>
   );
 };
 

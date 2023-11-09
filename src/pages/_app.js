@@ -7,8 +7,13 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <SessionProvider session={session}>
       <Head>
-        <title>FF Auxiliary</title>
-        <meta name='description' content='Fantasy Football Draft News' />
+        <title>
+          FFAuxiliary Official Website | fantasy football stats & news
+        </title>
+        <meta
+          name='description'
+          content='Research up to date NFL stats and news to make informed decisions and optimize your fantasy football lineup'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
         <link
