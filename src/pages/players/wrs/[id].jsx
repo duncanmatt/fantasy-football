@@ -73,16 +73,12 @@ const PlayerPage = ({ player }) => {
 export async function getServerSideProps({ params }) {
   await connectDB();
 
-  console.log(params);
-
   const player = await Wr.findById(params.id).lean();
   player._id = player._id.toString();
   const [name, team] = player.name.split('(');
   player._id = player._id.toString();
   player.name = name.trim();
   player.team = team.slice(0, -1);
-
-  console.log(player);
 
   return { props: { player } };
 }
