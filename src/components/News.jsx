@@ -4,27 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
-const fetcher = async (url) => {
-  const res = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  const data = await res.json();
-
-  if (res.status !== 200) {
-    throw new Error(data.message);
-  }
-  return data;
-};
-
-const News = () => {
-  const { data, error, isLoading } = useSWR('/api/news', fetcher);
-
-  if (error) return <div>ERROR</div>;
-
-  if (!data || isLoading)
+const News = ({ articles }) => {
+  if (!articles)
     return (
       <div className={styles.news}>
         <Skeleton />
@@ -33,7 +14,7 @@ const News = () => {
 
   return (
     <div className={styles.news}>
-      {data.map((article) => (
+      {articles.map((article) => (
         <Link
           href={article.link}
           className={styles.article}

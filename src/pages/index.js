@@ -1,13 +1,10 @@
-import connectDB from '../../lib/connectDB';
-import Player from '../../models/Player';
 import Transactions from '../components/Transactions';
 import News from '../components/News';
-import Sleepers from '../components/Sleepers';
+import WaiverWinners from '../components/WaiverWinners';
 import Layout from '../components/Layout';
-import { Divider, Skeleton } from 'antd';
 import styles from '../styles/Home.module.css';
 
-const Home = ({ sleepers }) => {
+const Home = ({ articles }) => {
   return (
     <>
       <Layout>
@@ -18,32 +15,34 @@ const Home = ({ sleepers }) => {
               <div className={styles.heading}>
                 Latest <span className={styles.dNews}>News</span>
               </div>
-              <News />
-              <Divider style={{ backgroundColor: 'rgb(217,217,217' }} />
+              <News articles={articles} />
             </div>
           </section>
-          <div className={styles.sleepersWrapper}>
-            <div className={styles.heading}>Sleepers</div>
-            {sleepers ? <Sleepers players={sleepers} /> : <Skeleton />}
-          </div>
+          {/* <div className={styles.waiverWinnersWrapper}>
+            <div className={styles.heading}>Waiver Winners</div>
+            <WaiverWinners />
+          </div> */}
         </main>
       </Layout>
     </>
   );
 };
 
-export async function getStaticProps() {
-  await connectDB();
+export async function getServerSideProps(ctx) {
+  const res = await fetch(
+    process.env.NODE_ENV === 'development'
+      ? `http://${ctx.req?.headers.host}/api/news`
+      : `https://${ctx.req?.headers.host}/api/news`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+  const data = await res.json();
 
-  const sleepersResult = await Player.find({ sleeper: true });
-
-  const sleepers = sleepersResult.map((doc) => {
-    const sleeper = doc.toObject();
-    sleeper._id = sleeper._id.toString();
-    return sleeper;
-  });
-
-  return { props: { sleepers: sleepers } };
+  return { props: { articles: data } };
 }
 
 export default Home;

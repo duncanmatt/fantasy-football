@@ -115,7 +115,7 @@
 }
 
 .heading {
-  font-size: 2.85rem;
+  font-size: 1.85rem;
   text-transform: uppercase;
   font-family: var(--font-rama);
   line-height: 100px;
@@ -200,7 +200,7 @@
 }
 
 /* SLEEPERS */
-.sleepersWrapper {
+.waiverWinnersWrapper {
   padding-inline: 1rem;
   padding-block: 2rem;
 }
