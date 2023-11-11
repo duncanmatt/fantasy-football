@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Link from 'next/link';
 import { Table } from 'antd';
 import styles from '../styles/Position.module.css';
+import Seo from '../components/Seo';
 
 const RBs = ({ players }) => {
   const columns = [
@@ -94,19 +95,25 @@ const RBs = ({ players }) => {
   ];
 
   return (
-    <Layout>
-      <div className={styles.main}>
-        <h2 className={styles.title}>RUNNING BACKS</h2>
-        <Table
-          bordered={true}
-          scroll={{ x: true }}
-          dataSource={players}
-          columns={columns}
-          loading={{ spinning: !players ? true : false }}
-          rowKey={(record) => record._id}
-        />
-      </div>
-    </Layout>
+    <>
+      <Seo
+        title='NFL RB stats 2023'
+        desc='Research rushing and receiving stats including catch rate by NFL running backs in 2023 for fantasy football.'
+      />
+      <Layout>
+        <div className={styles.main}>
+          <h2 className={styles.title}>RUNNING BACKS</h2>
+          <Table
+            bordered={true}
+            scroll={{ x: true }}
+            dataSource={players}
+            columns={columns}
+            loading={{ spinning: !players ? true : false }}
+            rowKey={(record) => record._id}
+          />
+        </div>
+      </Layout>
+    </>
   );
 };
 

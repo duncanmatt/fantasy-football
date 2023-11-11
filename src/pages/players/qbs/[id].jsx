@@ -6,49 +6,56 @@ import QBCard from '../../../components/QBCard';
 import { Skeleton } from 'antd';
 import styles from '../../../styles/Player.module.css';
 import Link from 'next/link';
+import Seo from '../../../components/Seo';
 
 const PlayerPage = ({ player, news }) => {
   return (
-    <Layout key={player._id}>
-      {player ? (
-        <QBCard
-          name={player.name}
-          imgurl={player.imgurl}
-          pass_yards={player.pass_yds}
-          pass_attempts={player.pass_atts}
-          run_yards={player.rush_yds}
-          run_attempts={player.rush_atts}
-          run_TDs={player.rush_tds}
-          completions={player.completions}
-          pass_TDs={player.pass_tds}
-          INTs={player.interceptions}
-        />
-      ) : (
-        <Skeleton />
-      )}
-      <div className={styles.news}>
-        <h3 className={styles.newsHead}>latest updates</h3>
-        <div className={styles.articles}>
-          {!news ? (
-            <Skeleton />
-          ) : (
-            news.map((article) => (
-              <Link
-                key={article.position}
-                className={styles.article}
-                href={article.link}
-              >
-                <h4 className={styles.title}>{article.title}</h4>
-                <p className={styles.articleDesc}>{article.snippet}</p>
-                <h6 className={styles.articleSrc}>
-                  {article.source} - {article.date}
-                </h6>
-              </Link>
-            ))
-          )}
+    <>
+      <Seo
+        title={`${player.name} latest stats and news`}
+        desc={`View current stats and most recent news for ${player.team} QB, ${player.name}.`}
+      />
+      <Layout key={player._id}>
+        {player ? (
+          <QBCard
+            name={player.name}
+            imgurl={player.imgurl}
+            pass_yards={player.pass_yds}
+            pass_attempts={player.pass_atts}
+            run_yards={player.rush_yds}
+            run_attempts={player.rush_atts}
+            run_TDs={player.rush_tds}
+            completions={player.completions}
+            pass_TDs={player.pass_tds}
+            INTs={player.interceptions}
+          />
+        ) : (
+          <Skeleton />
+        )}
+        <div className={styles.news}>
+          <h3 className={styles.newsHead}>latest updates</h3>
+          <div className={styles.articles}>
+            {!news ? (
+              <Skeleton />
+            ) : (
+              news.map((article) => (
+                <Link
+                  key={article.position}
+                  className={styles.article}
+                  href={article.link}
+                >
+                  <h4 className={styles.title}>{article.title}</h4>
+                  <p className={styles.articleDesc}>{article.snippet}</p>
+                  <h6 className={styles.articleSrc}>
+                    {article.source} - {article.date}
+                  </h6>
+                </Link>
+              ))
+            )}
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

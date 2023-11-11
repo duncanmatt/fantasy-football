@@ -8,7 +8,7 @@ import { SWRConfig } from 'swr';
 
 const Home = ({ articles, fallback }) => {
   return (
-    <SWRConfig value={{ provider: () => new Map(), fallback }}>
+    <SWRConfig value={{ fallback }}>
       <Layout>
         <main className={styles.main}>
           <section className={styles.landing}>
@@ -35,19 +35,18 @@ export default Home;
 export async function getStaticProps(ctx) {
   const newsParams = {
     api_key: process.env.SERP_API_KEY,
-    q: 'nfl today',
+    q: 'NFL fantasy',
     gl: 'us',
     hl: 'en',
-    ijn: '0',
     tbm: 'nws',
+    as_qdr: 'd1',
+    lr: 'en',
   };
 
   const res = await getJson('google', newsParams);
 
   const data = await res.news_results;
-
-  const url =
-    'https://www.google.com/search?q=nfl+today&oq=nfl+today&hl=en&gl=us&tbm=nws&sourceid=chrome&ie=UTF-8';
+  const url = res.search_metadata.google_url;
 
   return {
     props: {
