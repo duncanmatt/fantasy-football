@@ -1,4 +1,4 @@
-import WwCard from './wWCard';
+import WwCard from './WwCard';
 import styles from '../styles/Home.module.css';
 import useSWR from 'swr';
 import { Skeleton } from 'antd';

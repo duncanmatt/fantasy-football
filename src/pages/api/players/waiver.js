@@ -3,7 +3,6 @@ import Waiver from '../../../../models/Waiver';
 
 export default async function handler(req, res) {
   await connectDB();
-  console.log(req);
   if (req.method === 'GET') {
     try {
       const response = await Waiver.find({}).lean();

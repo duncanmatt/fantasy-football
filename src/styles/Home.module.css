@@ -208,7 +208,7 @@
 .waiverWinners {
   display: grid;
   gap: 2rem;
-  grid-template-rows: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
   grid-template-columns: 1fr;
   padding-block: 3rem 1rem;
 }
