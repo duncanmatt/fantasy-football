@@ -390,7 +390,7 @@
 }
 
 @media (min-width: 600px) {
-  .sleepers {
+  .waiverWinners {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     grid-template-rows: auto;
     row-gap: 2rem;
@@ -417,10 +417,6 @@
   .heading {
     margin-top: 2.25rem;
     font-size: 4rem;
-  }
-  .news {
-    gap: 1.75rem;
-    padding-block: 2rem;
   }
   .news {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -455,7 +451,7 @@
     justify-content: space-between;
     padding-inline: 1rem 0;
   }
-  .sleepers {
+  .waiverWinners {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -466,19 +462,19 @@
 }
 
 @media (min-width: 1420px) {
-  .sleepers {
+  .waiverWinners {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 0.25fr));
     grid-template-rows: auto;
     row-gap: 5rem;
   }
-  .sleeperOutlook {
+  .wWOutlook {
     font-size: 1.2rem;
   }
-  .sleeperUpper {
+  .wWUpper {
     font-size: 22px;
   }
-  .sleeperLink {
+  .wWLink {
     font-size: 20px;
   }
 }
