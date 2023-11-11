@@ -83,7 +83,6 @@ export async function getServerSideProps({ params }) {
   };
 
   const newsRes = await getJson('google', newsParams);
-  console.log(newsRes);
   const news = await newsRes.news_results;
 
   return { props: { player, news } };
