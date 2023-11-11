@@ -1,35 +1,13 @@
 import connectDB from '../../../../lib/connectDB';
 import Rb from '../../../../models/Rb';
-import useSWR from 'swr';
+import { getJson } from 'serpapi';
 import Layout from '../../../components/Layout';
 import NonQBCard from '../../../components/NonQBCard';
 import { Skeleton } from 'antd';
 import styles from '../../../styles/Player.module.css';
 import Link from 'next/link';
 
-const fetcher = async (url) => {
-  const res = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  const data = await res.json();
-
-  if (res.status !== 200) {
-    throw new Error(data.message);
-  }
-  return data;
-};
-
-const PlayerPage = ({ player }) => {
-  const { data, error, isLoading } = useSWR(
-    `/api/news/${player.name}`,
-    fetcher
-  );
-
-  if (error) return <div>ERROR</div>;
-
+const PlayerPage = ({ player, news }) => {
   return (
     <Layout key={player._id}>
       {player ? (
@@ -51,10 +29,10 @@ const PlayerPage = ({ player }) => {
       <div className={styles.news}>
         <h3 className={styles.newsHead}>latest updates</h3>
         <div className={styles.articles}>
-          {isLoading || !data ? (
+          {!news ? (
             <Skeleton />
           ) : (
-            data.map((article) => (
+            news.map((article) => (
               <Link
                 key={article.position}
                 className={styles.article}
@@ -86,5 +64,19 @@ export async function getServerSideProps({ params }) {
   player.name = name.trim();
   player.team = team.slice(0, -1);
 
-  return { props: { player } };
+  const newsParams = {
+    api_key: process.env.SERP_API_KEY,
+    q: name,
+    location: 'United States',
+    google_domain: 'google.com',
+    gl: 'us',
+    hl: 'en',
+    tbm: 'nws',
+    num: '8',
+  };
+
+  const newsRes = await getJson('google', newsParams);
+  const news = await newsRes.news_results;
+
+  return { props: { player, news } };
 }
