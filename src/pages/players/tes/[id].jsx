@@ -3,7 +3,7 @@ import Te from '../../../../models/Te';
 import useSWR from 'swr';
 import Layout from '../../../components/Layout';
 import NonQBCard from '../../../components/NonQBCard';
-import { Spin } from 'antd';
+import { Skeleton } from 'antd';
 import styles from '../../../styles/Player.module.css';
 import Link from 'next/link';
 
@@ -28,27 +28,31 @@ const PlayerPage = ({ player }) => {
     fetcher
   );
 
-  if (player === null || error) return <div>ERROR</div>;
+  if (error) return <div>ERROR</div>;
 
   return (
     <Layout key={player._id}>
-      <NonQBCard
-        name={player.name}
-        position='TE'
-        imgurl={player.imgurl}
-        rec_yds={player.rec_yds}
-        receptions={player.receptions}
-        rec_tds={player.rec_tds}
-        rush_yds={player.rush_yds}
-        rush_atts={player.rush_atts}
-        rush_tds={player.rush_tds}
-        fumbles={player.fumbles}
-      />
+      {player ? (
+        <NonQBCard
+          name={player.name}
+          position='TE'
+          imgurl={player.imgurl}
+          rec_yds={player.rec_yds}
+          receptions={player.receptions}
+          rec_tds={player.rec_tds}
+          rush_yds={player.rush_yds}
+          rush_atts={player.rush_atts}
+          rush_tds={player.rush_tds}
+          fumbles={player.fumbles}
+        />
+      ) : (
+        <Skeleton />
+      )}
       <div className={styles.news}>
         <h3 className={styles.newsHead}>latest updates</h3>
         <div className={styles.articles}>
           {isLoading || !data ? (
-            <Spin />
+            <Skeleton />
           ) : (
             data.map((article) => (
               <Link
@@ -70,6 +74,8 @@ const PlayerPage = ({ player }) => {
   );
 };
 
+export default PlayerPage;
+
 export async function getServerSideProps({ params }) {
   await connectDB();
 
@@ -82,5 +88,3 @@ export async function getServerSideProps({ params }) {
 
   return { props: { player } };
 }
-
-export default PlayerPage;
