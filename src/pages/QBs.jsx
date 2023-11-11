@@ -108,7 +108,7 @@ const QBs = ({ players }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   await connectDB();
 
   const playersResult = await Qb.find({ pass_yds: { $gt: 0 } });

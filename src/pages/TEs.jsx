@@ -110,7 +110,7 @@ const TEs = ({ players }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   await connectDB();
 
   const playersResult = await Te.find({ targets: { $gt: 0 } });

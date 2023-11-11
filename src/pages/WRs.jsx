@@ -110,7 +110,7 @@ const WRs = ({ players }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   await connectDB();
 
   const playersResult = await Wr.find({ receptions: { $gt: 0 } });
