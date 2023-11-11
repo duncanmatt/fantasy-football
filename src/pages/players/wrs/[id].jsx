@@ -13,7 +13,7 @@ const PlayerPage = ({ player, news }) => {
     <>
       <Seo
         title={`${player.name} latest stats and news`}
-        desc={`View current stats and most recent news for ${player.team} WR, ${player.name}.`}
+        desc={`View current stats and most recent news for ${player.team} wide receiver, ${player.name}.`}
       />
       <Layout key={player._id}>
         {player ? (
