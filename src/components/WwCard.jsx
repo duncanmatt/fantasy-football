@@ -2,18 +2,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
-const SleeperCard = ({ player }) => {
+const WwCard = ({ player }) => {
   return (
-    <div className={styles.sleeper}>
-      <div className={styles.sleeperBody}>
-        <div className={styles.sleeperUpper}>
-          <h4 className={styles.sleeperName}>{player.name}</h4>
-          <span className={styles.sleeperPos}>{player.position}</span>
+    <div className={styles.wW}>
+      <div className={styles.wWBody}>
+        <div className={styles.wWUpper}>
+          <h4 className={styles.wWName}>{player.name}</h4>
+          <span className={styles.wWPos}>{player.position}</span>
         </div>
         <div className={styles.bodyInner}>
-          <span className={styles.sleeperLogoWrapper}>
+          <span className={styles.wWLogoWrapper}>
             <Image
-              className={styles.sleeperLogo}
+              className={styles.wWLogo}
               alt={player.team}
               src={`https://static.www.nfl.com/league/apps/fantasy/logos/200x213/${player.team_abv}.png`}
               fill
@@ -22,10 +22,10 @@ const SleeperCard = ({ player }) => {
               blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
             />
           </span>
-          <div className={styles.sleeperHeadshotWrapper}>
+          <div className={styles.wWHeadshotWrapper}>
             <Image
-              className={styles.sleeperHeadshot}
-              src={player.imgUrl}
+              className={styles.wWHeadshot}
+              src={player.imgurl}
               alt={player.name}
               placeholder='blur'
               blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
@@ -35,14 +35,14 @@ const SleeperCard = ({ player }) => {
           </div>
         </div>
       </div>
-      <div className={styles.sleeperOutlook}>
-        <span className={styles.sleeperOutlookHeader}>
+      <div className={styles.wWOutlook}>
+        <span className={styles.wWOutlookHeader}>
           <h6>2023 outlook</h6>
         </span>
-        <span className={styles.sleeperOutlookDesc}>{player.sleeper[1]}</span>
+        <span className={styles.wWOutlookDesc}>{player.desc}</span>
       </div>
-      <div className={styles.sleeperLinkWrapper}>
-        <Link className={styles.sleeperLink} href={`/players/${player._id}`}>
+      <div className={styles.wWLinkWrapper}>
+        <Link className={styles.wWLink} href={`/players/${player._id}`}>
           view more
         </Link>
       </div>
@@ -50,4 +50,4 @@ const SleeperCard = ({ player }) => {
   );
 };
 
-export default SleeperCard;
+export default WwCard;

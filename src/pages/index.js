@@ -18,10 +18,10 @@ const Home = ({ articles }) => {
               <News articles={articles} />
             </div>
           </section>
-          {/* <div className={styles.waiverWinnersWrapper}>
+          <div className={styles.waiverWinnersWrapper}>
             <div className={styles.heading}>Waiver Winners</div>
             <WaiverWinners />
-          </div> */}
+          </div>
         </main>
       </Layout>
     </>
