@@ -23,7 +23,7 @@ const QBs = ({ players }) => {
       title: 'Pts',
       dataIndex: 'fpts',
       defaultSortOrder: 'descend',
-      sorter: { compare: (a, b) => a.pass_tds - b.pass_tds },
+      sorter: { compare: (a, b) => a.fpts - b.fpts },
     },
     {
       title: 'Passing',
