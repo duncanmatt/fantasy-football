@@ -102,7 +102,10 @@ const TEs = ({ players }) => {
       />
       <Layout>
         <div className={styles.main}>
-          <h2 className={styles.title}>TIGHT ENDS</h2>
+          <div className={styles.posHeading}>
+            <h2 className={styles.title}>TIGHT ENDS</h2>
+            <span className={styles.scoringFormat}>PPR</span>
+          </div>
           <Table
             bordered={true}
             scroll={{ x: true }}

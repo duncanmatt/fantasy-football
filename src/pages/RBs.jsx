@@ -102,7 +102,10 @@ const RBs = ({ players }) => {
       />
       <Layout>
         <div className={styles.main}>
-          <h2 className={styles.title}>RUNNING BACKS</h2>
+          <div className={styles.posHeading}>
+            <h2 className={styles.title}>RUNNING BACKS</h2>
+            <span className={styles.scoringFormat}>PPR</span>
+          </div>
           <Table
             bordered={true}
             scroll={{ x: true }}

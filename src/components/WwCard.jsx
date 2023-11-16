@@ -37,7 +37,7 @@ const WwCard = ({ player }) => {
       </div>
       <div className={styles.wWOutlook}>
         <span className={styles.wWOutlookHeader}>
-          <h6>2023 outlook</h6>
+          <h6>Week 11 outlook</h6>
         </span>
         <span className={styles.wWOutlookDesc}>{player.desc}</span>
       </div>
