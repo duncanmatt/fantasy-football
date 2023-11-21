@@ -1,39 +1,39 @@
 import logo from '../../public/logo.svg';
-import { Divider } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <div className='footer'>
-      <Divider style={{ backgroundColor: '#000' }} />
+    <div
+      className='footer'
+      style={{ paddingBlockStart: '2rem', borderTop: '1px solid #b1b4b6' }}
+    >
+      <div>
+        <p>
+          stats compiled from{' '}
+          <Link
+            href='https://www.fantasypros.com'
+            style={{ fontWeight: '600' }}
+          >
+            Fantasy Pros
+          </Link>{' '}
+          and{' '}
+          <Link style={{ fontWeight: '600' }} href='https://nfl.com'>
+            NFL
+          </Link>
+        </p>
+      </div>
       <div
         style={{
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
-          paddingBlockStart: '1rem',
         }}
       >
-        &copy; 2023, Fantasy Football Auxiliary
+        <span>&copy; 2023, Fantasy Football Auxiliary</span>{' '}
+        <Image src={logo} alt='Offseason Advisor' width={18} height={18} />
       </div>
-      <div>
-        <p>
-          stats compiled from{' '}
-          <Link
-            href='https://www.fantasypros.com'
-            style={{ textDecoration: 'underline' }}
-          >
-            Fantasy Pros
-          </Link>{' '}
-          and{' '}
-          <Link style={{ textDecoration: 'underline' }} href='https://nfl.com'>
-            NFL
-          </Link>
-        </p>
-      </div>
-      <Image src={logo} alt='Offseason Advisor' width={30} height={30} />
     </div>
   );
 };

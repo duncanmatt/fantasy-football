@@ -72,7 +72,7 @@ header::selection {
 }
 
 .header-content {
-  box-shadow: rgb(217, 217, 217) 0px 1px 0px 0px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .ant-spin-container {

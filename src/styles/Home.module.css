@@ -48,7 +48,8 @@
   display: grid;
   grid-template-rows: 50px;
   grid-template-columns: auto auto;
-  box-shadow: rgb(217, 217, 217) 0px 1px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 0px 0px 4px,
+    var(--border-color) 0px 1px 1px 0px;
   overflow: hidden;
   background-color: var(--white);
 }
