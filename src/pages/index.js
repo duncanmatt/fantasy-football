@@ -32,7 +32,7 @@ const Home = ({ articles, fallback }) => {
 
 export default Home;
 
-export async function getStaticProps(ctx) {
+export async function getServerSideProps(ctx) {
   const newsParams = {
     api_key: process.env.SERP_API_KEY,
     q: 'NFL fantasy',
