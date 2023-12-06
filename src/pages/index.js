@@ -41,6 +41,7 @@ export async function getStaticProps(ctx) {
     tbm: 'nws',
     as_qdr: 'd1',
     lr: 'en',
+    num: 6,
   };
 
   const res = await getJson('google', newsParams);
