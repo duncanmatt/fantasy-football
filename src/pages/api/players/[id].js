@@ -1,9 +1,6 @@
-import dbConnect from '../../../../lib/connectDB';
 import { getJson } from 'serpapi';
 
 export default async function handler(req, res) {
-  await dbConnect();
-
   const {
     query: { name },
     method,
