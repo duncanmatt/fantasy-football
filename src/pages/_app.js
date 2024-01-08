@@ -7,9 +7,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
     <SessionProvider session={session}>
       <Head>
-        <title>
-          FFAuxiliary Official Website | fantasy football stats & news
-        </title>
+        <title>FFAuxiliary | fantasy football draft research</title>
         <meta
           name='description'
           content='Research up to date NFL stats and news to make informed decisions and optimize your fantasy football lineup'
